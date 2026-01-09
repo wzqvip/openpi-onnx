@@ -3,6 +3,10 @@ import dataclasses
 import logging
 import math
 import pathlib
+import sys
+
+# Ensure libero is found
+sys.path.append(str(pathlib.Path("./third_party/libero").resolve()))
 
 import imageio
 from libero.libero import benchmark
@@ -43,6 +47,7 @@ class Args:
     video_out_path: str = "data/libero/videos"  # Path to save videos
 
     seed: int = 7  # Random Seed (for reproducibility)
+    task_id: int | None = None
 
 
 def eval_libero(args: Args) -> None:
@@ -74,7 +79,12 @@ def eval_libero(args: Args) -> None:
 
     # Start evaluation
     total_episodes, total_successes = 0, 0
-    for task_id in tqdm.tqdm(range(num_tasks_in_suite)):
+    
+    tasks_to_run = range(num_tasks_in_suite)
+    if args.task_id is not None:
+        tasks_to_run = [args.task_id]
+        
+    for task_id in tqdm.tqdm(tasks_to_run):
         # Get task
         task = task_suite.get_task(task_id)
 
@@ -216,4 +226,4 @@ def _quat2axisangle(quat):
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
-    tyro.cli(eval_libero)
+    eval_libero(tyro.cli(Args))

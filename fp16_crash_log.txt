@@ -1,0 +1,177 @@
+&&&& RUNNING TensorRT.trtexec [TensorRT v101303] [b9] # /usr/src/tensorrt/bin/trtexec --onnx=checkpoints/pi05_libero_pytorch/fp16/model.onnx --fp16 --verbose
+[01/09/2026-10:22:29] [I] === Model Options ===
+[01/09/2026-10:22:29] [I] Format: ONNX
+[01/09/2026-10:22:29] [I] Model: checkpoints/pi05_libero_pytorch/fp16/model.onnx
+[01/09/2026-10:22:29] [I] Output:
+[01/09/2026-10:22:29] [I] === Build Options ===
+[01/09/2026-10:22:29] [I] Memory Pools: workspace: default, dlaSRAM: default, dlaLocalDRAM: default, dlaGlobalDRAM: default, tacticSharedMem: default
+[01/09/2026-10:22:29] [I] avgTiming: 8
+[01/09/2026-10:22:29] [I] Precision: FP32+FP16
+[01/09/2026-10:22:29] [I] LayerPrecisions: 
+[01/09/2026-10:22:29] [I] Layer Device Types: 
+[01/09/2026-10:22:29] [I] Calibration: 
+[01/09/2026-10:22:29] [I] Refit: Disabled
+[01/09/2026-10:22:29] [I] Strip weights: Disabled
+[01/09/2026-10:22:29] [I] Version Compatible: Disabled
+[01/09/2026-10:22:29] [I] ONNX Plugin InstanceNorm: Disabled
+[01/09/2026-10:22:29] [I] ONNX kENABLE_UINT8_AND_ASYMMETRIC_QUANTIZATION_DLA flag: Disabled
+[01/09/2026-10:22:29] [I] TensorRT runtime: full
+[01/09/2026-10:22:29] [I] Lean DLL Path: 
+[01/09/2026-10:22:29] [I] Tempfile Controls: { in_memory: allow, temporary: allow }
+[01/09/2026-10:22:29] [I] Exclude Lean Runtime: Disabled
+[01/09/2026-10:22:29] [I] Sparsity: Disabled
+[01/09/2026-10:22:29] [I] Safe mode: Disabled
+[01/09/2026-10:22:29] [I] Build DLA standalone loadable: Disabled
+[01/09/2026-10:22:29] [I] Allow GPU fallback for DLA: Disabled
+[01/09/2026-10:22:29] [I] DirectIO mode: Disabled
+[01/09/2026-10:22:29] [I] Restricted mode: Disabled
+[01/09/2026-10:22:29] [I] Skip inference: Disabled
+[01/09/2026-10:22:29] [I] Save engine: 
+[01/09/2026-10:22:29] [I] Load engine: 
+[01/09/2026-10:22:29] [I] Profiling verbosity: 0
+[01/09/2026-10:22:29] [I] Tactic sources: Using default tactic sources
+[01/09/2026-10:22:29] [I] timingCacheMode: local
+[01/09/2026-10:22:29] [I] timingCacheFile: 
+[01/09/2026-10:22:29] [I] Enable Compilation Cache: Enabled
+[01/09/2026-10:22:29] [I] Enable Monitor Memory: Disabled
+[01/09/2026-10:22:29] [I] errorOnTimingCacheMiss: Disabled
+[01/09/2026-10:22:29] [I] Preview Features: Use default preview flags.
+[01/09/2026-10:22:29] [I] MaxAuxStreams: -1
+[01/09/2026-10:22:29] [I] BuilderOptimizationLevel: -1
+[01/09/2026-10:22:29] [I] MaxTactics: -1
+[01/09/2026-10:22:29] [I] Calibration Profile Index: 0
+[01/09/2026-10:22:29] [I] Weight Streaming: Disabled
+[01/09/2026-10:22:29] [I] Runtime Platform: Same As Build
+[01/09/2026-10:22:29] [I] Debug Tensors: 
+[01/09/2026-10:22:29] [I] Distributive Independence: Disabled
+[01/09/2026-10:22:29] [I] Mark Unfused Tensors As Debug Tensors: Disabled
+[01/09/2026-10:22:29] [I] Input(s)s format: fp32:CHW
+[01/09/2026-10:22:29] [I] Output(s)s format: fp32:CHW
+[01/09/2026-10:22:29] [I] Input build shapes: model
+[01/09/2026-10:22:29] [I] Input calibration shapes: model
+[01/09/2026-10:22:29] [I] === System Options ===
+[01/09/2026-10:22:29] [I] Device: 0
+[01/09/2026-10:22:29] [I] DLACore: 
+[01/09/2026-10:22:29] [I] Plugins:
+[01/09/2026-10:22:29] [I] setPluginsToSerialize:
+[01/09/2026-10:22:29] [I] dynamicPlugins:
+[01/09/2026-10:22:29] [I] ignoreParsedPluginLibs: 0
+[01/09/2026-10:22:29] [I] 
+[01/09/2026-10:22:29] [I] === Inference Options ===
+[01/09/2026-10:22:29] [I] Batch: Explicit
+[01/09/2026-10:22:29] [I] Input inference shapes: model
+[01/09/2026-10:22:29] [I] Iterations: 10
+[01/09/2026-10:22:29] [I] Duration: 3s (+ 200ms warm up)
+[01/09/2026-10:22:29] [I] Sleep time: 0ms
+[01/09/2026-10:22:29] [I] Idle time: 0ms
+[01/09/2026-10:22:29] [I] Inference Streams: 1
+[01/09/2026-10:22:29] [I] ExposeDMA: Disabled
+[01/09/2026-10:22:29] [I] Data transfers: Enabled
+[01/09/2026-10:22:29] [I] Spin-wait: Disabled
+[01/09/2026-10:22:29] [I] Multithreading: Disabled
+[01/09/2026-10:22:29] [I] CUDA Graph: Disabled
+[01/09/2026-10:22:29] [I] Separate profiling: Disabled
+[01/09/2026-10:22:29] [I] Time Deserialize: Disabled
+[01/09/2026-10:22:29] [I] Time Refit: Disabled
+[01/09/2026-10:22:29] [I] NVTX verbosity: 0
+[01/09/2026-10:22:29] [I] Persistent Cache Ratio: 0
+[01/09/2026-10:22:29] [I] Optimization Profile Index: 0
+[01/09/2026-10:22:29] [I] Weight Streaming Budget: 100.000000%
+[01/09/2026-10:22:29] [I] Inputs:
+[01/09/2026-10:22:29] [I] Debug Tensor Save Destinations:
+[01/09/2026-10:22:29] [I] Dump All Debug Tensor in Formats: 
+[01/09/2026-10:22:29] [I] === Reporting Options ===
+[01/09/2026-10:22:29] [I] Verbose: Enabled
+[01/09/2026-10:22:29] [I] Averages: 10 inferences
+[01/09/2026-10:22:29] [I] Percentiles: 90,95,99
+[01/09/2026-10:22:29] [I] Dump refittable layers:Disabled
+[01/09/2026-10:22:29] [I] Dump output: Disabled
+[01/09/2026-10:22:29] [I] Profile: Disabled
+[01/09/2026-10:22:29] [I] Export timing to JSON file: 
+[01/09/2026-10:22:29] [I] Export output to JSON file: 
+[01/09/2026-10:22:29] [I] Export profile to JSON file: 
+[01/09/2026-10:22:29] [I] 
+[01/09/2026-10:22:29] [I] === Device Information ===
+[01/09/2026-10:22:29] [I] Available Devices: 
+[01/09/2026-10:22:29] [I]   Device 0: "NVIDIA Thor" UUID: GPU-a7c66ad2-6dbb-0ab8-c1a2-37ba6dba3600
+[01/09/2026-10:22:29] [I] Selected Device: NVIDIA Thor
+[01/09/2026-10:22:29] [I] Selected Device ID: 0
+[01/09/2026-10:22:29] [I] Selected Device UUID: GPU-a7c66ad2-6dbb-0ab8-c1a2-37ba6dba3600
+[01/09/2026-10:22:29] [I] Compute Capability: 11.0
+[01/09/2026-10:22:29] [I] SMs: 20
+[01/09/2026-10:22:29] [I] Device Global Memory: 125772 MiB
+[01/09/2026-10:22:29] [I] Shared Memory per SM: 228 KiB
+[01/09/2026-10:22:29] [I] Memory Bus Width: 0 bits (ECC disabled)
+[01/09/2026-10:22:29] [I] Application Compute Clock Rate: 1.04858 GHz
+[01/09/2026-10:22:29] [I] Application Memory Clock Rate: 0 GHz
+[01/09/2026-10:22:29] [I] 
+[01/09/2026-10:22:29] [I] Note: The application clock rates do not reflect the actual clock rates that the GPU is currently running at.
+[01/09/2026-10:22:29] [I] 
+[01/09/2026-10:22:29] [I] TensorRT version: 10.13.3
+[01/09/2026-10:22:29] [I] Loading standard plugins
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::ROIAlign_TRT version 2
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::CropAndResizeDynamic version 2
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::InstanceNormalization_TRT version 3
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::ScatterElements version 2
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::MultiscaleDeformableAttnPlugin_TRT version 2
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::ModulatedDeformConv2d version 2
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::BatchedNMSDynamic_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::BatchedNMS_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::BatchTilePlugin_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::Clip_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::CoordConvAC version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::CropAndResizeDynamic version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::CropAndResize version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::DecodeBbox3DPlugin version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::DetectionLayer_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::EfficientNMS_Explicit_TF_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::EfficientNMS_Implicit_TF_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::EfficientNMS_ONNX_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::EfficientNMS_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::FlattenConcat_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::GenerateDetection_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::GridAnchor_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::GridAnchorRect_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::InstanceNormalization_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::InstanceNormalization_TRT version 2
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::LReLU_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::ModulatedDeformConv2d version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::MultilevelCropAndResize_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::MultilevelProposeROI_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::MultiscaleDeformableAttnPlugin_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::NMSDynamic_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::NMS_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::Normalize_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::PillarScatterPlugin version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::PriorBox_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::ProposalDynamic version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::ProposalLayer_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::Proposal version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::PyramidROIAlign_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::Region_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::Reorg_TRT version 2
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::Reorg_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::ResizeNearest_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::ROIAlign_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::RPROI_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::ScatterElements version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::ScatterND version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::SpecialSlice_TRT version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::Split version 1
+[01/09/2026-10:22:29] [V] [TRT] Registered plugin creator - ::VoxelGeneratorPlugin version 1
+[01/09/2026-10:22:29] [I] [TRT] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 30, GPU 87627 (MiB)
+[01/09/2026-10:22:29] [V] [TRT] Trying to load shared library libnvinfer_builder_resource.so.10.13.3
+[01/09/2026-10:22:29] [V] [TRT] Loaded shared library libnvinfer_builder_resource.so.10.13.3
+[01/09/2026-10:22:30] [I] [TRT] [MemUsageChange] Init builder kernel library: CPU +1227, GPU +1218, now: CPU 1459, GPU 89035 (MiB)
+[01/09/2026-10:22:30] [V] [TRT] CUDA lazy loading is enabled.
+[01/09/2026-10:22:30] [I] Start parsing network model.
+[01/09/2026-10:22:30] [I] [TRT] ----------------------------------------------------------------
+[01/09/2026-10:22:30] [I] [TRT] Input filename:   checkpoints/pi05_libero_pytorch/fp16/model.onnx
+[01/09/2026-10:22:30] [I] [TRT] ONNX IR version:  0.0.8
+[01/09/2026-10:22:30] [I] [TRT] Opset version:    0
+[01/09/2026-10:22:30] [I] [TRT] Producer name:    pytorch
+[01/09/2026-10:22:30] [I] [TRT] Producer version: 2.7.1
+[01/09/2026-10:22:30] [I] [TRT] Domain:           
+[01/09/2026-10:22:30] [I] [TRT] Model version:    0
+[01/09/2026-10:22:30] [I] [TRT] Doc string:       
+[01/09/2026-10:22:30] [I] [TRT] ----------------------------------------------------------------

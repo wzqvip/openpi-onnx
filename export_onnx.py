@@ -29,6 +29,7 @@ def custom_apply_rotary_pos_emb(q, k, cos, sin, position_ids=None, unsqueeze_dim
 def patch_get_safe_dtype(target_dtype, device_type):
     return torch.float16
 
+
 # --- Wrapper for Tracing ---
 class OnnxWrapper(nn.Module):
     def __init__(self, model):
@@ -70,8 +71,13 @@ def main():
     parser = argparse.ArgumentParser(description="Export Pi0.5 model to ONNX")
     parser.add_argument("--dtype", choices=["fp16", "fp32"], default="fp16",
                         help="Export precision. Default: fp16")
+    parser.add_argument("--force-cpu", action="store_true", help="Force CPU execution")
     args = parser.parse_args()
     
+    # Determine device early
+    device = "cuda" if torch.cuda.is_available() and not args.force_cpu else "cpu"
+    print(f"Device: {device}")
+
     # OUTPUT PATH update based on dtype
     if args.dtype == "fp32":
         global OUTPUT_ONNX_PATH
@@ -85,11 +91,12 @@ def main():
     transformers.models.gemma.modeling_gemma.apply_rotary_pos_emb = custom_apply_rotary_pos_emb
     
     import openpi.models_pytorch.pi0_pytorch
-    # Only patch safe_dtype to float16 if we are exporting fp16
-    if args.dtype == "fp16":
+    # Only patch safe_dtype to float16 if we are exporting fp16 AND we are on GPU (supported)
+    # If on CPU, we use FP32 and then convert, so we need safe_dtype to be float32
+    if args.dtype == "fp16" and device != "cpu":
         openpi.models_pytorch.pi0_pytorch.get_safe_dtype = patch_get_safe_dtype
     else:
-        # For FP32, we map to float32
+        # For FP32 or CPU-workaround, we map to float32
         def patch_get_safe_dtype_fp32(target, device): return torch.float32
         openpi.models_pytorch.pi0_pytorch.get_safe_dtype = patch_get_safe_dtype_fp32
 
@@ -126,30 +133,39 @@ def main():
     
     # Patch sample_time
     original_sample_time = openpi.models_pytorch.pi0_pytorch.PI0Pytorch.sample_time
-    def sample_time_patched(self, bsize, device):
-        t = original_sample_time(self, bsize, device)
-        return t.to(dtype=torch.float16 if args.dtype=="fp16" else torch.float32)
+    def sample_time_patched(self, bsize, dev):
+        t = original_sample_time(self, bsize, dev)
+        # Use dtype based on export mode
+        # Check cuda availability directly to be safe
+        is_cpu = not torch.cuda.is_available() or args.force_cpu
+        if args.dtype == "fp16" and not is_cpu:
+             target = torch.float16
+        else:
+             target = torch.float32
+        return t.to(dtype=target)
     openpi.models_pytorch.pi0_pytorch.PI0Pytorch.sample_time = sample_time_patched
-    print(f"Patched PI0Pytorch.sample_time to return {args.dtype}")
+    print(f"Patched PI0Pytorch.sample_time to return correct dtype for {args.dtype}")
 
     # Patch embed_suffix
     original_embed_suffix = openpi.models_pytorch.pi0_pytorch.PI0Pytorch.embed_suffix
     import sys
     def embed_suffix_patched(self, state, noisy_actions, timestep):
         # Force correct dtype
-        target_dtype = torch.float16 if args.dtype=="fp16" else torch.float32
+        is_cpu = not torch.cuda.is_available() or args.force_cpu
+        if args.dtype == "fp16" and not is_cpu:
+             target_dtype = torch.float16
+        else:
+             target_dtype = torch.float32
+        
         print(f"DEBUG: embed_suffix_patched called. timestep.dtype={timestep.dtype}, casting to {target_dtype}")
         sys.stdout.flush()
         timestep = timestep.to(dtype=target_dtype)
-        # Verify cast
-        print(f"DEBUG: timestep cast to {timestep.dtype}")
-        sys.stdout.flush()
         return original_embed_suffix(self, state, noisy_actions, timestep)
     openpi.models_pytorch.pi0_pytorch.PI0Pytorch.embed_suffix = embed_suffix_patched
-    print(f"Patched PI0Pytorch.embed_suffix to cast timestep to {args.dtype}")
+    print(f"Patched PI0Pytorch.embed_suffix to cast timestep to correct dtype for {args.dtype}")
     
     # Force CPU for export to ensure stability (avoid VRAM OOM for FP32)
-    device = "cpu"
+    # device already set
     # device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Loading policy from {CHECKPOINT_DIR} on {device}...")
     policy = policy_config.create_trained_policy(config, CHECKPOINT_DIR, pytorch_device=device)
@@ -159,7 +175,7 @@ def main():
         model.gradient_checkpointing_disable()
     
     # Model Dtype
-    model_dtype = torch.float16 if args.dtype == "fp16" else torch.float32
+    model_dtype = torch.float16 if args.dtype == "fp16" and device != "cpu" else torch.float32
     model.to(model_dtype)
     model.eval()
     
@@ -181,23 +197,60 @@ def main():
                    "state", "tokenized_prompt", "tokenized_prompt_mask", "noise"]
     output_names = ["actions"]
     
-    print(f"Exporting to {OUTPUT_ONNX_PATH}...")
-    torch.onnx.export(
-        wrapper,
-        dummy_inputs,
-        OUTPUT_ONNX_PATH,
-        opset_version=18,  # Increased to mismatch 2.11 default and avoid buggy version converter
-        do_constant_folding=True,
-        input_names=input_names,
-        output_names=output_names,
-        dynamic_axes={k: {0: "batch_size"} for k in input_names + output_names}
-    )
-    print(f"Exported to {OUTPUT_ONNX_PATH}")
+    # If FP16 requested but on CPU, export FP32 first then convert
+    if args.dtype == "fp16" and device == "cpu":
+        print("Exporting FP32 model for conversion to FP16 (CPU workaround)...")
+        model.to(torch.float32)
+        model_dtype = torch.float32
+        # Adjust dummy inputs
+        dummy_inputs = tuple(t.to(torch.float32) if isinstance(t, torch.Tensor) and t.is_floating_point() else t for t in dummy_inputs)
+        
+        # Temporary path for FP32 export
+        temp_fp32_path = OUTPUT_ONNX_PATH.replace(".onnx", ".temp_fp32.onnx")
+        
+        torch.onnx.export(
+            wrapper,
+            dummy_inputs,
+            temp_fp32_path,
+            opset_version=18,
+            do_constant_folding=True,
+            input_names=input_names,
+            output_names=output_names,
+            dynamic_axes={k: {0: "batch_size"} for k in input_names + output_names}
+        )
+        print(f"Exported temp FP32 model to {temp_fp32_path}")
+        
+        print("Converting to FP16...")
+        import onnx
+        from onnxconverter_common import float16
+        model_fp32 = onnx.load(temp_fp32_path)
+        model_fp16 = float16.convert_float_to_float16(model_fp32)
 
-    print(f"Exported to {OUTPUT_ONNX_PATH}")
+        # FIX: Restore Opset version if lost
+        if len(model_fp16.opset_import) == 0:
+            print("WARNING: Opset version lost during conversion. Restoring from source.")
+            model_fp16.opset_import.extend(model_fp32.opset_import)
 
-    # Always consolidate if single file is desired
-    # if args.format == "single":
+        onnx.save(model_fp16, OUTPUT_ONNX_PATH)
+        print(f"Saved FP16 model to {OUTPUT_ONNX_PATH}")
+        os.remove(temp_fp32_path)
+    else:
+        # Standard export
+        torch.onnx.export(
+            wrapper,
+            dummy_inputs,
+            OUTPUT_ONNX_PATH,
+            opset_version=18,
+            do_constant_folding=True,
+            input_names=input_names,
+            output_names=output_names,
+            dynamic_axes={k: {0: "batch_size"} for k in input_names + output_names}
+        )
+        print(f"Exported to {OUTPUT_ONNX_PATH}")
+
+    # Consolidate if needed (already handled by save above for FP16, but if we need external data for FP16?)
+    # onnx.save usually handles external data if model is large.
+    # explicit consolidation:
     if True:
         print("Consolidating external data...")
         import onnx
@@ -212,6 +265,5 @@ def main():
             convert_attribute=False
         )
         print(f"Consolidated to {OUTPUT_ONNX_PATH}.data")
-
 if __name__ == "__main__":
     main()
