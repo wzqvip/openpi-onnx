@@ -47,6 +47,16 @@ python export_onnx.py
 *   **Format**: ONNX Opset 18, FP16 Weights.
 *   **Validation**: This model is verified to run correctly on ORT and TensorRT.
 
+## 3.5 Export W8A16 (Weight-INT8, Activation-FP16)
+
+For deployments requiring lower memory usage with near-FP16 accuracy, use the W8A16 export:
+```bash
+python export_w8a16_onnx.py
+```
+*   **Output**: `checkpoints/pi05_libero_pytorch/model.w8a16.onnx`
+*   **Format**: ONNX Opset 18. Weights are quantized to INT8, while activations remain in FP16.
+*   **Benefits**: Reduces model size by ~2x and reduces VRAM usage without the complexity of full INT8 quantization/calibration.
+
 ## 4. Optimization (TensorRT)
 
 To build a TensorRT engine for maximum performance:

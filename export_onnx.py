@@ -72,17 +72,30 @@ def main():
     parser.add_argument("--dtype", choices=["fp16", "fp32"], default="fp16",
                         help="Export precision. Default: fp16")
     parser.add_argument("--force-cpu", action="store_true", help="Force CPU execution")
+    parser.add_argument("--checkpoint", type=str, default="./checkpoints/pi05_libero_pytorch", help="Path to checkpoint directory")
+    parser.add_argument("--output_dir", type=str, default="./checkpoints/pi05_libero_pytorch", help="Output directory for ONNX model")
+    
     args = parser.parse_args()
+
+    global CHECKPOINT_DIR, OUTPUT_ONNX_PATH
+    CHECKPOINT_DIR = args.checkpoint
+    
+    # Ensure output dir exists
+    if not os.path.exists(args.output_dir):
+        os.makedirs(args.output_dir)
+        
+    OUTPUT_ONNX_PATH = os.path.join(args.output_dir, "model.onnx")
     
     # Determine device early
     device = "cuda" if torch.cuda.is_available() and not args.force_cpu else "cpu"
     print(f"Device: {device}")
+    print(f"Checkpoint: {CHECKPOINT_DIR}")
+    print(f"Output: {OUTPUT_ONNX_PATH}")
 
-    # OUTPUT PATH update based on dtype
-    if args.dtype == "fp32":
-        global OUTPUT_ONNX_PATH
-        OUTPUT_ONNX_PATH = OUTPUT_ONNX_PATH.replace(".onnx", ".fp32.onnx")
-
+    # OUTPUT PATH update based on dtype (optional convention, but let's stick to user request for now)
+    # If explicit output_dir is given, we trust it. 
+    # But previous logic appended .fp32.onnx. Let's keep it simple: model.onnx in the target dir.
+    
     # HACK: Disable torch.compile to avoid OOM
     torch.compile = lambda x, **k: x
 

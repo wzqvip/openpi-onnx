@@ -1,0 +1,209 @@
+&&&& RUNNING TensorRT.trtexec [TensorRT v101303] [b9] # /usr/src/tensorrt/bin/trtexec --onnx=./checkpoints/pi05_libero_pytorch/model.fp32.onnx --fp16 --avgRuns=50 --duration=0 --iterations=10
+[01/13/2026-04:23:10] [I] === Model Options ===
+[01/13/2026-04:23:10] [I] Format: ONNX
+[01/13/2026-04:23:10] [I] Model: ./checkpoints/pi05_libero_pytorch/model.fp32.onnx
+[01/13/2026-04:23:10] [I] Output:
+[01/13/2026-04:23:10] [I] === Build Options ===
+[01/13/2026-04:23:10] [I] Memory Pools: workspace: default, dlaSRAM: default, dlaLocalDRAM: default, dlaGlobalDRAM: default, tacticSharedMem: default
+[01/13/2026-04:23:10] [I] avgTiming: 8
+[01/13/2026-04:23:10] [I] Precision: FP32+FP16
+[01/13/2026-04:23:10] [I] LayerPrecisions: 
+[01/13/2026-04:23:10] [I] Layer Device Types: 
+[01/13/2026-04:23:10] [I] Calibration: 
+[01/13/2026-04:23:10] [I] Refit: Disabled
+[01/13/2026-04:23:10] [I] Strip weights: Disabled
+[01/13/2026-04:23:10] [I] Version Compatible: Disabled
+[01/13/2026-04:23:10] [I] ONNX Plugin InstanceNorm: Disabled
+[01/13/2026-04:23:10] [I] ONNX kENABLE_UINT8_AND_ASYMMETRIC_QUANTIZATION_DLA flag: Disabled
+[01/13/2026-04:23:10] [I] TensorRT runtime: full
+[01/13/2026-04:23:10] [I] Lean DLL Path: 
+[01/13/2026-04:23:10] [I] Tempfile Controls: { in_memory: allow, temporary: allow }
+[01/13/2026-04:23:10] [I] Exclude Lean Runtime: Disabled
+[01/13/2026-04:23:10] [I] Sparsity: Disabled
+[01/13/2026-04:23:10] [I] Safe mode: Disabled
+[01/13/2026-04:23:10] [I] Build DLA standalone loadable: Disabled
+[01/13/2026-04:23:10] [I] Allow GPU fallback for DLA: Disabled
+[01/13/2026-04:23:10] [I] DirectIO mode: Disabled
+[01/13/2026-04:23:10] [I] Restricted mode: Disabled
+[01/13/2026-04:23:10] [I] Skip inference: Disabled
+[01/13/2026-04:23:10] [I] Save engine: 
+[01/13/2026-04:23:10] [I] Load engine: 
+[01/13/2026-04:23:10] [I] Profiling verbosity: 0
+[01/13/2026-04:23:10] [I] Tactic sources: Using default tactic sources
+[01/13/2026-04:23:10] [I] timingCacheMode: local
+[01/13/2026-04:23:10] [I] timingCacheFile: 
+[01/13/2026-04:23:10] [I] Enable Compilation Cache: Enabled
+[01/13/2026-04:23:10] [I] Enable Monitor Memory: Disabled
+[01/13/2026-04:23:10] [I] errorOnTimingCacheMiss: Disabled
+[01/13/2026-04:23:10] [I] Preview Features: Use default preview flags.
+[01/13/2026-04:23:10] [I] MaxAuxStreams: -1
+[01/13/2026-04:23:10] [I] BuilderOptimizationLevel: -1
+[01/13/2026-04:23:10] [I] MaxTactics: -1
+[01/13/2026-04:23:10] [I] Calibration Profile Index: 0
+[01/13/2026-04:23:10] [I] Weight Streaming: Disabled
+[01/13/2026-04:23:10] [I] Runtime Platform: Same As Build
+[01/13/2026-04:23:10] [I] Debug Tensors: 
+[01/13/2026-04:23:10] [I] Distributive Independence: Disabled
+[01/13/2026-04:23:10] [I] Mark Unfused Tensors As Debug Tensors: Disabled
+[01/13/2026-04:23:10] [I] Input(s)s format: fp32:CHW
+[01/13/2026-04:23:10] [I] Output(s)s format: fp32:CHW
+[01/13/2026-04:23:10] [I] Input build shapes: model
+[01/13/2026-04:23:10] [I] Input calibration shapes: model
+[01/13/2026-04:23:10] [I] === System Options ===
+[01/13/2026-04:23:10] [I] Device: 0
+[01/13/2026-04:23:10] [I] DLACore: 
+[01/13/2026-04:23:10] [I] Plugins:
+[01/13/2026-04:23:10] [I] setPluginsToSerialize:
+[01/13/2026-04:23:10] [I] dynamicPlugins:
+[01/13/2026-04:23:10] [I] ignoreParsedPluginLibs: 0
+[01/13/2026-04:23:10] [I] 
+[01/13/2026-04:23:10] [I] === Inference Options ===
+[01/13/2026-04:23:10] [I] Batch: Explicit
+[01/13/2026-04:23:10] [I] Input inference shapes: model
+[01/13/2026-04:23:10] [I] Iterations: 10
+[01/13/2026-04:23:10] [I] Duration: 0s (+ 200ms warm up)
+[01/13/2026-04:23:10] [I] Sleep time: 0ms
+[01/13/2026-04:23:10] [I] Idle time: 0ms
+[01/13/2026-04:23:10] [I] Inference Streams: 1
+[01/13/2026-04:23:10] [I] ExposeDMA: Disabled
+[01/13/2026-04:23:10] [I] Data transfers: Enabled
+[01/13/2026-04:23:10] [I] Spin-wait: Disabled
+[01/13/2026-04:23:10] [I] Multithreading: Disabled
+[01/13/2026-04:23:10] [I] CUDA Graph: Disabled
+[01/13/2026-04:23:10] [I] Separate profiling: Disabled
+[01/13/2026-04:23:10] [I] Time Deserialize: Disabled
+[01/13/2026-04:23:10] [I] Time Refit: Disabled
+[01/13/2026-04:23:10] [I] NVTX verbosity: 0
+[01/13/2026-04:23:10] [I] Persistent Cache Ratio: 0
+[01/13/2026-04:23:10] [I] Optimization Profile Index: 0
+[01/13/2026-04:23:10] [I] Weight Streaming Budget: 100.000000%
+[01/13/2026-04:23:10] [I] Inputs:
+[01/13/2026-04:23:10] [I] Debug Tensor Save Destinations:
+[01/13/2026-04:23:10] [I] Dump All Debug Tensor in Formats: 
+[01/13/2026-04:23:10] [I] === Reporting Options ===
+[01/13/2026-04:23:10] [I] Verbose: Disabled
+[01/13/2026-04:23:10] [I] Averages: 50 inferences
+[01/13/2026-04:23:10] [I] Percentiles: 90,95,99
+[01/13/2026-04:23:10] [I] Dump refittable layers:Disabled
+[01/13/2026-04:23:10] [I] Dump output: Disabled
+[01/13/2026-04:23:10] [I] Profile: Disabled
+[01/13/2026-04:23:10] [I] Export timing to JSON file: 
+[01/13/2026-04:23:10] [I] Export output to JSON file: 
+[01/13/2026-04:23:10] [I] Export profile to JSON file: 
+[01/13/2026-04:23:10] [I] 
+[01/13/2026-04:23:10] [I] === Device Information ===
+[01/13/2026-04:23:10] [I] Available Devices: 
+[01/13/2026-04:23:10] [I]   Device 0: "NVIDIA Thor" UUID: GPU-a7c66ad2-6dbb-0ab8-c1a2-37ba6dba3600
+[01/13/2026-04:23:10] [I] Selected Device: NVIDIA Thor
+[01/13/2026-04:23:10] [I] Selected Device ID: 0
+[01/13/2026-04:23:10] [I] Selected Device UUID: GPU-a7c66ad2-6dbb-0ab8-c1a2-37ba6dba3600
+[01/13/2026-04:23:10] [I] Compute Capability: 11.0
+[01/13/2026-04:23:10] [I] SMs: 20
+[01/13/2026-04:23:10] [I] Device Global Memory: 125772 MiB
+[01/13/2026-04:23:10] [I] Shared Memory per SM: 228 KiB
+[01/13/2026-04:23:10] [I] Memory Bus Width: 0 bits (ECC disabled)
+[01/13/2026-04:23:10] [I] Application Compute Clock Rate: 1.04858 GHz
+[01/13/2026-04:23:10] [I] Application Memory Clock Rate: 0 GHz
+[01/13/2026-04:23:10] [I] 
+[01/13/2026-04:23:10] [I] Note: The application clock rates do not reflect the actual clock rates that the GPU is currently running at.
+[01/13/2026-04:23:10] [I] 
+[01/13/2026-04:23:10] [I] TensorRT version: 10.13.3
+[01/13/2026-04:23:10] [I] Loading standard plugins
+[01/13/2026-04:23:11] [I] [TRT] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 30, GPU 65659 (MiB)
+[01/13/2026-04:23:12] [I] [TRT] [MemUsageChange] Init builder kernel library: CPU +1226, GPU +1329, now: CPU 1458, GPU 67194 (MiB)
+[01/13/2026-04:23:12] [I] Start parsing network model.
+[01/13/2026-04:23:13] [I] [TRT] ----------------------------------------------------------------
+[01/13/2026-04:23:13] [I] [TRT] Input filename:   ./checkpoints/pi05_libero_pytorch/model.fp32.onnx
+[01/13/2026-04:23:13] [I] [TRT] ONNX IR version:  0.0.8
+[01/13/2026-04:23:13] [I] [TRT] Opset version:    18
+[01/13/2026-04:23:13] [I] [TRT] Producer name:    pytorch
+[01/13/2026-04:23:13] [I] [TRT] Producer version: 2.11.0
+[01/13/2026-04:23:13] [I] [TRT] Domain:           
+[01/13/2026-04:23:13] [I] [TRT] Model version:    0
+[01/13/2026-04:23:13] [I] [TRT] Doc string:       
+[01/13/2026-04:23:13] [I] [TRT] ----------------------------------------------------------------
+[01/13/2026-04:23:15] [I] Finished parsing network model. Parse time: 2.70526
+[01/13/2026-04:23:16] [W] Dynamic dimensions required for input: base_0_rgb, but no shapes were provided. Automatically overriding shape to: 1x3x224x224
+[01/13/2026-04:23:16] [I] Set shape of input tensor base_0_rgb for optimization profile 0 to: MIN=1x3x224x224 OPT=1x3x224x224 MAX=1x3x224x224
+[01/13/2026-04:23:16] [W] Dynamic dimensions required for input: left_wrist_0_rgb, but no shapes were provided. Automatically overriding shape to: 1x3x224x224
+[01/13/2026-04:23:16] [I] Set shape of input tensor left_wrist_0_rgb for optimization profile 0 to: MIN=1x3x224x224 OPT=1x3x224x224 MAX=1x3x224x224
+[01/13/2026-04:23:16] [W] Dynamic dimensions required for input: right_wrist_0_rgb, but no shapes were provided. Automatically overriding shape to: 1x3x224x224
+[01/13/2026-04:23:16] [I] Set shape of input tensor right_wrist_0_rgb for optimization profile 0 to: MIN=1x3x224x224 OPT=1x3x224x224 MAX=1x3x224x224
+[01/13/2026-04:23:16] [W] Dynamic dimensions required for input: state, but no shapes were provided. Automatically overriding shape to: 1x32
+[01/13/2026-04:23:16] [I] Set shape of input tensor state for optimization profile 0 to: MIN=1x32 OPT=1x32 MAX=1x32
+[01/13/2026-04:23:16] [W] Dynamic dimensions required for input: tokenized_prompt, but no shapes were provided. Automatically overriding shape to: 1x200
+[01/13/2026-04:23:16] [I] Set shape of input tensor tokenized_prompt for optimization profile 0 to: MIN=1x200 OPT=1x200 MAX=1x200
+[01/13/2026-04:23:16] [W] Dynamic dimensions required for input: tokenized_prompt_mask, but no shapes were provided. Automatically overriding shape to: 1x200
+[01/13/2026-04:23:16] [I] Set shape of input tensor tokenized_prompt_mask for optimization profile 0 to: MIN=1x200 OPT=1x200 MAX=1x200
+[01/13/2026-04:23:16] [W] Dynamic dimensions required for input: noise, but no shapes were provided. Automatically overriding shape to: 1x10x32
+[01/13/2026-04:23:16] [I] Set shape of input tensor noise for optimization profile 0 to: MIN=1x10x32 OPT=1x10x32 MAX=1x10x32
+[01/13/2026-04:23:24] [W] [TRT] /Constant_40_output_0 [CONSTANT] contains out-of-range weights when cast to Half, clipping to +/- 65504.
+[01/13/2026-04:23:26] [W] [TRT] /Constant_71_output_0 [CONSTANT] contains out-of-range weights when cast to Half, clipping to +/- 65504.
+[01/13/2026-04:23:28] [W] [TRT] /Constant_105_output_0 [CONSTANT] contains out-of-range weights when cast to Half, clipping to +/- 65504.
+[01/13/2026-04:23:28] [W] [TRT] /Constant_138_output_0 [CONSTANT] contains out-of-range weights when cast to Half, clipping to +/- 65504.
+[01/13/2026-04:23:28] [W] [TRT] /Constant_171_output_0 [CONSTANT] contains out-of-range weights when cast to Half, clipping to +/- 65504.
+[01/13/2026-04:23:28] [W] [TRT] /Constant_204_output_0 [CONSTANT] contains out-of-range weights when cast to Half, clipping to +/- 65504.
+[01/13/2026-04:23:28] [W] [TRT] /Constant_237_output_0 [CONSTANT] contains out-of-range weights when cast to Half, clipping to +/- 65504.
+[01/13/2026-04:23:28] [W] [TRT] /Constant_270_output_0 [CONSTANT] contains out-of-range weights when cast to Half, clipping to +/- 65504.
+[01/13/2026-04:23:28] [W] [TRT] /Constant_303_output_0 [CONSTANT] contains out-of-range weights when cast to Half, clipping to +/- 65504.
+[01/13/2026-04:23:28] [W] [TRT] /Constant_336_output_0 [CONSTANT] contains out-of-range weights when cast to Half, clipping to +/- 65504.
+[01/13/2026-04:23:28] [W] [TRT] /Constant_369_output_0 [CONSTANT] contains out-of-range weights when cast to Half, clipping to +/- 65504.
+[01/13/2026-04:23:33] [W] [TRT] [RemoveDeadLayers] Input Tensor state is unused or used only at compile-time, but is not being removed.
+[01/13/2026-04:23:33] [I] [TRT] Local timing cache in use. Profiling results in this builder pass will not be stored.
+[01/13/2026-04:23:38] [I] [TRT] Compiler backend is used during engine build.
+[01/13/2026-04:28:37] [I] [TRT] Detected 7 inputs and 1 output network tensors.
+[01/13/2026-04:28:42] [I] [TRT] Total Host Persistent Memory: 80 bytes
+[01/13/2026-04:28:42] [I] [TRT] Total Device Persistent Memory: 0 bytes
+[01/13/2026-04:28:42] [I] [TRT] Max Scratch Memory: 132318208 bytes
+[01/13/2026-04:28:42] [I] [TRT] [BlockAssignment] Started assigning block shifts. This will take 1 steps to complete.
+[01/13/2026-04:28:42] [I] [TRT] [BlockAssignment] Algorithm ShiftNTopDown took 0.010676ms to assign 1 blocks to 1 nodes requiring 132318208 bytes.
+[01/13/2026-04:28:42] [I] [TRT] Total Activation Memory: 132318208 bytes
+[01/13/2026-04:28:43] [I] [TRT] Total Weights Memory: 6488704384 bytes
+[01/13/2026-04:28:43] [I] [TRT] Compiler backend is used during engine execution.
+[01/13/2026-04:28:43] [I] [TRT] Engine generation completed in 309.247 seconds.
+[01/13/2026-04:28:43] [I] [TRT] [MemUsageStats] Peak memory usage of TRT CPU/GPU memory allocators: CPU 0 MiB, GPU 6188 MiB
+[01/13/2026-04:28:44] [I] Created engine with size: 6229.68 MiB
+[01/13/2026-04:28:44] [I] Engine built in 327.9 sec.
+[01/13/2026-04:28:47] [I] [TRT] Loaded engine size: 6229 MiB
+[01/13/2026-04:28:47] [I] Engine deserialized in 0.225039 sec.
+[01/13/2026-04:28:48] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +126, now: CPU 0, GPU 6314 (MiB)
+[01/13/2026-04:28:48] [I] Setting persistentCacheLimit to 0 bytes.
+[01/13/2026-04:28:48] [I] Created execution context with device memory size: 126.188 MiB
+[01/13/2026-04:28:48] [I] Using random values for input base_0_rgb
+[01/13/2026-04:28:48] [I] Input binding for base_0_rgb with dimensions 1x3x224x224 is created.
+[01/13/2026-04:28:48] [I] Using random values for input left_wrist_0_rgb
+[01/13/2026-04:28:48] [I] Input binding for left_wrist_0_rgb with dimensions 1x3x224x224 is created.
+[01/13/2026-04:28:48] [I] Using random values for input right_wrist_0_rgb
+[01/13/2026-04:28:48] [I] Input binding for right_wrist_0_rgb with dimensions 1x3x224x224 is created.
+[01/13/2026-04:28:48] [I] Using random values for input state
+[01/13/2026-04:28:48] [I] Input binding for state with dimensions 1x32 is created.
+[01/13/2026-04:28:48] [I] Using random values for input tokenized_prompt
+[01/13/2026-04:28:48] [I] Input binding for tokenized_prompt with dimensions 1x200 is created.
+[01/13/2026-04:28:48] [I] Using random values for input tokenized_prompt_mask
+[01/13/2026-04:28:48] [I] Input binding for tokenized_prompt_mask with dimensions 1x200 is created.
+[01/13/2026-04:28:48] [I] Using random values for input noise
+[01/13/2026-04:28:48] [I] Input binding for noise with dimensions 1x10x32 is created.
+[01/13/2026-04:28:48] [I] Output binding for actions with dimensions 1x10x32 is created.
+[01/13/2026-04:28:48] [I] Starting inference
+[01/13/2026-04:28:49] [I] Warmup completed 1 queries over 200 ms
+[01/13/2026-04:28:49] [I] Timing trace has 10 queries over 1.59656 s
+[01/13/2026-04:28:49] [I] 
+[01/13/2026-04:28:49] [I] === Trace details ===
+[01/13/2026-04:28:49] [I] Trace averages of 50 runs:
+[01/13/2026-04:28:49] [I] 
+[01/13/2026-04:28:49] [I] === Performance summary ===
+[01/13/2026-04:28:49] [I] Throughput: 6.26347 qps
+[01/13/2026-04:28:49] [I] Latency: min = 173.996 ms, max = 200.812 ms, mean = 184.542 ms, median = 175.598 ms, percentile(90%) = 200.554 ms, percentile(95%) = 200.812 ms, percentile(99%) = 200.812 ms
+[01/13/2026-04:28:49] [I] Enqueue Time: min = 147.526 ms, max = 170.554 ms, mean = 156.953 ms, median = 149.219 ms, percentile(90%) = 170.251 ms, percentile(95%) = 170.554 ms, percentile(99%) = 170.554 ms
+[01/13/2026-04:28:49] [I] H2D Latency: min = 26.245 ms, max = 30.3885 ms, mean = 27.9672 ms, median = 26.5379 ms, percentile(90%) = 30.2577 ms, percentile(95%) = 30.3885 ms, percentile(99%) = 30.3885 ms
+[01/13/2026-04:28:49] [I] GPU Compute Time: min = 147.554 ms, max = 170.421 ms, mean = 156.572 ms, median = 149.143 ms, percentile(90%) = 170.319 ms, percentile(95%) = 170.421 ms, percentile(99%) = 170.421 ms
+[01/13/2026-04:28:49] [I] D2H Latency: min = 0.00256348 ms, max = 0.00335693 ms, mean = 0.00308533 ms, median = 0.00309753 ms, percentile(90%) = 0.0032959 ms, percentile(95%) = 0.00335693 ms, percentile(99%) = 0.00335693 ms
+[01/13/2026-04:28:49] [I] Total Host Walltime: 1.59656 s
+[01/13/2026-04:28:49] [I] Total GPU Compute Time: 1.56572 s
+[01/13/2026-04:28:49] [W] * Throughput may be bound by Enqueue Time rather than GPU Compute and the GPU may be under-utilized.
+[01/13/2026-04:28:49] [W]   If not already in use, --useCudaGraph (utilize CUDA graphs where possible) may increase the throughput.
+[01/13/2026-04:28:49] [W] * GPU compute time is unstable, with coefficient of variance = 6.46512%.
+[01/13/2026-04:28:49] [W]   If not already in use, locking GPU clock frequency or adding --useSpinWait may improve the stability.
+[01/13/2026-04:28:49] [I] Explanations of the performance metrics are printed in the verbose logs.
+[01/13/2026-04:28:49] [I] 
+&&&& PASSED TensorRT.trtexec [TensorRT v101303] [b9] # /usr/src/tensorrt/bin/trtexec --onnx=./checkpoints/pi05_libero_pytorch/model.fp32.onnx --fp16 --avgRuns=50 --duration=0 --iterations=10
