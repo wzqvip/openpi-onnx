@@ -7,7 +7,10 @@ from typing import Literal, Protocol, SupportsIndex, TypeVar
 
 import jax
 import jax.numpy as jnp
-import lerobot.datasets.lerobot_dataset as lerobot_dataset
+try:
+    import lerobot.datasets.lerobot_dataset as lerobot_dataset
+except ImportError:
+    lerobot_dataset = None
 import numpy as np
 import torch
 

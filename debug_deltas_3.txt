@@ -1,0 +1,215 @@
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+<frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+<frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+DEBUG: STARTING EVAL
+  0%|          | 0/1 [00:00<?, ?it/s]DEBUG: Task ID 0
+
+  0%|          | 0/1 [00:00<?, ?it/s][ADEBUG STEP 10
+  Obs State (first 6): [-2.11241627e-01 -1.10906019e-02  1.17424952e+00  3.14089540e+00
+ -2.84781983e-03 -8.77393103e-02]
+DEBUG STEP 10
+  Predicted Abs Pos (Step 0): [-0.72780564  0.58595705 -0.65899659]
+  Calculated Delta (Step 0): [-0.51656401  0.59704766 -1.83324611]
+DEBUG STEP 11
+  Obs State (first 6): [-0.21259751 -0.01623336  1.16984046  3.09877988  0.01771087 -0.0926532 ]
+DEBUG STEP 11
+  Predicted Abs Pos (Step 0): [-0.9616827  -0.30849431 -0.02653076]
+  Calculated Delta (Step 0): [-0.74908518 -0.29226095 -1.19637122]
+DEBUG STEP 12
+  Obs State (first 6): [-0.21787723 -0.02451343  1.1604714   3.00656983  0.0452176  -0.10837698]
+DEBUG STEP 12
+  Predicted Abs Pos (Step 0): [-0.41506971 -1.36388698 -1.54128002]
+  Calculated Delta (Step 0): [-0.19719248 -1.33937355 -2.70175142]
+DEBUG STEP 13
+  Obs State (first 6): [-0.22181455 -0.03426831  1.15008215  2.90222759  0.07680246 -0.10912304]
+DEBUG STEP 13
+  Predicted Abs Pos (Step 0): [1.58843022 0.76069475 0.48815891]
+  Calculated Delta (Step 0): [ 1.81024478  0.79496305 -0.66192324]
+DEBUG STEP 14
+  Obs State (first 6): [-0.22106954 -0.03885879  1.13835049  2.80568124  0.10509532 -0.09180567]
+DEBUG STEP 14
+  Predicted Abs Pos (Step 0): [ 0.05765264 -1.31377023  0.68149375]
+  Calculated Delta (Step 0): [ 0.27872219 -1.27491144 -0.45685674]
+DEBUG STEP 15
+  Obs State (first 6): [-0.21657266 -0.0438554   1.12993034  2.70411503  0.11977824 -0.06117293]
+DEBUG STEP 15
+  Predicted Abs Pos (Step 0): [ 1.11386048  0.89123094 -1.52139719]
+  Calculated Delta (Step 0): [ 1.33043314  0.93508634 -2.65132754]
+DEBUG STEP 16
+  Obs State (first 6): [-0.2097753  -0.04453927  1.11978498  2.60744249  0.16194585 -0.01709495]
+DEBUG STEP 16
+  Predicted Abs Pos (Step 0): [ 0.97259896 -0.48019019  0.20488866]
+  Calculated Delta (Step 0): [ 1.18237427 -0.43565092 -0.91489632]
+DEBUG STEP 17
+  Obs State (first 6): [-0.20162259 -0.04561653  1.10561714  2.51464785  0.20100749  0.02887546]
+DEBUG STEP 17
+  Predicted Abs Pos (Step 0): [ 0.31616911  1.4061014  -0.57133529]
+  Calculated Delta (Step 0): [ 0.51779171  1.45171793 -1.67695244]
+DEBUG STEP 18
+  Obs State (first 6): [-0.19437133 -0.04569604  1.09184228  2.42625288  0.22321423  0.08699036]
+DEBUG STEP 18
+  Predicted Abs Pos (Step 0): [-0.45082075 -0.43235469 -0.50778722]
+  Calculated Delta (Step 0): [-0.25644941 -0.38665865 -1.5996295 ]
+DEBUG STEP 19
+  Obs State (first 6): [-0.19295853 -0.04627273  1.0776114   2.34474268  0.22382873  0.1551839 ]
+DEBUG STEP 19
+  Predicted Abs Pos (Step 0): [1.08046528 0.69760799 1.28769968]
+  Calculated Delta (Step 0): [1.27342381 0.74388072 0.21008828]
+DEBUG STEP 20
+  Obs State (first 6): [-0.1916806  -0.04750007  1.06826854  2.2615666   0.23843276  0.23530116]
+DEBUG STEP 20
+  Predicted Abs Pos (Step 0): [-0.5622506  -0.67526018 -1.63691142]
+  Calculated Delta (Step 0): [-0.37057    -0.62776011 -2.70517996]
+DEBUG STEP 21
+  Obs State (first 6): [-0.19496106 -0.05296118  1.05680553  2.18319931  0.26908704  0.29080053]
+DEBUG STEP 21
+  Predicted Abs Pos (Step 0): [-0.62719397  1.41974728  0.05805024]
+  Calculated Delta (Step 0): [-0.43223291  1.47270847 -0.99875529]
+DEBUG STEP 22
+  Obs State (first 6): [-0.20133026 -0.05831856  1.0453189   2.11216814  0.29025631  0.34750363]
+DEBUG STEP 22
+  Predicted Abs Pos (Step 0): [-0.53764839  0.01427534  0.39943204]
+  Calculated Delta (Step 0): [-0.33631813  0.07259389 -0.64588686]
+DEBUG STEP 23
+  Obs State (first 6): [-0.21206212 -0.06610169  1.03411141  2.05509799  0.27667365  0.39322357]
+DEBUG STEP 23
+  Predicted Abs Pos (Step 0): [-0.07657657 -0.26117196  1.22112801]
+  Calculated Delta (Step 0): [ 0.13548555 -0.19507027  0.18701661]
+DEBUG STEP 24
+  Obs State (first 6): [-0.22200666 -0.07848349  1.02764305  1.99927578  0.25390291  0.41948429]
+DEBUG STEP 24
+  Predicted Abs Pos (Step 0): [ 0.73085444 -0.81238273 -1.88991038]
+  Calculated Delta (Step 0): [ 0.9528611  -0.73389924 -2.91755343]
+DEBUG STEP 25
+  Obs State (first 6): [-0.22220981 -0.09440086  1.02230598  1.93494085  0.25249895  0.43289499]
+DEBUG STEP 25
+  Predicted Abs Pos (Step 0): [ 0.13078582 -2.27399134 -0.29032379]
+  Calculated Delta (Step 0): [ 0.35299564 -2.17959048 -1.31262977]
+DEBUG STEP 26
+  Obs State (first 6): [-0.21716268 -0.11433919  1.01422789  1.87071686  0.24890387  0.43668546]
+DEBUG STEP 26
+  Predicted Abs Pos (Step 0): [ 1.05703699  0.16915816 -0.28988891]
+  Calculated Delta (Step 0): [ 1.27419967  0.28349735 -1.3041168 ]
+DEBUG STEP 27
+  Obs State (first 6): [-0.21496772 -0.11218626  1.01709081  1.82427691  0.27880158  0.44127284]
+DEBUG STEP 27
+  Predicted Abs Pos (Step 0): [-1.03473058  0.92625748 -0.94110283]
+  Calculated Delta (Step 0): [-0.81976286  1.03844374 -1.95819364]
+DEBUG STEP 28
+  Obs State (first 6): [-0.2141448  -0.10839014  1.0204707   1.78130416  0.29908616  0.41790284]
+DEBUG STEP 28
+  Predicted Abs Pos (Step 0): [1.45337609 1.42737133 0.04279398]
+  Calculated Delta (Step 0): [ 1.66752089  1.53576148 -0.97767673]
+DEBUG STEP 29
+  Obs State (first 6): [-0.21324327 -0.10338124  1.02264226  1.72808024  0.32152317  0.38057956]
+DEBUG STEP 29
+  Predicted Abs Pos (Step 0): [-1.10493402 -0.77291185 -0.03280252]
+  Calculated Delta (Step 0): [-0.89169076 -0.6695306  -1.05544479]
+DEBUG STEP 30
+  Obs State (first 6): [-0.21254103 -0.09854814  1.02476087  1.67955015  0.32850302  0.34419981]
+DEBUG STEP 30
+  Predicted Abs Pos (Step 0): [-0.1852155   0.1366878  -1.00099657]
+  Calculated Delta (Step 0): [ 0.02732553  0.23523594 -2.02575744]
+DEBUG STEP 31
+  Obs State (first 6): [-0.21295381 -0.09471648  1.0266076   1.6405572   0.31769966  0.30277929]
+DEBUG STEP 31
+  Predicted Abs Pos (Step 0): [-1.5053183  -2.44092863 -1.96524352]
+  Calculated Delta (Step 0): [-1.29236449 -2.34621216 -2.99185112]
+DEBUG STEP 32
+  Obs State (first 6): [-0.21396433 -0.09471034  1.02885432  1.60145656  0.29146447  0.25791531]
+DEBUG STEP 32
+  Predicted Abs Pos (Step 0): [-0.89232647  1.43290331  0.03613058]
+  Calculated Delta (Step 0): [-0.67836213  1.52761365 -0.99272374]
+DEBUG STEP 33
+  Obs State (first 6): [-0.21620065 -0.09189177  1.03111158  1.55954387  0.26420975  0.22557399]
+DEBUG STEP 33
+  Predicted Abs Pos (Step 0): [ 0.35900591  0.83480449 -0.53411947]
+  Calculated Delta (Step 0): [ 0.57520656  0.92669627 -1.56523104]
+DEBUG STEP 34
+  Obs State (first 6): [-0.21741062 -0.08529341  1.03400023  1.49519769  0.25322273  0.20377644]
+DEBUG STEP 34
+  Predicted Abs Pos (Step 0): [ 0.21482334 -1.18737339  0.53741556]
+  Calculated Delta (Step 0): [ 0.43223396 -1.10207998 -0.49658467]
+DEBUG STEP 35
+  Obs State (first 6): [-0.21634218 -0.07643671  1.03663512  1.4143148   0.27731332  0.2070227 ]
+DEBUG STEP 35
+  Predicted Abs Pos (Step 0): [-0.37883036  2.09123496 -0.02665752]
+  Calculated Delta (Step 0): [-0.16248819  2.16767168 -1.06329264]
+DEBUG STEP 36
+  Obs State (first 6): [-0.21575288 -0.06812574  1.03863644  1.34005567  0.29247663  0.20222188]
+DEBUG STEP 36
+  Predicted Abs Pos (Step 0): [-0.1248241   0.66452116 -0.00775234]
+  Calculated Delta (Step 0): [ 0.09092878  0.73264689 -1.04638878]
+DEBUG STEP 37
+  Obs State (first 6): [-0.2159407  -0.06005008  1.03994286  1.26778378  0.28635844  0.16858075]
+DEBUG STEP 37
+  Predicted Abs Pos (Step 0): [ 0.60912534 -2.06282018 -0.61817173]
+  Calculated Delta (Step 0): [ 0.82506603 -2.0027701  -1.65811459]
+DEBUG STEP 38
+  Obs State (first 6): [-0.21589508 -0.05163336  1.0404812   1.19311989  0.27951105  0.1323343 ]
+DEBUG STEP 38
+  Predicted Abs Pos (Step 0): [ 0.8779141  -1.44792809 -0.46207194]
+  Calculated Delta (Step 0): [ 1.09380918 -1.39629473 -1.50255314]
+DEBUG STEP 39
+  Obs State (first 6): [-0.21518138 -0.04273782  1.0405508   1.1155013   0.28391428  0.10718367]
+DEBUG STEP 39
+  Predicted Abs Pos (Step 0): [-0.79179979  0.43135306  0.44787614]
+  Calculated Delta (Step 0): [-0.57661841  0.47409088 -0.59267465]
+/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/imageio/plugins/tifffile.py:189: DeprecationWarning: ImageIO's vendored tifffile backend is deprecated and will be removed in ImageIO v3. Install the tifffile directly: `pip install imageio[tifffile]`
+  warnings.warn(
+WARNING:root:Failed to save video: Could not find a backend to open `data/libero/videos_torch/rollout_pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate_failure.mp4`` with iomode `wI`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+WARNING:root:Result: failure
+
+100%|██████████| 1/1 [01:10<00:00, 70.57s/it][A100%|██████████| 1/1 [01:10<00:00, 70.57s/it]
+100%|██████████| 1/1 [01:12<00:00, 72.97s/it]100%|██████████| 1/1 [01:12<00:00, 72.97s/it]
+Total Success Rate: 0.0
+Latency (ms): Mean=293.55, Median=290.69, P99=313.88
+Max GPU Memory: 7.12 GB
+Exception ignored in: <function MjRenderContext.__del__ at 0xfffea812c040>
+Traceback (most recent call last):
+  File "/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/robosuite/utils/binding_utils.py", line 199, in __del__
+    self.gl_ctx.free()
+  File "/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0xfffe4d97a840>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0xfffea84eaba0>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0xfffea84eaba0>,
+		<OpenGL._opaque.EGLContext_pointer object at 0xfffea84eaa80>,
+	),
+	result = 0
+)
+Exception ignored in: <function EGLGLContext.__del__ at 0xfffea85bbec0>
+Traceback (most recent call last):
+  File "/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/robosuite/renderers/context/egl_context.py", line 155, in __del__
+    self.free()
+  File "/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0xfffe4d97a840>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0xfffea84eaba0>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0xfffea84eaba0>,
+		<OpenGL._opaque.EGLContext_pointer object at 0xfffea84eaa80>,
+	),
+	result = 0
+)
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

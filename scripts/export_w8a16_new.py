@@ -11,11 +11,15 @@ from transformers.models.gemma import modeling_gemma
 from openpi.models_pytorch import pi0_pytorch
 import numpy as np
 import copy
+import shutil
 
-# --- Configuration ---
-CHECKPOINT_DIR = "./checkpoints/pi05_libero_pytorch"
+# --- Configuration (UPDATED) ---
+CHECKPOINT_DIR = "./checkpoints/pi05_libero_pytorch_new"
 CONFIG_NAME = "pi05_libero"
-OUTPUT_PATH = "./checkpoints/pi05_libero_pytorch/model.w8a16.onnx"
+OUTPUT_DIR = "./dist/final_w8a16_new"
+OUTPUT_PATH = os.path.join(OUTPUT_DIR, "model.w8a16.onnx")
+
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # --- 1. Monkey Patching ---
 # Patch RoPE to be ONNX-friendly (remove complex numbers)
@@ -102,12 +106,6 @@ class OnnxWrapper(torch.nn.Module):
         )
 
 def main():
-    import argparse
-    parser = argparse.ArgumentParser(description="Export Pi0.5 model to W8A16 ONNX")
-    parser.add_argument("--format", choices=["single", "discrete"], default="single", 
-                        help="Output format: 'single' (consolidated .data file) or 'discrete' (split weight files). Default: single")
-    args = parser.parse_args()
-
     # Disable torch.compile
     torch.compile = lambda x, **k: x
 
@@ -123,26 +121,15 @@ def main():
     original_sample_time = pi0_pytorch.PI0Pytorch.sample_time
     def sample_time_patched(self, bsize, device):
         t = original_sample_time(self, bsize, device)
-        # Check if we are running fp16 or fp32
-        # We will determine target dtype later
         return t
     pi0_pytorch.PI0Pytorch.sample_time = sample_time_patched
 
-    device = "cpu" # "cuda" if torch.cuda.is_available() else "cpu"
-    # Force CPU to avoid CUDA kernel errors on Thor
+    device = "cpu" 
     print(f"Loading policy from {CHECKPOINT_DIR} on {device}...")
     
-    # Use FP32 if on CPU to avoid "Float vs Half" errors
-    # If on GPU, we can try FP16 directly, but let's stick to FP32->FP16 for stability if needed.
-    # Actually, for W8A16, running in FP32 during calibration/export is safer for modelopt, then we cast.
-    # But modelopt quantizes based on current weight values.
-    # Let's use FP32 for the model execution.
     exec_dtype = torch.float32
-    if device == "cuda":
-        # We can try float16 on cuda
-        # But let's stick to FP32 fallback logic for consistency if CPU is used.
-        pass
 
+    # LOAD FROM NEW CHECKPOINT
     policy = policy_config.create_trained_policy(config, CHECKPOINT_DIR, pytorch_device=device)
     model = policy._model
     model.eval()
@@ -214,9 +201,6 @@ def main():
     print(f"Temp FP32-quantized model exported to {temp_path}")
 
     # --- Convert to FP16 (W8A16) ---
-    # --- Convert to FP16 (W8A16) ---
-    # SKIPPING FP16 conversion due to corruption bug.
-    # The exported model (temp_path) has QDQ nodes. Activations are FP32 in graph, but TRT --fp16 handles mixed precision.
     print("Skipping broken FP16 conversion. Using FP32 export with QDQ nodes...")
     
     import onnx

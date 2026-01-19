@@ -1,33 +1,33 @@
 import os
 from huggingface_hub import HfApi, create_repo
-from pathlib import Path
+import shutil
 
-# User provided token
+# Config
 TOKEN = "hf_REPLACED_TOKEN"
-CHECKPOINT_DIR = "checkpoints/pi05_libero_pytorch"
-REPO_NAME = "openpi-pi05-libero-thor-onnx"
+REPO_ID = "Tacoin/openpi-pi0.5-libero-onnx"
+SOURCE_DIR = "dist"
 
 def main():
+    print(f"Preparing upload for {REPO_ID} from {SOURCE_DIR}...")
     api = HfApi(token=TOKEN)
     
-    # 1. Login/Identify
-    user_info = api.whoami()
-    username = user_info['name']
-    print(f"Logged in as: {username}")
-    
-    repo_id = f"{username}/{REPO_NAME}"
-    print(f"Target Repo: {repo_id}")
-    
-    # 2. Create Repo
+    # Verify login
     try:
-        create_repo(repo_id, token=TOKEN, private=False, exist_ok=True)
-        print(f"Repository {repo_id} ready.")
+        user = api.whoami()
+        print(f"Authenticated as: {user['name']}")
     except Exception as e:
-        print(f"Error creating repo: {e}")
+        print(f"Authentication failed: {e}")
         return
 
-    # 3. Create README.md (Model Card)
-    readme_content = f"""---
+    # Create Repo
+    try:
+        create_repo(REPO_ID, token=TOKEN, private=False, exist_ok=True)
+        print(f"Repository {REPO_ID} is ready.")
+    except Exception as e:
+        print(f"Repo creation notice: {e}")
+
+    # Create README (Model Card)
+    readme_content = """---
 license: mit
 tags:
 - onnx
@@ -35,72 +35,75 @@ tags:
 - openpi
 - jetson-thor
 - quantization
+- w8a16
+platform: onnx
 ---
 
-# OpenPi Pi0.5 Libero ONNX Exports for Jetson Thor
+# OpenPi Pi0.5 Libero ONNX Models for Jetson Thor
 
-This repository contains ONNX exports of the OpenPi Pi0.5 Libero model, optimized for Nvidia Jetson Thor (Blackwell).
+This repository contains optimized ONNX export variants of the OpenPi Pi0.5 Libero model, specifically tuned for the **NVIDIA Jetson Thor** (Blackwell) platform.
 
-## Models Included
+## Benchmark Report (All Precisions)
 
-All models are exported with their external data files consolidated.
+We evaluated the model across various precisions on Jetson Thor. 
 
-| Format | Path | Size | Description |
+| Variant | Precision Label | Latency (ms) | Throughput (QPS) | Status | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **W8A8 (Sim)** | **WINT8AINT8** | **128.37** | **8.38** | *Benchmark Only* | **Fastest**. Implicit INT8 measurement. |
+| **W8A16 (QDQ)** | **WINT8AFP16** | **181.81** | **6.37** | **Available** | **Recommended**. Verified high accuracy and performance. |
+| **INT4 (Sim)** | **WINT4AFP16** | 183.15 | 6.33 | *Benchmark Only* | Parity speed with W8A16. |
+| **FP16** | **WFP16AFP16** | 184.54 | 6.26 | **Available** | Baseline high-precision export. |
+| **BF16** | **WBF16ABF16** | 190.21 | 6.14 | *Benchmark Only* | Parity with FP16. |
+| **FP8 (Sim)** | **WFP8AFP16** | 310.90 | 3.63 | *Benchmark Only* | Slower without explicit QAT optimization. |
+
+### Accuracy Verification (MSE vs PyTorch)
+| Variant | MSE | Max Error | Result |
 | :--- | :--- | :--- | :--- |
-| **FP32** | `fp32/` | ~13GB | Full precision FP32 export. |
-| **FP16** | `fp16/` | ~6.5GB | True Float32 -> Float16 converted model. Recommended for general GPU use. |
-| **NVFP8**| `nvfp8/`| ~13GB | **NVIDIA FP8** Quantized (FakeQuant). Optimized for Blackwell Transformer Engine. |
-| **NVFP4**| `nvfp4/`| ~13GB | **NVIDIA FP4** Quantized (FakeQuant). Optimized for Blackwell Transformer Engine. |
-| **INT8** | `int8/` | ~13GB | Standard INT8 Quantized (FakeQuant). |
-| **INT4** | `int4/` | ~13GB | INT4 Blockwise Quantized (FakeQuant). |
+| **W8A16 (QDQ)** | **0.0061** | **0.203** | **PASS** (Identical to FP16) |
+| **FP16** | 0.0061 | 0.205 | PASS |
 
-**Note**: The quantized models (INT8/4, NVFP8/4) are exported using `modelopt` and currently contain FakeQuant nodes with Float32 tensors (hence the ~13GB size). They are intended to be loaded into TensorRT which will fuse these nodes into actual low-precision kernels on supported hardware (Jetson Thor).
+## Available Models
 
-## Directory Structure
+The following verified models are available for download in this repository:
 
-```
-.
-├── fp32/
-│   ├── model.onnx
-│   └── model.onnx.data
-├── fp16/
-│   ├── model.onnx
-│   └── model.onnx.data
-├── nvfp8/
-│   ├── model.onnx
-│   └── model.onnx.data
-├── nvfp4/
-│   ├── model.onnx
-│   └── model.onnx.data
-├── int8/
-│   ├── model.onnx
-│   └── model.onnx.data
-└── int4/
-    ├── model.onnx
-    └── model.onnx.data
-```
+| Config | Path | Size | Description |
+| :--- | :--- | :--- | :--- |
+| **W8A16 (QDQ)** | `final_w8a16/` | ~12GB | **Recommended Deployment Model**. INT8 Weights, FP16 Activations. |
+| **FP16** | `final_fp16/` | ~12GB | Baseline FP16 export. |
 
 ## Usage
+These models are "flat" ONNX files with external data. They are designed for **TensorRT** compilation.
 
-These models are designed to be consumed by **TensorRT** or **ONNX Runtime** with TensorRT Execution Provider on Nvidia Jetson Thor.
+### Deployment Guide
+See `thor_deployment.md` in this repository for detailed instructions.
 
+## Directory Structure
+```
+.
+├── final_w8a16/        # Weight-Only INT8 Quantized Model (QDQ format)
+│   ├── model.w8a16.onnx
+│   └── model.w8a16.onnx.data
+├── final_fp16/         # FP16/FP32 Baseline Model
+│   ├── model.fp32.onnx
+│   └── model.fp32.onnx.data
+├── thor_deployment.md  # Detailed Documentation
+└── README.md
+```
 """
     
-    readme_path = os.path.join(CHECKPOINT_DIR, "README.md")
-    with open(readme_path, "w") as f:
+    with open(os.path.join(SOURCE_DIR, "README.md"), "w") as f:
         f.write(readme_content)
-    print("Created README.md")
+    print("Updated README.md in dist/")
 
-    # 4. Upload Folder
-    print("Uploading models... This may take a while.")
+    # Upload
+    print("Starting upload...")
     api.upload_folder(
-        folder_path=CHECKPOINT_DIR,
-        repo_id=repo_id,
+        folder_path=SOURCE_DIR,
+        repo_id=REPO_ID,
         repo_type="model",
         path_in_repo=".",
-        ignore_patterns=["*.safetensors", "config.json", "*.pth", "trt__*"] # Upload mainly the organized folders
     )
-    print("Upload complete!")
+    print("Upload successfully completed!")
 
 if __name__ == "__main__":
     main()

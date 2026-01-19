@@ -1,10 +1,15 @@
+
 import onnxruntime as ort
-print(f"Available providers: {ort.get_available_providers()}")
+import torch
+
+print("Torch CUDA Available:", torch.cuda.is_available())
+if torch.cuda.is_available():
+    print("Torch Device Name:", torch.cuda.get_device_name(0))
+
+print("ORT Available Providers:", ort.get_available_providers())
 
 try:
-    import torch
-    print(f"PyTorch CUDA available: {torch.cuda.is_available()}")
-    print(f"PyTorch CUDA device count: {torch.cuda.device_count()}")
-    print(f"PyTorch CUDA device name: {torch.cuda.get_device_name(0)}")
-except ImportError:
-    print("PyTorch not installed")
+    sess = ort.InferenceSession("./dist/final_w8a16_new/model.w8a16.onnx", providers=["CUDAExecutionProvider"])
+    print("ORT Session Provider:", sess.get_providers())
+except Exception as e:
+    print("ORT Session Creation Failed:", e)

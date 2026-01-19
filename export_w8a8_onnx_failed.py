@@ -162,17 +162,17 @@ def main():
     pi0_pytorch.PI0Pytorch.embed_suffix = embed_suffix_match
     
 
-    # --- Quantization Setup (W8A16) ---
-    print("Quantizing logic (W8A16 - Weight Only INT8)...")
+    # --- Quantization Setup (W8A8 - Full INT8) ---
+    print("Quantizing logic (W8A8 - Full INT8 with Calibration)...")
     
-    # W8A16 Config: Enable Weight Quantizer (INT8), Disable Input Quantizer
+    # W8A8 Config: Enable Weight Quantizer (INT8) AND Input Quantizer (INT8)
     quant_config = copy.deepcopy(mtq.INT8_DEFAULT_CFG)
-    quant_config["quant_cfg"]["*input_quantizer"] = {"enable": False}
+    # quant_config["quant_cfg"]["*input_quantizer"] = {"enable": False} # ENABLED for W8A8
     
     def filter_func(name):
         return any(x in name for x in ["time_emb", "pos_embed", "embed_tokens", "patch_embed", "norm"])
     
-    print("Applying quantization (Weight Only)...")
+    print("Applying quantization (W8A8)...")
     # Quantize in FP32 mode
     model = mtq.quantize(model, quant_config) 
     mtq.disable_quantizer(model, filter_func)
@@ -191,8 +191,39 @@ def main():
         torch.randn(batch_size, config.model.action_horizon, config.model.action_dim, dtype=exec_dtype, device=device) # noise
     )
 
+    # --- Calibration Loop ---
+    print("Running Calibration (20 steps)...")
+    # Force train mode for statistic collection
+    print("Switching to model.train() for calibration...")
+    model.train()
+    
+    if hasattr(mtq, "enable_calibration"):
+        print("Enabling calibration via mtq.enable_calibration...")
+        mtq.enable_calibration(model)
+
+    with torch.no_grad():
+        for i in range(20):
+            calib_inputs = (
+                torch.randn(batch_size, 3, 224, 224, dtype=exec_dtype, device=device),
+                torch.randn(batch_size, 3, 224, 224, dtype=exec_dtype, device=device),
+                torch.zeros(batch_size, 3, 224, 224, dtype=exec_dtype, device=device),
+                torch.randn(batch_size, 32, dtype=exec_dtype, device=device),
+                torch.randint(0, 100, (batch_size, config.model.max_token_len), dtype=torch.int32, device=device),
+                torch.ones(batch_size, config.model.max_token_len, dtype=torch.bool, device=device),
+                torch.randn(batch_size, config.model.action_horizon, config.model.action_dim, dtype=exec_dtype, device=device)
+            )
+            wrapper(*calib_inputs)
+            print(f"Calibration step {i+1}/20 done")
+
+    if hasattr(mtq, "disable_calibration"):
+        print("Disabling calibration via mtq.disable_calibration...")
+        mtq.disable_calibration(model)
+    else:
+        model.eval()
+
     # --- Export ---
-    print(f"Exporting W8A16 model (initially FP32 trace) to {OUTPUT_PATH}...")
+    OUTPUT_PATH = "./checkpoints/pi05_libero_pytorch/model.w8a8.onnx"
+    print(f"Exporting W8A8 model to {OUTPUT_PATH}...")
     
     # Temporary path
     temp_path = OUTPUT_PATH + ".temp.onnx"
@@ -211,13 +242,10 @@ def main():
         dynamic_axes=dynamic_axes,
         dynamo=False
     )
-    print(f"Temp FP32-quantized model exported to {temp_path}")
+    print(f"Temp W8A8 model exported to {temp_path}")
 
-    # --- Convert to FP16 (W8A16) ---
-    # --- Convert to FP16 (W8A16) ---
-    # SKIPPING FP16 conversion due to corruption bug.
-    # The exported model (temp_path) has QDQ nodes. Activations are FP32 in graph, but TRT --fp16 handles mixed precision.
-    print("Skipping broken FP16 conversion. Using FP32 export with QDQ nodes...")
+    # --- Post-Process ---
+    print("Processing export...")
     
     import onnx
     model_export = onnx.load(temp_path)
@@ -250,7 +278,7 @@ def main():
         model_export.graph.node.extend(new_nodes)
         print(f"Patched {patched_count} CumSum nodes.")
 
-    print(f"Saving W8A16 (QDQ) model to {OUTPUT_PATH}...")
+    print(f"Saving W8A8 model to {OUTPUT_PATH}...")
     if os.path.exists(OUTPUT_PATH):
         os.remove(OUTPUT_PATH)
     data_path = os.path.basename(OUTPUT_PATH) + ".data"

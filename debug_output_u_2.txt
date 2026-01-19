@@ -1,0 +1,227 @@
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+<frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+<frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+DEBUG: STARTING EVAL
+  0%|          | 0/1 [00:00<?, ?it/s]DEBUG: Task ID 0
+
+  0%|          | 0/1 [00:00<?, ?it/s][ADEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG STEP 10
+  Obs State (first 6): [-2.11241627e-01 -1.10906019e-02  1.17424952e+00  3.14089540e+00
+ -2.84781983e-03 -8.77393103e-02]
+  Obs Image Shape: (224, 224, 3), Type: uint8, Min: 6, Max: 237
+  Action Output (first 6): [-0.72780564  0.58595705 -0.65899659  0.24095106 -0.08932122 -0.34445388]
+  Action Output Stats: Min=-2.0558081535892487, Max=2.2802575331017967, Mean=-0.026178331112578182
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG STEP 15
+  Obs State (first 6): [-0.20822101  0.02215407  1.17099746  3.21477625  0.01726205 -0.10684996]
+  Obs Image Shape: (224, 224, 3), Type: uint8, Min: 6, Max: 237
+  Action Output (first 6): [-0.98615308 -0.32610093 -0.03327891  0.03575712  0.10640442  0.07138892]
+  Action Output Stats: Min=-2.1931924621834753, Max=1.3204631646478178, Mean=-0.14139283440374115
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG STEP 20
+  Obs State (first 6): [-0.23742689  0.02106907  1.14131907  3.19663801  0.02085364 -0.26143242]
+  Obs Image Shape: (224, 224, 3), Type: uint8, Min: 6, Max: 237
+  Action Output (first 6): [-0.41144738 -1.40595288 -1.54844411 -0.0456865   0.04655847  0.29990792]
+  Action Output Stats: Min=-2.4357432207899095, Max=2.5447824255790708, Mean=-0.22450465351303645
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG STEP 25
+  Obs State (first 6): [-0.25361628 -0.01883665  1.09861203  3.20139646  0.05257229 -0.22095984]
+  Obs Image Shape: (224, 224, 3), Type: uint8, Min: 6, Max: 237
+  Action Output (first 6): [ 1.57518733  0.76730848  0.5096875  -0.05702336  0.28821415 -0.22078655]
+  Action Output Stats: Min=-2.1021448567453622, Max=2.2741503151323794, Mean=0.003466530551036216
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG STEP 30
+  Obs State (first 6): [-0.26124365  0.00866804  1.06229774  3.24451352  0.06716401 -0.18061026]
+  Obs Image Shape: (224, 224, 3), Type: uint8, Min: 6, Max: 237
+  Action Output (first 6): [ 0.00653918 -1.3579886   0.71825179 -0.02252052 -0.04999194  0.23286006]
+  Action Output Stats: Min=-2.5914058932509425, Max=2.5901704493607283, Mean=-0.03390913758138611
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG STEP 35
+  Obs State (first 6): [-0.27674667 -0.03290005  1.04670696  3.20557183  0.1876901  -0.09800621]
+  Obs Image Shape: (224, 224, 3), Type: uint8, Min: 6, Max: 237
+  Action Output (first 6): [ 1.08358584  0.88990365 -1.50690386  0.10104825  0.12317128  0.31237101]
+  Action Output Stats: Min=-2.815836970912456, Max=1.5254253856706619, Mean=-0.040415981414632984
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=base_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=left_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+DEBUG PREPROCESS: key=right_wrist_0_rgb, shape=torch.Size([1, 3, 224, 224]), dtype=torch.float32
+/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/imageio/plugins/tifffile.py:189: DeprecationWarning: ImageIO's vendored tifffile backend is deprecated and will be removed in ImageIO v3. Install the tifffile directly: `pip install imageio[tifffile]`
+  warnings.warn(
+WARNING:root:Failed to save video: Could not find a backend to open `data/libero/videos_torch/rollout_pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate_failure.mp4`` with iomode `wI`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+WARNING:root:Result: failure
+
+100%|██████████| 1/1 [00:18<00:00, 18.93s/it][A100%|██████████| 1/1 [00:18<00:00, 18.93s/it]
+100%|██████████| 1/1 [00:21<00:00, 21.35s/it]100%|██████████| 1/1 [00:21<00:00, 21.35s/it]
+Total Success Rate: 0.0
+Latency (ms): Mean=303.05, Median=293.42, P99=475.65
+Max GPU Memory: 7.12 GB
+Exception ignored in: <function MjRenderContext.__del__ at 0xfffed00b8040>
+Traceback (most recent call last):
+  File "/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/robosuite/utils/binding_utils.py", line 199, in __del__
+    self.gl_ctx.free()
+  File "/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0xfffe759962a0>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0xfffed04fa960>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0xfffed04fa960>,
+		<OpenGL._opaque.EGLContext_pointer object at 0xfffed04fa840>,
+	),
+	result = 0
+)
+Exception ignored in: <function EGLGLContext.__del__ at 0xfffed05b3ec0>
+Traceback (most recent call last):
+  File "/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/robosuite/renderers/context/egl_context.py", line 155, in __del__
+    self.free()
+  File "/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0xfffe759962a0>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0xfffed04fa960>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0xfffed04fa960>,
+		<OpenGL._opaque.EGLContext_pointer object at 0xfffed04fa840>,
+	),
+	result = 0
+)
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

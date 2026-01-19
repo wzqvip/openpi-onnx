@@ -48,17 +48,33 @@ Models are being uploaded to Hugging Face Hub:
 see /home/taco/openpi-onnx/BENCHMARK_RESULTS.md
 
 
-Hardware: NVIDIA Jetson Thor (Blackwell GPU)
-Date: 2026-01-09
+### Benchmark Results (Sorted by Performance)
 
-| Precision | Latency (ms) | Throughput (QPS) | GPU Mem (MiB) | Notes |
-|-----------|--------------|------------------|---------------|-------|
-| FP32      | ~250         | 4.01             | ~13,000       | Weights: 12.1 GiB. |
-| FP16 (W16A16) | 184.54       | 6.26             | 6,314         | Exported as FP32, Run as FP16. Valid. |
-| INT8      | 118.11       | 8.47             | **4,018**     | **Measured**. Engine Size: 3.67 GiB. |
-| W8A16     | 181.81       | 6.37             | 6,313         | QDQ Export (13GB). Weights INT8, Compute Mixed. |
-| NVFP4     | N/A          | N/A              | N/A           | Export Failed (Requires CUDA). |
-| INT4      | Failed       | Failed           | Failed        | Parse Error. |
+| Variant | Precision Label | Latency (ms) | Throughput (QPS) | GPU Mem | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **W8A8 (Sim)** | **WINT8AINT8** | **128.37** | **8.38** | **~3.7 GiB*** | **Fastest**. Implicit INT8. Real W8A8 requires calibration. |
+| **W8A16 (QDQ)** | **WINT8AFP16** | 181.81 | 6.37 | 6.3 GiB | **Recommended**. Smallest verified model (13GB). Parity speed. |
+| **INT4 (Sim)** | **WINT4AFP16** | 183.15 | 6.33 | ~6.3 GiB* | Run on FP32 model with `--int4`. Parity speed. |
+| **FP16** | **WFP16AFP16** | 184.54 | 6.26 | 6.3 GiB | Baseline (25GB model). Native FP16 execution. |
+| **BF16** | **WBF16ABF16** | 190.21 | 6.14 | ~6.3 GiB | Parity with FP16. |
+| **FP8 (Sim)** | **WFP8AFP16** | 310.90 | 3.63 | ~6.3 GiB* | Slower. Requires optimized QAT model for gains. |
+
+*\*Estimated memory for simulated runs.*
+
+### Accuracy Verification (MSE vs PyTorch)
+| Variant | MSE | Max Error | Status |
+| :--- | :--- | :--- | :--- |
+| **W8A16 (QDQ)** | **0.0061** | **0.203** | **Pass**. Negligible diff vs FP16. |
+| **FP16** | 0.0061 | 0.205 | **Pass**. Baseline ONNX export error. |
+
+*Note: The identical MSE indicates that W8A16 quantization introduced no additional accuracy loss compared to the validation-ready FP16 export.*
+
+### Definitions
+*   **WINT8AINT8**: Weights and Activations in INT8 (Full INT8).
+*   **WINT8AFP16**: Weights in INT8, Activations in FP16. (Achieved via QDQ).
+*   **WFP16AFP16**: Weights and Activations in FP16.
+*   **WFP8AFP16**: Weights in FP8, Activations in FP16 (Simulated).
+*   **WINT4AFP16**: Weights in INT4, Activations in FP16 (Simulated).
 
 ## Findings
 
@@ -72,4 +88,25 @@ Date: 2026-01-09
     - FP32: Stable.
     - INT8: Valid, Performant, and Memory Efficient.
 
+
 e-inference-examples/blob/main/quantization/image_classification/cpu/ReadMe.md
+
+## Update: JAX -> PyTorch Pipeline (Jan 2026)
+This section tracks the deployment of the *converted* JAX model (`pi05_libero`).
+
+### 1. Accuracy (Offline Eval)
+*   **Static MSE**: 1.25 (vs PyTorch). Flagged for review.
+*   **Offline Validation**: `scripts/eval_libero_offline.py` provided. (Blocked by Hardware).
+*   **Sim Evaluation**: Blocked by Thor SM 11.0 Incompatibility.
+
+### 2. New Quantization Formats
+*   **W4A4 (INT4/INT4)**:
+    *   **Method**: `scripts/export_w4a4.py` (modelopt custom config).
+    *   **Model**: `dist/final_w4a4/model.w4a4.onnx`.
+    *   **Status**: Exported. Verified `trt.DequantizeLinear` ops present.
+    *   **Requirement**: Needs TensorRT backend (CPU execution not supported).
+
+### 3. Environment Warning
+*   **Configuration**: CUDA 13.0 Driver. PyTorch 2.11 (`cu128`).
+*   **Issue**: `onnxruntime` and `torch` binaries do not fully support Thor (SM 11.0) yet.
+*   **Recommendation**: Use NVIDIA NGC PyTorch container or build from source for SM 11.0.

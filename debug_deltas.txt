@@ -1,0 +1,73 @@
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+<frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+<frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+DEBUG: STARTING EVAL
+  0%|          | 0/1 [00:00<?, ?it/s]DEBUG: Task ID 0
+
+  0%|          | 0/1 [00:00<?, ?it/s][ADEBUG STEP 10
+  Obs State (first 6): [-2.11241627e-01 -1.10906019e-02  1.17424952e+00  3.14089540e+00
+ -2.84781983e-03 -8.77393103e-02]
+ERROR:root:Exception: 'numpy.ndarray' object has no attribute 'detach'
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_torch.py", line 181, in eval_libero
+    raw_actions = result["actions"][0].detach().cpu().numpy()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'numpy.ndarray' object has no attribute 'detach'
+/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/imageio/plugins/tifffile.py:189: DeprecationWarning: ImageIO's vendored tifffile backend is deprecated and will be removed in ImageIO v3. Install the tifffile directly: `pip install imageio[tifffile]`
+  warnings.warn(
+WARNING:root:Failed to save video: Could not find a backend to open `data/libero/videos_torch/rollout_pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate_failure.mp4`` with iomode `wI`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+WARNING:root:Result: failure
+
+100%|██████████| 1/1 [00:01<00:00,  1.65s/it][A100%|██████████| 1/1 [00:01<00:00,  1.65s/it]
+100%|██████████| 1/1 [00:04<00:00,  4.06s/it]100%|██████████| 1/1 [00:04<00:00,  4.06s/it]
+Total Success Rate: 0.0
+Latency (ms): Mean=579.94, Median=579.94, P99=579.95
+Max GPU Memory: 7.12 GB
+Exception ignored in: <function MjRenderContext.__del__ at 0xfffea3010040>
+Traceback (most recent call last):
+  File "/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/robosuite/utils/binding_utils.py", line 199, in __del__
+    self.gl_ctx.free()
+  File "/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0xfffe48836960>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0xfffea33ceb10>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0xfffea33ceb10>,
+		<OpenGL._opaque.EGLContext_pointer object at 0xfffea33ce9f0>,
+	),
+	result = 0
+)
+Exception ignored in: <function EGLGLContext.__del__ at 0xfffea349bec0>
+Traceback (most recent call last):
+  File "/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/robosuite/renderers/context/egl_context.py", line 155, in __del__
+    self.free()
+  File "/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/home/taco/miniconda3/envs/torch-py311/lib/python3.11/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0xfffe48836960>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0xfffea33ceb10>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0xfffea33ceb10>,
+		<OpenGL._opaque.EGLContext_pointer object at 0xfffea33ce9f0>,
+	),
+	result = 0
+)
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

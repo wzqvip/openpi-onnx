@@ -17,6 +17,8 @@ import numpy as np
 import tqdm
 import tyro
 import torch
+import time
+
 
 from openpi.training import config as _config
 from openpi.policies import policy_config
@@ -55,13 +57,13 @@ class Args:
     force_cpu: bool = False
 
 def _quat2axisangle(quat):
-    # Robosuite convention: [x, y, z, w] or [w, x, y, z]?
-    # Code in main.py uses quat[3] as w.
-    if quat[3] > 1.0: quat[3] = 1.0
-    elif quat[3] < -1.0: quat[3] = -1.0
-    den = np.sqrt(1.0 - quat[3] * quat[3])
+    # Robosuite convention: [w, x, y, z]
+    # w is scalar, xyz is vector
+    if quat[0] > 1.0: quat[0] = 1.0
+    elif quat[0] < -1.0: quat[0] = -1.0
+    den = np.sqrt(1.0 - quat[0] * quat[0])
     if math.isclose(den, 0.0): return np.zeros(3)
-    return (quat[:3] * 2.0 * math.acos(quat[3])) / den
+    return (quat[1:] * 2.0 * math.acos(quat[0])) / den
 
 def eval_libero(args: Args) -> None:
     np.random.seed(args.seed)
@@ -105,6 +107,8 @@ def eval_libero(args: Args) -> None:
         tasks_to_run = [args.task_id]
 
     total_episodes, total_successes = 0, 0
+    latencies = []
+
 
     for task_id in tqdm.tqdm(tasks_to_run):
         task = task_suite.get_task(task_id)
@@ -131,6 +135,7 @@ def eval_libero(args: Args) -> None:
                     img = np.ascontiguousarray(obs["agentview_image"][::-1, ::-1])
                     wrist_img = np.ascontiguousarray(obs["robot0_eye_in_hand_image"][::-1, ::-1])
                     
+                    
                     img = resize_with_pad(img, args.resize_size, args.resize_size)
                     wrist_img = resize_with_pad(wrist_img, args.resize_size, args.resize_size)
                     
@@ -147,13 +152,39 @@ def eval_libero(args: Args) -> None:
                                     obs["robot0_gripper_qpos"],
                                 )
                             ),
+                            "observation/joint_position": obs["robot0_joint_pos"],
                             "prompt": str(task_description),
                         }
                         
                         # Policy Inference
+                        if torch.cuda.is_available():
+                            torch.cuda.synchronize()
+                        start_time = time.time()
                         result = policy.infer(element)
-                        action_chunk = result["actions"]
-                        action_plan.extend(action_chunk[: args.replan_steps])
+                        if torch.cuda.is_available():
+                            torch.cuda.synchronize()
+                        end_time = time.time()
+                        latencies.append((end_time - start_time) * 1000)
+
+                        if torch.cuda.is_available():
+                            torch.cuda.synchronize()
+                        end_time = time.time()
+                        latencies.append((end_time - start_time) * 1000)
+
+                        # Convert from Torch to Numpy
+                        # result['actions'] is usually a Numpy array (from Policy wrapper)
+                        if hasattr(result["actions"], "detach"):
+                             raw_actions = result["actions"][0].detach().cpu().numpy()
+                        else:
+                             # Can be [H, D] or [D]
+                             raw_actions = result["actions"][0]
+                        
+                        # Ensure 2D [H, D]
+                        # Ensure 2D [H, D]
+                        if raw_actions.ndim == 1:
+                            raw_actions = raw_actions[None, :]
+
+                        action_plan.extend(raw_actions[: args.replan_steps])
 
                     action = action_plan.popleft()
                     obs, reward, done, info = env.step(action.tolist())
@@ -173,15 +204,28 @@ def eval_libero(args: Args) -> None:
             total_episodes += 1
             
             suffix = "success" if done else "failure"
-            task_segment = task_description.replace(" ", "_")
-            imageio.mimwrite(
-                pathlib.Path(args.video_out_path) / f"rollout_{task_segment}_{suffix}.mp4",
-                [np.asarray(x) for x in replay_images],
-                fps=10,
-            )
-            logging.info(f"Result: {suffix}")
+            try:
+                task_segment = task_description.replace(" ", "_")
+                imageio.mimwrite(
+                    pathlib.Path(args.video_out_path) / f"rollout_{task_segment}_{suffix}.mp4",
+                    [np.asarray(x) for x in replay_images],
+                    fps=10,
+                )
+            except Exception as e:
+                logging.warning(f"Failed to save video: {e}")
+            logging.warning(f"Result: {suffix}")
 
-    logging.info(f"Total Success Rate: {total_successes / total_episodes if total_episodes > 0 else 0}")
+    print(f"Total Success Rate: {total_successes / total_episodes if total_episodes > 0 else 0}")
+
+    # Print Metrics
+    if latencies:
+        latencies = np.array(latencies)
+        print(f"Latency (ms): Mean={np.mean(latencies):.2f}, Median={np.median(latencies):.2f}, P99={np.percentile(latencies, 99):.2f}")
+    
+    if torch.cuda.is_available():
+        max_mem = torch.cuda.max_memory_allocated() / 1024**3
+        print(f"Max GPU Memory: {max_mem:.2f} GB")
+
 
 def _get_libero_env(task, resolution, seed):
     task_description = task.language
