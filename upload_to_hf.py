@@ -3,7 +3,7 @@ from huggingface_hub import HfApi, create_repo
 import shutil
 
 # Config
-TOKEN = "hf_REPLACED_TOKEN"
+TOKEN = ""
 REPO_ID = "Tacoin/openpi-pi0.5-libero-onnx"
 SOURCE_DIR = "dist"
 
