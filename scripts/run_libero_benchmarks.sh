@@ -1,23 +1,76 @@
 #!/bin/bash
 set -e
 
-mkdir -p data/libero/logs
+# Benchmark Configuration
+TASKS=("libero_spatial" "libero_object" "libero_goal" "libero_100")
+MODELS=("torch" "int8" "fp4")
+RESULTS_DIR="results/benchmark_results"
+mkdir -p $RESULTS_DIR
 
-PYTHON=/home/taco/miniconda3/envs/torch-py311/bin/python
-export MUJOCO_GL=egl
+echo "========================================================"
+echo "Starting Comprehensive Libero Benchmark"
+echo "Tasks: ${TASKS[@]}"
+echo "Models: ${MODELS[@]}"
+echo "========================================================"
 
-tegrastats --interval 1000 --logfile data/libero/logs/tegrastats.log &
-TEGRA_PID=$!
-trap "kill $TEGRA_PID" EXIT
+for task in "${TASKS[@]}"; do
+    echo ""
+    echo "--------------------------------------------------------"
+    echo "Benchmarking Task Suite: $task"
+    echo "--------------------------------------------------------"
+    
+    for model in "${MODELS[@]}"; do
+        echo "Running Model: $model"
+        
+        if [ "$model" == "torch" ]; then
+            # PyTorch Baseline
+            /home/taco/.venv/bin/python scripts/eval_libero_torch.py \
+                --task_suite_name $task \
+                --num_trials_per_task 3
+                
+        elif [ "$model" == "int8" ]; then
+            # INT8 TensorRT
+            # Ensure engine exists
+            ENGINE_PATH="checkpoints/pi05_libero_onnx_compat/engine_int8.trt"
+            if [ ! -f "$ENGINE_PATH" ]; then
+                echo "Skipping INT8: Engine not found at $ENGINE_PATH"
+                continue
+            fi
+            
+            echo "Starting Inference Server..."
+            # Start TRT server in background
+            /home/taco/.venv/bin/python scripts/serve_trt.py \
+                --engine_path $ENGINE_PATH \
+                --port 8015 &
+            SERVER_PID=$!
+            
+            # Wait for server to start (heuristic)
+            echo "Waiting for server (PID $SERVER_PID) to initialize..."
+            sleep 15
+            
+            echo "Running Benchmark Client..."
+            /home/taco/.venv/bin/python scripts/eval_libero_trt.py \
+                --task_suite_name $task \
+                --num_trials_per_task 3 \
+                --port 8015 || true # Continue even if client fails
+                
+            # Kill server
+            echo "Stopping Inference Server..."
+            kill $SERVER_PID
 
+                
+        elif [ "$model" == "fp4" ]; then
+             # FP4 Simulated
+             /home/taco/.venv/bin/python scripts/eval_fp4_torch.py \
+                --task_suite_name $task \
+                --num_trials_per_task 3
+        fi
+        
+        echo "Finished $model on $task"
+    done
+done
 
-echo "Running Libero Spatial..."
-PYTHONPATH=src $PYTHON scripts/eval_libero_torch.py --task_suite_name libero_spatial --video_out_path data/libero/videos_torch/spatial 2>&1 | tee data/libero/logs/spatial.log || true
-
-echo "Running Libero Goal..."
-PYTHONPATH=src $PYTHON scripts/eval_libero_torch.py --task_suite_name libero_goal --video_out_path data/libero/videos_torch/goal 2>&1 | tee data/libero/logs/goal.log || true
-
-echo "Running Libero 10..."
-PYTHONPATH=src $PYTHON scripts/eval_libero_torch.py --task_suite_name libero_10 --video_out_path data/libero/videos_torch/10 2>&1 | tee data/libero/logs/10.log || true
-
-echo "All benchmarks completed."
+echo ""
+echo "========================================================"
+echo "Benchmark Complete."
+echo "========================================================"

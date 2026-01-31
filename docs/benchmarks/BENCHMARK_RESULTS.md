@@ -1,14 +1,15 @@
 # Model Benchmark Results
 
 **Hardware**: NVIDIA Jetson Thor (Blackwell GPU)
-**Date**: 2026-01-31
-
-| Precision | Accuracy (Success Rate) | Latency | GPU Mem | Status | Notes |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **INT8** | **100.0%** | **118.11 ms** | **4.01 GB** | **Recommended** | Verified on `libero_spatial`. Best trade-off. |
-| **FP4** | **100.0%** | ~1405 ms* | 8.14 GB* | **Verified (Sim)** | *Simulation Overhead. Real engine expected < 50ms / ~5-6GB.* |
-| **FP32** | 80.0% | ~250 ms | ~13.0 GB | Baseline | Functional but memory intensive. |
-| **FP16** | 0.0% | ~200 ms | ~6.2 GB | **Unstable** | Failed on Real Data (Over-optimized). |
+### Metrics Overview
+| Precision | Task Suite | Success Rate | Latency (ms) | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **INT8 (Orin)** | Libero-Spatial | **Running...** | **118.11** | In Progress |
+| **INT8 (Orin)** | Libero-Object | **Running...** | TBD | In Progress |
+| **INT8 (Orin)** | Libero-Goal | **Running...** | TBD | In Progress |
+| **INT8 (Orin)** | Libero-100 | **Running...** | TBD | In Progress |
+| FP32 (Base) | All Suites | Running... | ~250.0 | In Progress |
+| FP16 | All Suites | 0.0% | ~200.0 | Failed (Overflow) |
 
 ## Analysis
 
