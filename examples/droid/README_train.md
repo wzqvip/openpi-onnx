@@ -1,3 +1,4 @@
+<!-- Last Updated: 2026-01-29 -->
 # Training on DROID
 
 Here we describe how to fine-tune the pi0.5 model on the *full* DROID dataset. This is an approximate open-source reproduction of the pi05-DROID training pipeline.

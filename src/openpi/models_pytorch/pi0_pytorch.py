@@ -75,7 +75,7 @@ def make_att_2d_masks(pad_masks, att_masks):
     if pad_masks.ndim != 2:
         raise ValueError(pad_masks.ndim)
 
-    cumsum = torch.cumsum(att_masks, dim=1)
+    cumsum = torch.cumsum(att_masks.to(torch.long), dim=1)
     att_2d_masks = cumsum[:, None, :] <= cumsum[:, :, None]
     pad_2d_masks = pad_masks[:, None, :] * pad_masks[:, :, None]
     return att_2d_masks & pad_2d_masks
@@ -174,7 +174,7 @@ class PI0Pytorch(nn.Module):
             mean=0.0,
             std=1.0,
             size=shape,
-            dtype=torch.float32,
+            dtype=self.action_in_proj.weight.dtype if hasattr(self, "action_in_proj") and hasattr(self.action_in_proj, "weight") else torch.float32,
             device=device,
         )
 
@@ -235,6 +235,8 @@ class PI0Pytorch(nn.Module):
         return embs, pad_masks, att_masks
 
     def embed_suffix(self, state, noisy_actions, timestep):
+        if hasattr(self, "action_in_proj") and hasattr(self.action_in_proj, "weight"):
+             timestep = timestep.to(dtype=self.action_in_proj.weight.dtype)
         """Embed state, noisy_actions, timestep to prepare for Expert Gemma processing."""
         embs = []
         pad_masks = []
@@ -287,6 +289,11 @@ class PI0Pytorch(nn.Module):
         else:
             # time MLP (for adaRMS)
             def time_mlp_func(time_emb):
+                if hasattr(self.time_mlp_in, "weight"):
+                     time_emb = time_emb.to(dtype=self.time_mlp_in.weight.dtype)
+                print(f"DEBUG: time_emb dtype: {time_emb.dtype}, module: {type(self.time_mlp_in)}")
+                if hasattr(self.time_mlp_in, "weight"):
+                     print(f"DEBUG: weight dtype: {self.time_mlp_in.weight.dtype}")
                 x = self.time_mlp_in(time_emb)
                 x = F.silu(x)  # swish == silu
                 x = self.time_mlp_out(x)

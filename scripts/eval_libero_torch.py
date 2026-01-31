@@ -19,6 +19,21 @@ import tyro
 import torch
 import time
 
+# PATCH: Fix weights_only=True default in Torch 2.4+
+_original_torch_load = torch.load
+def safe_torch_load(*args, **kwargs):
+    if "weights_only" not in kwargs:
+        kwargs["weights_only"] = False
+    return _original_torch_load(*args, **kwargs)
+torch.load = safe_torch_load
+
+# Mocks - Must be before openpi imports
+import sys
+from unittest.mock import MagicMock
+sys.modules["lerobot"] = MagicMock()
+sys.modules["lerobot.common"] = MagicMock()
+sys.modules["lerobot.common.datasets"] = MagicMock()
+sys.modules["lerobot.common.datasets.lerobot_dataset"] = MagicMock()
 
 from openpi.training import config as _config
 from openpi.policies import policy_config
@@ -74,7 +89,19 @@ def eval_libero(args: Args) -> None:
     # Hack to disable torch.compile for stability
     torch.compile = lambda x, **k: x
     
+    # Mocks
+    import sys
+    from unittest.mock import MagicMock
+    sys.modules["lerobot"] = MagicMock()
+    sys.modules["lerobot.common"] = MagicMock()
+    sys.modules["lerobot.common.datasets"] = MagicMock()
+    sys.modules["lerobot.common.datasets.lerobot_dataset"] = MagicMock()
+
     train_config = _config.get_config(args.config)
+    # Force float32 for baseline stability vs numpy inputs
+    train_config = dataclasses.replace(train_config, model=dataclasses.replace(train_config.model, dtype="float32"))
+    # [FIX] Override action_dim to 32 to match checkpoint weights
+    train_config = dataclasses.replace(train_config, model=dataclasses.replace(train_config.model, action_dim=32))
     
     device = "cpu" if args.force_cpu else ("cuda" if torch.cuda.is_available() else "cpu")
     logging.info(f"Loading policy from {args.checkpoint} on {device}...")
@@ -84,6 +111,61 @@ def eval_libero(args: Args) -> None:
         args.checkpoint, 
         pytorch_device=device
     )
+    
+    # Inspect Policy for Norm Stats
+    print(f"Policy Dir: {dir(policy)}")
+    try:
+        print(f"Policy Vars: {vars(policy)}")
+    except:
+        pass
+    
+    # Recursive Search for norm_stats
+    def find_norm_stats(obj, depth=0, visited=None):
+        if visited is None: visited = set()
+        if depth > 5: return None
+        if id(obj) in visited: return None
+        visited.add(id(obj))
+        
+        # Check current object
+        if hasattr(obj, "norm_stats") and isinstance(obj.norm_stats, dict):
+            return obj.norm_stats
+            
+        # Search attributes
+        if hasattr(obj, "__dict__"):
+            for k, v in vars(obj).items():
+                if not k.startswith("__"):
+                    res = find_norm_stats(v, depth+1, visited)
+                    if res: return res
+                    
+        # Search lists/dicts
+        if isinstance(obj, (list, tuple)):
+            for item in obj:
+                res = find_norm_stats(item, depth+1, visited)
+                if res: return res
+        
+        return None
+
+    print("Searching for norm_stats recursively...")
+    norm_stats = find_norm_stats(policy)
+    
+    if norm_stats:
+        print("FOUND norm_stats!")
+        import json
+        flat_stats = {}
+        for k, v in norm_stats.items():
+            flat_stats[k] = {"mean": v.mean.tolist(), "std": v.std.tolist(), "q01": v.q01.tolist() if v.q01 is not None else None, "q99": v.q99.tolist() if v.q99 is not None else None}
+            
+        with open("torch_norm_stats.json", "w") as f:
+            json.dump(flat_stats, f, indent=2)
+        print("Dumbed stats to torch_norm_stats.json")
+    else:
+        print("WARNING: Recursive search failed to find norm_stats.")
+    
+    # Attempt to extract
+    # Usually in data_config -> but config failed.
+    # What if we just print train_config.data to see what it has?
+    print(f"Data Config Type: {type(train_config.data)}")
+    print(f"Data Config Dir: {dir(train_config.data)}")
 
     benchmark_dict = benchmark.get_benchmark_dict()
     task_suite = benchmark_dict[args.task_suite_name]()
@@ -112,14 +194,26 @@ def eval_libero(args: Args) -> None:
 
     for task_id in tqdm.tqdm(tasks_to_run):
         task = task_suite.get_task(task_id)
-        initial_states = task_suite.get_task_init_states(task_id)
+        initial_states = task_suite.get_task_init_states(task_id)        
+        
+    # Removed crashing block
+    # Will inspect log for structure
+
         env, task_description = _get_libero_env(task, LIBERO_ENV_RESOLUTION, args.seed)
 
         task_episodes, task_successes = 0, 0
+        
+        # DEBUG: Check initial state vector
+        s0 = initial_states[0]
+        print(f"DEBUG [Torch] InitState[0]: shape={s0.shape}, mean={np.mean(s0)}, first10={s0[:10]}")
+        
         for episode_idx in tqdm.tqdm(range(args.num_trials_per_task)):
+            env.reset()
             env.reset()
             action_plan = collections.deque()
             obs = env.set_init_state(initial_states[episode_idx])
+            
+            print(f"DEBUG [Torch] Task ID: {task_id}, Desc: {task_description}")
             
             t = 0
             replay_images = []
@@ -156,6 +250,10 @@ def eval_libero(args: Args) -> None:
                             "prompt": str(task_description),
                         }
                         
+                        # DEBUG: Print input stats
+                        print(f"DEBUG [Torch] Image: shape={element['observation/image'].shape}, range=[{np.min(element['observation/image'])}, {np.max(element['observation/image'])}], mean={np.mean(element['observation/image'])}")
+                        print(f"DEBUG [Torch] State: shape={element['observation/state'].shape}, first10={element['observation/state'][:10]}")
+                        
                         # Policy Inference
                         if torch.cuda.is_available():
                             torch.cuda.synchronize()
@@ -187,6 +285,9 @@ def eval_libero(args: Args) -> None:
                         action_plan.extend(raw_actions[: args.replan_steps])
 
                     action = action_plan.popleft()
+                    # Slice to 7 dimensions if model was padded to 32
+                    if len(action) > 7:
+                        action = action[:7]
                     obs, reward, done, info = env.step(action.tolist())
                     
                     if done:

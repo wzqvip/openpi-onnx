@@ -1,3 +1,4 @@
+<!-- Last Updated: 2026-01-29 -->
 # Simple Client
 
 A minimal client that sends observations to the server and prints the inference rate.

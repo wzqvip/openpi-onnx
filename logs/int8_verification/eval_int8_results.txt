@@ -1,0 +1,2050 @@
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/taco/.venv/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+<frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+<frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+DEBUG: tensorrt_remote_policy file: /home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py
+DEBUG Stats Keys: ['state', 'actions']
+DEBUG Stats Keys: ['state', 'actions']
+DEBUG: input_transforms:
+  0: LiberoInputs(model_type=<ModelType.PI05: 'pi05'>)
+  1: ImageNormalize()
+  2: Normalize(norm_stats={'state': NormStats(mean=array([-0.0436387 ,  0.03525488,  0.76370335,  2.96736836, -0.21080354,
+       -0.12975203,  0.02778869, -0.02801023]), std=array([0.10337679, 0.15188012, 0.3815425 , 0.35452312, 0.92917639,
+       0.33074805, 0.01412893, 0.0139609 ]), q01=array([-3.52446890e-01, -2.68248648e-01,  4.08374592e-02,  1.53176537e+00,
+       -2.71523300e+00, -1.07653814e+00,  1.71582562e-03, -4.00372256e-02]), q99=array([ 1.38912787e-01,  3.25199161e-01,  1.25689629e+00,  3.26276857e+00,
+        2.44372332e+00,  5.63846984e-01,  4.03078087e-02, -1.71316169e-03])), 'actions': NormStats(mean=array([ 0.02682784,  0.08886061, -0.09983397,  0.00024007,  0.00128381,
+       -0.00294432, -0.13052438]), std=array([0.33119109, 0.37191954, 0.45225635, 0.03948825, 0.06278067,
+       0.0731762 , 0.99144512]), q01=array([-0.747375  , -0.796125  , -0.9375    , -0.115803  , -0.16942972,
+       -0.19450221, -1.        ]), q99=array([0.937125  , 0.8595    , 0.937125  , 0.14022601, 0.18103543,
+       0.31154571, 0.9996    ]))}, use_quantiles=True, strict=False)
+  3: InjectDefaultPrompt(prompt=None)
+  4: TokenizePrompt(tokenizer=<openpi.models.tokenizer.PaligemmaTokenizer object at 0xfffe4a661cd0>, discrete_state_input=False)
+DEBUG: Padding action stats from 7 to 32
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  0%|          | 0/10 [00:00<?, ?it/s][Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+DEBUG [TRT] InitState[0]: shape=(92,), mean=0.14017316975601676, first10=[ 0.00000000e+00 -1.38453941e-04 -1.76734475e-01 -3.65575975e-02
+ -2.45711298e+00  5.93502672e-03  2.23521997e+00  7.99383438e-01
+  2.08330000e-02 -2.08330000e-02]
+
+  0%|          | 0/3 [00:00<?, ?it/s][ADEBUG [TRT] Task ID: 0, Desc: pick up the black bowl between the plate and the ramekin and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.49360251913265
+DEBUG [TRT] State: shape=(8,), first10=[-2.11241627e-01 -1.10906019e-02  1.17424952e+00 -1.81290888e-03
+ -5.58544375e-02 -5.29339427e-04  3.87233651e-02 -3.87222021e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0628, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0233, min=-0.9843, max=0.8275
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2671, min=-2.7719, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0394, min=-2.3052, max=2.8611
+DEBUG Actions: min=-0.9771943895134032, max=0.8766009122670292, mean=0.015970555780217943, has_nan=False
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.59795519770408
+DEBUG [TRT] State: shape=(8,), first10=[-0.19778465  0.00134269  1.17679469  0.00270549 -0.03658523  0.00946831
+  0.03908517 -0.03901755]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0620, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0126, min=-0.9765, max=0.8588
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2510, min=-2.7667, max=0.9366
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0640, min=-3.0825, max=2.5108
+DEBUG Actions: min=-0.9826398561563194, max=0.9177407827463148, mean=0.0610327431794843, has_nan=False
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.85275164753402
+DEBUG [TRT] State: shape=(8,), first10=[-0.15296776  0.03064679  1.17966889  0.00435413 -0.00592344  0.03776672
+  0.03927192 -0.039204  ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0600, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0361, min=-0.9686, max=0.8667
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2092, min=-2.7648, max=0.9463
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0334, min=-2.2695, max=2.5946
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.86292915603741
+DEBUG [TRT] State: shape=(8,), first10=[-0.09804874  0.06104083  1.17738591  0.00448309  0.01142576  0.06693851
+  0.03941518 -0.03936053]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0599, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0935, min=-0.9922, max=0.8667
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1637, min=-2.7646, max=0.9537
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0281, min=-3.2555, max=2.3634
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=120.42415364583333
+DEBUG [TRT] State: shape=(8,), first10=[-0.04168819  0.08827934  1.16010397  0.0025918   0.02045673  0.07514175
+  0.03952206 -0.03949446]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0555, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1547, min=-0.9765, max=0.7412
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1259, min=-2.7668, max=0.9592
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0016, min=-2.9057, max=3.7429
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 239], mean=119.2983697385204
+DEBUG [TRT] State: shape=(8,), first10=[-0.00267724  0.10478176  1.11577361 -0.00302639  0.02573907  0.04330438
+  0.03960557 -0.03960446]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0643, min=-0.9529, max=0.8745
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1921, min=-0.9922, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1138, min=-2.7733, max=0.9636
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.1138, min=-2.9914, max=3.5001
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 236], mean=118.4083027742347
+DEBUG [TRT] State: shape=(8,), first10=[ 0.00286385  0.12140578  1.06582325 -0.00248091  0.03353547  0.02842611
+  0.03968237 -0.03968309]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0713, min=-0.9529, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1954, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1161, min=-2.7727, max=0.9675
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0114, min=-3.1262, max=2.9243
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 242], mean=118.3853303039966
+DEBUG [TRT] State: shape=(8,), first10=[-0.01139604  0.14111504  1.01445755  0.00549109  0.054393    0.02678612
+  0.0397444  -0.0397459 ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0715, min=-0.9529, max=0.8980
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1787, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1237, min=-2.7635, max=0.9708
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.1352, min=-2.6819, max=2.8039
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 243], mean=118.5834196960034
+
+ 33%|███▎      | 1/3 [00:07<00:14,  7.40s/it][ADEBUG [TRT] State: shape=(8,), first10=[-0.03890075  0.1487188   0.96015951  0.01016367  0.06864517  0.00839173
+  0.03938855 -0.03941742]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0699, min=-0.9529, max=0.9059
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1596, min=-1.0000, max=0.7569
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1472, min=-2.7581, max=0.9523
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0607, min=-3.2060, max=3.4157
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=118.72667543579932
+DEBUG [TRT] State: shape=(8,), first10=[-0.05071331  0.14665431  0.93697828  0.00413595  0.08653778 -0.00159725
+  0.02066632 -0.02066724]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0688, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1812, min=-1.0000, max=0.7569
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1594, min=-2.7650, max=0.4738
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0978, min=-3.0505, max=2.4811
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 242], mean=118.66177056760205
+DEBUG [TRT] State: shape=(8,), first10=[-0.0509373   0.14677913  0.94777206 -0.03975385  0.07912592  0.00129648
+  0.00383573 -0.00386028]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0693, min=-0.9529, max=0.8980
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1457, min=-1.0000, max=0.8667
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1629, min=-2.8157, max=0.8879
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0129, min=-3.4157, max=2.6912
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 243], mean=118.32716836734694
+DEBUG [TRT] State: shape=(8,), first10=[-0.04151914  0.14890167  0.99020447 -0.10254367  0.04646442  0.01094316
+  0.00198243 -0.00199664]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0719, min=-0.9529, max=0.9059
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1105, min=-1.0000, max=0.7882
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1575, min=-2.8883, max=0.9852
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0081, min=-3.5344, max=2.7205
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 238], mean=118.1023331207483
+DEBUG [TRT] State: shape=(8,), first10=[-0.01671219  0.14859473  1.04308797 -0.16016418  0.02786225  0.02106911
+  0.0019706  -0.00198767]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0737, min=-0.9529, max=0.8667
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1241, min=-1.0000, max=0.7882
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1418, min=-2.9549, max=0.9856
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0619, min=-2.8294, max=3.5582
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 244], mean=117.89513578869048
+DEBUG [TRT] State: shape=(8,), first10=[ 0.02826265  0.15047755  1.05923427 -0.19209122  0.04808686  0.01977034
+  0.0019721  -0.00198837]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0753, min=-0.9529, max=0.9137
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1290, min=-1.0000, max=0.7961
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1187, min=-2.9917, max=0.9856
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0041, min=-2.6976, max=2.9912
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 241], mean=117.63046077806122
+DEBUG [TRT] State: shape=(8,), first10=[ 0.05809828  0.15681182  1.02880097 -0.20906438  0.05558787 -0.01552123
+  0.00197455 -0.0019868 ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0774, min=-0.9529, max=0.8902
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1185, min=-1.0000, max=0.7961
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1145, min=-3.0114, max=0.9857
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0562, min=-3.1146, max=2.9524
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 244], mean=117.47575866284014
+DEBUG [TRT] State: shape=(8,), first10=[ 0.05399531  0.16123017  0.98201171 -0.19335979  0.03019855 -0.03343553
+  0.00198018 -0.00197936]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0786, min=-0.9529, max=0.9137
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1232, min=-1.0000, max=0.8039
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1260, min=-2.9932, max=0.9861
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0184, min=-3.2340, max=2.7660
+===== RESULT: Episode 1/3: SUCCESS =====
+DEBUG [TRT] Task ID: 0, Desc: pick up the black bowl between the plate and the ramekin and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.39492984693878
+DEBUG [TRT] State: shape=(8,), first10=[-2.06850850e-01 -2.23248190e-02  1.17398127e+00 -1.74375111e-03
+ -5.71822187e-02 -2.06870424e-04  3.87220294e-02 -3.87234703e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0636, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0388, min=-0.9765, max=0.8353
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2697, min=-2.7718, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0056, min=-3.1681, max=2.1281
+DEBUG Actions: min=-0.9887195088835656, max=0.883937338261008, mean=-0.011479554960095784, has_nan=False
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.45744977678571
+DEBUG [TRT] State: shape=(8,), first10=[-2.00273720e-01 -1.27196889e-02  1.17572676e+00  4.35941248e-03
+ -4.60021612e-02  1.14351486e-03  3.90780262e-02 -3.90267408e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0631, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0314, min=-0.9922, max=0.8510
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2600, min=-2.7648, max=0.9362
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0324, min=-3.2367, max=3.0896
+DEBUG Actions: min=-0.9894684706114233, max=0.947738310033798, mean=0.04803652073685636, has_nan=False
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.74972762542517
+DEBUG [TRT] State: shape=(8,), first10=[-0.1607346   0.01502429  1.17187363  0.01813006 -0.01315946  0.00283997
+  0.03927077 -0.03920679]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0608, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0260, min=-0.9843, max=0.8431
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2251, min=-2.7489, max=0.9462
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0739, min=-3.0356, max=2.5186
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.92664487670068
+DEBUG [TRT] State: shape=(8,), first10=[-0.1068924   0.04289497  1.16559569  0.02121276  0.00595871  0.01642995
+  0.03942047 -0.03935656]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0594, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0944, min=-0.9686, max=0.8510
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1838, min=-2.7453, max=0.9540
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0471, min=-2.8114, max=3.3751
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 243], mean=120.59180351828232
+DEBUG [TRT] State: shape=(8,), first10=[-0.05037686  0.0708472   1.14494918  0.02174001  0.01885826  0.01618973
+  0.03953931 -0.03947827]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0542, min=-0.9529, max=0.9059
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1623, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1469, min=-2.7447, max=0.9601
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0053, min=-2.7997, max=2.6623
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.47583838222789
+DEBUG [TRT] State: shape=(8,), first10=[-0.00681377  0.09247913  1.09636385  0.01956637  0.03880071  0.00966468
+  0.03963098 -0.03957987]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0629, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1926, min=-0.9922, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1260, min=-2.7472, max=0.9649
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0091, min=-2.7336, max=3.3904
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=118.47803066539116
+DEBUG [TRT] State: shape=(8,), first10=[ 0.0022014   0.11828346  1.04669376  0.02238589  0.05261632  0.01006097
+  0.03971176 -0.03965432]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0708, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1966, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1196, min=-2.7439, max=0.9691
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0827, min=-3.0064, max=3.0162
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 240], mean=118.4178159545068
+DEBUG [TRT] State: shape=(8,), first10=[-0.01142422  0.14141725  0.99643116  0.02586673  0.07025029  0.01469913
+  0.03976958 -0.0397212 ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0712, min=-0.9529, max=0.8824
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1774, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1251, min=-2.7399, max=0.9721
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0354, min=-3.2374, max=3.0175
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 245], mean=118.65229060374149
+DEBUG [TRT] State: shape=(8,), first10=[-0.03571856  0.14541527  0.95457435  0.02292201  0.09137763  0.01842139
+  0.0339189  -0.03395615]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0694, min=-0.9529, max=0.9216
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1533, min=-1.0000, max=0.8118
+
+ 67%|██████▋   | 2/3 [00:14<00:07,  7.24s/it][ADEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1435, min=-2.7433, max=0.6689
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0098, min=-3.0610, max=2.9492
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 251], mean=118.76569143282313
+DEBUG [TRT] State: shape=(8,), first10=[-4.40835776e-02  1.44852578e-01  9.45353171e-01 -8.23849246e-04
+  1.10990846e-01  1.50699093e-02  1.09025482e-02 -1.09578903e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0685, min=-0.9529, max=0.9686
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1488, min=-1.0000, max=0.8745
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1520, min=-2.7708, max=0.5175
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0331, min=-2.4717, max=2.5156
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 247], mean=118.6448899872449
+DEBUG [TRT] State: shape=(8,), first10=[-0.04476492  0.14464299  0.96158257 -0.04334993  0.10465823  0.01743244
+  0.00256398 -0.00262941]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0695, min=-0.9529, max=0.9373
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1168, min=-1.0000, max=0.8588
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1548, min=-2.8199, max=0.9521
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0180, min=-2.9271, max=3.3232
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 248], mean=118.32186038477892
+DEBUG [TRT] State: shape=(8,), first10=[-0.03565672  0.14499706  1.00211191 -0.09448501  0.0638232   0.03354183
+  0.00220355 -0.002265  ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0720, min=-0.9529, max=0.9451
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1258, min=-1.0000, max=0.7647
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1486, min=-2.8790, max=0.9712
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0086, min=-2.6195, max=3.3332
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 243], mean=118.11598506590136
+DEBUG [TRT] State: shape=(8,), first10=[-0.00765143  0.14704704  1.05214262 -0.1375651   0.04801584  0.04162859
+  0.00217573 -0.00223933]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0736, min=-0.9529, max=0.9059
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1382, min=-0.9922, max=0.7647
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1289, min=-2.9287, max=0.9725
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0567, min=-2.4515, max=2.8154
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 251], mean=117.87899925595238
+DEBUG [TRT] State: shape=(8,), first10=[ 0.0405333   0.14719969  1.05899472 -0.16741313  0.07043329  0.03548103
+  0.0021674  -0.00223056]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0755, min=-0.9529, max=0.9686
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1406, min=-1.0000, max=0.7882
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1071, min=-2.9632, max=0.9729
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0336, min=-2.8147, max=2.7928
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 246], mean=117.5225605867347
+DEBUG [TRT] State: shape=(8,), first10=[ 0.06504248  0.15235333  1.02443833 -0.17886963  0.06464194  0.00490144
+  0.00216594 -0.00222436]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0783, min=-0.9529, max=0.9294
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1263, min=-1.0000, max=0.8118
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1061, min=-2.9765, max=0.9733
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0209, min=-2.9414, max=2.9332
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 243], mean=117.34833386479592
+DEBUG [TRT] State: shape=(8,), first10=[ 0.05656238  0.15440178  0.97962718 -0.16369333  0.03040237 -0.01506914
+  0.00216933 -0.00221592]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0796, min=-0.9529, max=0.9059
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1119, min=-1.0000, max=0.8196
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1212, min=-2.9589, max=0.9737
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0221, min=-2.6151, max=2.5845
+===== RESULT: Episode 2/3: SUCCESS =====
+DEBUG [TRT] Task ID: 0, Desc: pick up the black bowl between the plate and the ramekin and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.39086415816327
+DEBUG [TRT] State: shape=(8,), first10=[-2.00501341e-01 -3.26849405e-03  1.18724183e+00 -2.83571160e-03
+ -5.48904798e-02 -1.12595918e-03  3.87260678e-02 -3.87195708e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0636, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0328, min=-0.9765, max=0.8196
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2559, min=-2.7731, max=0.9180
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0463, min=-3.1963, max=2.5782
+DEBUG Actions: min=-0.9901197002232969, max=0.8902081757143735, mean=0.02270464379649519, has_nan=False
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.46255846088435
+DEBUG [TRT] State: shape=(8,), first10=[-1.86438046e-01  7.11329684e-03  1.19234182e+00  4.57679554e-04
+ -5.60217133e-02  1.01607242e-02  3.90816657e-02 -3.90244627e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0630, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0227, min=-0.9922, max=0.8431
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2408, min=-2.7693, max=0.9364
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.1028, min=-3.4245, max=2.8132
+DEBUG Actions: min=-1.0040029644480943, max=0.9035079014532564, mean=0.05423808307865048, has_nan=False
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.6012037627551
+DEBUG [TRT] State: shape=(8,), first10=[-0.13977846  0.03808774  1.19391688  0.00339973 -0.03860614  0.01052259
+  0.03927393 -0.03920469]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0620, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0389, min=-0.9686, max=0.8353
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2023, min=-2.7659, max=0.9464
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0397, min=-2.0875, max=2.4597
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.53148915816327
+DEBUG [TRT] State: shape=(8,), first10=[-0.08430569  0.06718058  1.1860866   0.00274456 -0.02674188  0.0164507
+  0.03942321 -0.03935465]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0625, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1058, min=-0.9686, max=0.8275
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1621, min=-2.7666, max=0.9541
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.1029, min=-3.0699, max=2.5343
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 238], mean=120.04274952168367
+DEBUG [TRT] State: shape=(8,), first10=[-0.03209787  0.09679908  1.15105306  0.00244446 -0.01466595  0.01262169
+  0.03954401 -0.03947423]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0585, min=-0.9529, max=0.8667
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1774, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1303, min=-2.7670, max=0.9604
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0049, min=-2.8830, max=2.5900
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=118.55929793792517
+DEBUG [TRT] State: shape=(8,), first10=[-0.01269994  0.11561463  1.10084612 -0.002912   -0.01697144 -0.00672372
+  0.03963405 -0.03957734]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0701, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1932, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1267, min=-2.7732, max=0.9650
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0367, min=-2.6425, max=2.9168
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=117.93295599489795
+DEBUG [TRT] State: shape=(8,), first10=[-0.01955353  0.12704337  1.04943734 -0.0012016  -0.02272666 -0.02227283
+  0.03970992 -0.03965666]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0750, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1829, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1384, min=-2.7712, max=0.9690
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.1390, min=-3.0640, max=3.2808
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=117.97002551020408
+DEBUG [TRT] State: shape=(8,), first10=[-0.04501747  0.13728472  0.99552879  0.00324403 -0.02097831 -0.03120558
+  0.03977253 -0.0397187 ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0747, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1484, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1588, min=-2.7661, max=0.9722
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0630, min=-2.8281, max=2.6971
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=118.42072571215986
+DEBUG [TRT] State: shape=(8,), first10=[-0.07096706  0.13960252  0.94278056  0.00529709 -0.00343226 -0.04584087
+  0.0373344  -0.03726945]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0712, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1773, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1827, min=-2.7637, max=0.8459
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+
+100%|██████████| 3/3 [00:21<00:00,  7.31s/it][A100%|██████████| 3/3 [00:21<00:00,  7.31s/it]
+ 10%|█         | 1/10 [00:23<03:32, 23.65s/it]DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0993, min=-2.6470, max=3.0186
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=118.6064453125
+DEBUG [TRT] State: shape=(8,), first10=[-0.0831924   0.13977373  0.9299963   0.00153611  0.0213444  -0.05071235
+  0.01588682 -0.01580393]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0698, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1738, min=-1.0000, max=0.7804
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1905, min=-2.7680, max=0.4624
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0767, min=-2.3181, max=2.4235
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=118.46152875212584
+DEBUG [TRT] State: shape=(8,), first10=[-0.08389095  0.14209456  0.94541642 -0.04999892  0.03360871 -0.05167944
+  0.0022966  -0.00219967]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0709, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1319, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1930, min=-2.8276, max=0.9746
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.1409, min=-2.4440, max=2.8430
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=118.17849835246598
+DEBUG [TRT] State: shape=(8,), first10=[-0.07484163  0.14730786  0.98240332 -0.12719416  0.02103327 -0.05244182
+  0.00182424 -0.0017072 ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0731, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1009, min=-1.0000, max=0.7725
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1903, min=-2.9168, max=1.0003
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.1256, min=-2.5734, max=2.4481
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=117.95632706207483
+DEBUG [TRT] State: shape=(8,), first10=[-0.05245927  0.14983224  1.03383495 -0.19821039 -0.00310508 -0.03865785
+  0.00182183 -0.00170408]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0749, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1073, min=-1.0000, max=0.7647
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1766, min=-2.9988, max=1.0004
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0284, min=-2.9230, max=2.4180
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=117.6530147215136
+DEBUG [TRT] State: shape=(8,), first10=[-0.01342914  0.1573448   1.06920851 -0.25630231  0.01281345 -0.01278504
+  0.00181967 -0.00170416]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0772, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1220, min=-0.9922, max=0.7647
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1500, min=-3.0659, max=1.0004
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0201, min=-3.1149, max=2.4820
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 242], mean=117.20677880527211
+DEBUG [TRT] State: shape=(8,), first10=[ 0.03391193  0.1598016   1.06685103 -0.30396601  0.03496064 -0.02064299
+  0.00181306 -0.00170963]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0807, min=-0.9529, max=0.8980
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1235, min=-1.0000, max=0.8039
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1325, min=-3.1210, max=1.0001
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0182, min=-2.8658, max=2.3046
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 245], mean=116.97483524659864
+DEBUG [TRT] State: shape=(8,), first10=[ 0.06956717  0.1623012   1.03579711 -0.33654594  0.05661508 -0.05188351
+  0.00181085 -0.00171163]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0826, min=-0.9529, max=0.9216
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1135, min=-1.0000, max=0.8118
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1281, min=-3.1586, max=1.0000
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0476, min=-3.1055, max=2.4529
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 244], mean=116.85394743835035
+DEBUG [TRT] State: shape=(8,), first10=[ 0.07110721  0.16379548  0.98788243 -0.3324509   0.04827437 -0.05934368
+  0.00181237 -0.00171079]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0835, min=-0.9529, max=0.9137
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1104, min=-1.0000, max=0.8196
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1375, min=-3.1539, max=1.0001
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0043, min=-2.3585, max=2.7752
+===== RESULT: Episode 3/3: SUCCESS =====
+===== TASK 0 COMPLETE: 3/3 (100.00%) =====
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+DEBUG [TRT] InitState[0]: shape=(92,), mean=0.13935676991805657, first10=[ 0.00000000e+00  1.29388721e-02 -2.00546496e-01  1.96853965e-03
+ -2.44585237e+00  8.17410117e-03  2.22499861e+00  7.62673719e-01
+  2.08330000e-02 -2.08330000e-02]
+
+  0%|          | 0/3 [00:00<?, ?it/s][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+ 33%|███▎      | 1/3 [00:02<00:04,  2.24s/it][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+ 67%|██████▋   | 2/3 [00:04<00:02,  2.22s/it][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+100%|██████████| 3/3 [00:06<00:00,  2.16s/it][A100%|██████████| 3/3 [00:06<00:00,  2.18s/it]
+ 20%|██        | 2/10 [00:30<01:51, 13.92s/it]DEBUG [TRT] Task ID: 1, Desc: pick up the black bowl next to the ramekin and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.27731717687075
+DEBUG [TRT] State: shape=(8,), first10=[-2.08966682e-01  5.33552476e-03  1.18472516e+00  1.60647667e-03
+ -5.57996710e-02 -4.72293390e-04  3.87235280e-02 -3.87220437e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0645, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0089, min=-0.9765, max=0.8510
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2564, min=-2.7679, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0394, min=-2.3052, max=2.8611
+===== RESULT: Episode 1/3: FAILURE =====
+DEBUG [TRT] Task ID: 1, Desc: pick up the black bowl next to the ramekin and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.72948554421768
+DEBUG [TRT] State: shape=(8,), first10=[-2.05716943e-01  1.40105831e-02  1.16741444e+00  5.65992045e-04
+ -5.71073841e-02  2.48760756e-04  3.87230467e-02 -3.87224965e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0609, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0330, min=-0.9765, max=0.8510
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2548, min=-2.7691, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0765, min=-3.0003, max=2.5108
+===== RESULT: Episode 2/3: FAILURE =====
+DEBUG [TRT] Task ID: 1, Desc: pick up the black bowl next to the ramekin and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 231], mean=118.9896165497449
+DEBUG [TRT] State: shape=(8,), first10=[-2.06960779e-01 -4.41078671e-03  1.18365483e+00  2.28839803e-03
+ -5.55950618e-02  7.01681474e-04  3.87205676e-02 -3.87250138e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0667, min=-0.9529, max=0.8118
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0074, min=-0.9765, max=0.8196
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2595, min=-2.7672, max=0.9177
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0238, min=-2.4341, max=2.5946
+===== RESULT: Episode 3/3: FAILURE =====
+===== TASK 1 COMPLETE: 0/3 (0.00%) =====
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+DEBUG [TRT] InitState[0]: shape=(92,), mean=0.1398337442675567, first10=[ 0.          0.00671314 -0.19188476 -0.0099483  -2.43256078 -0.03991007
+  2.193524    0.80137118  0.020833   -0.020833  ]
+
+  0%|          | 0/3 [00:00<?, ?it/s][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+ 33%|███▎      | 1/3 [00:02<00:04,  2.32s/it][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+ 67%|██████▋   | 2/3 [00:04<00:02,  2.23s/it][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+100%|██████████| 3/3 [00:06<00:00,  2.18s/it][A100%|██████████| 3/3 [00:06<00:00,  2.20s/it]
+ 30%|███       | 3/10 [00:37<01:15, 10.84s/it]DEBUG [TRT] Task ID: 2, Desc: pick up the black bowl from table center and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.34765625
+DEBUG [TRT] State: shape=(8,), first10=[-2.09368550e-01 -4.00698370e-03  1.18501374e+00  2.76892057e-04
+ -5.55796445e-02  8.56424579e-04  3.87200051e-02 -3.87255538e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0639, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0202, min=-0.9765, max=0.8275
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2605, min=-2.7695, max=0.9177
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=295.3900, min=0.0000, max=18075.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0800, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0394, min=-2.3052, max=2.8611
+===== RESULT: Episode 1/3: FAILURE =====
+DEBUG [TRT] Task ID: 2, Desc: pick up the black bowl from table center and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.74576822916667
+DEBUG [TRT] State: shape=(8,), first10=[-2.02351698e-01 -6.79025949e-03  1.18010160e+00 -1.85890494e-03
+ -5.71681292e-02 -4.87124795e-04  3.87238366e-02 -3.87217534e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0608, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0131, min=-0.9765, max=0.8196
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2597, min=-2.7719, max=0.9179
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=295.3900, min=0.0000, max=18075.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0800, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0765, min=-3.0003, max=2.5108
+===== RESULT: Episode 2/3: FAILURE =====
+DEBUG [TRT] Task ID: 2, Desc: pick up the black bowl from table center and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 231], mean=119.18526785714286
+DEBUG [TRT] State: shape=(8,), first10=[-1.97859680e-01 -6.68573112e-03  1.18069339e+00 -1.10960581e-03
+ -5.46899542e-02 -2.36984481e-04  3.87230582e-02 -3.87225194e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0652, min=-0.9529, max=0.8118
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0316, min=-0.9765, max=0.8431
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2569, min=-2.7711, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=295.3900, min=0.0000, max=18075.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0800, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0238, min=-2.4341, max=2.5946
+===== RESULT: Episode 3/3: FAILURE =====
+===== TASK 2 COMPLETE: 0/3 (0.00%) =====
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+DEBUG [TRT] InitState[0]: shape=(92,), mean=0.13987242866493885, first10=[ 0.         -0.00651065 -0.16603781 -0.01921947 -2.44992866  0.0056406
+  2.26177245  0.7712468   0.020833   -0.020833  ]
+
+  0%|          | 0/3 [00:00<?, ?it/s][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+ 33%|███▎      | 1/3 [00:02<00:04,  2.33s/it][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+ 67%|██████▋   | 2/3 [00:04<00:02,  2.22s/it][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+100%|██████████| 3/3 [00:06<00:00,  2.18s/it][A100%|██████████| 3/3 [00:06<00:00,  2.20s/it]
+ 40%|████      | 4/10 [00:45<00:56,  9.39s/it]DEBUG [TRT] Task ID: 3, Desc: pick up the black bowl on the cookie box and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=120.75657684948979
+DEBUG [TRT] State: shape=(8,), first10=[-2.06136755e-01 -8.13992935e-03  1.17399112e+00 -8.35749711e-04
+ -5.56519169e-02 -3.42290532e-04  3.87231101e-02 -3.87224599e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0529, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0153, min=-0.9765, max=0.8118
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2632, min=-2.7708, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=362.8650, min=0.0000, max=18075.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0850, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0394, min=-2.3052, max=2.8611
+===== RESULT: Episode 1/3: FAILURE =====
+DEBUG [TRT] Task ID: 3, Desc: pick up the black bowl on the cookie box and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 236], mean=120.86531409438776
+DEBUG [TRT] State: shape=(8,), first10=[-2.04678161e-01 -4.52802447e-03  1.17956105e+00 -1.36308997e-03
+ -5.52608859e-02 -4.15635712e-04  3.87238518e-02 -3.87217346e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0520, min=-0.9529, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0035, min=-0.9765, max=0.8196
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2598, min=-2.7714, max=0.9179
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=362.8650, min=0.0000, max=18075.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0850, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0765, min=-3.0003, max=2.5108
+===== RESULT: Episode 2/3: FAILURE =====
+DEBUG [TRT] Task ID: 3, Desc: pick up the black bowl on the cookie box and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 236], mean=120.81600100977892
+DEBUG [TRT] State: shape=(8,), first10=[-2.09051211e-01  1.08087037e-02  1.16559541e+00  1.27007908e-03
+ -5.77804731e-02 -5.86980243e-04  3.87240524e-02 -3.87214946e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0524, min=-0.9529, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0180, min=-0.9765, max=0.8745
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2582, min=-2.7683, max=0.9179
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=362.8650, min=0.0000, max=18075.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0850, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0238, min=-2.4341, max=2.5946
+===== RESULT: Episode 3/3: FAILURE =====
+===== TASK 3 COMPLETE: 0/3 (0.00%) =====
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+DEBUG [TRT] InitState[0]: shape=(92,), mean=0.1383011505151184, first10=[ 0.         -0.02604714 -0.14518728  0.02022834 -2.42979041  0.0284113
+  2.22961937  0.77586927  0.020833   -0.020833  ]
+
+  0%|          | 0/3 [00:00<?, ?it/s][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+ 33%|███▎      | 1/3 [00:02<00:04,  2.32s/it][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+ 67%|██████▋   | 2/3 [00:04<00:02,  2.21s/it][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+100%|██████████| 3/3 [00:06<00:00,  2.18s/it][A100%|██████████| 3/3 [00:06<00:00,  2.20s/it]
+ 50%|█████     | 5/10 [00:52<00:42,  8.58s/it]DEBUG [TRT] Task ID: 4, Desc: pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 219], mean=117.50672300170068
+DEBUG [TRT] State: shape=(8,), first10=[-2.04185052e-01 -7.23385679e-05  1.17290845e+00  6.20020303e-04
+ -5.65141366e-02 -6.76245985e-04  3.87244149e-02 -3.87211732e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0784, min=-0.9608, max=0.7176
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0009, min=-0.9765, max=0.8275
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2589, min=-2.7691, max=0.9179
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=642.7550, min=0.0000, max=39635.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1050, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0675, min=-3.5264, max=2.7140
+===== RESULT: Episode 1/3: FAILURE =====
+DEBUG [TRT] Task ID: 4, Desc: pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 210], mean=118.93386612457483
+DEBUG [TRT] State: shape=(8,), first10=[-2.07690202e-01  1.68921505e-02  1.18454953e+00  3.44050278e-03
+ -5.55406674e-02  4.78079124e-04  3.87221763e-02 -3.87233787e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0672, min=-0.9529, max=0.6471
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0323, min=-0.9765, max=0.8745
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2505, min=-2.7658, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=642.7550, min=0.0000, max=39635.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1050, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0659, min=-3.0003, max=2.5108
+===== RESULT: Episode 2/3: FAILURE =====
+DEBUG [TRT] Task ID: 4, Desc: pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 220], mean=118.33786405187075
+DEBUG [TRT] State: shape=(8,), first10=[-2.11708163e-01 -4.37685533e-03  1.16444288e+00 -1.49598001e-03
+ -5.77867816e-02 -4.62423770e-04  3.87239647e-02 -3.87216226e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0719, min=-0.9608, max=0.7255
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0070, min=-0.9843, max=0.8275
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2666, min=-2.7715, max=0.9179
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=642.7550, min=0.0000, max=39635.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1050, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0602, min=-2.8472, max=3.2835
+===== RESULT: Episode 3/3: FAILURE =====
+===== TASK 4 COMPLETE: 0/3 (0.00%) =====
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+DEBUG [TRT] InitState[0]: shape=(92,), mean=0.14192027238096178, first10=[ 0.00000000e+00  4.13132279e-03 -1.50901679e-01  2.42375075e-03
+ -2.45559186e+00  4.12586750e-02  2.21960909e+00  7.87211819e-01
+  2.08330000e-02 -2.08330000e-02]
+
+  0%|          | 0/3 [00:00<?, ?it/s][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+ 33%|███▎      | 1/3 [00:02<00:04,  2.29s/it][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+ 67%|██████▋   | 2/3 [00:04<00:02,  2.19s/it][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+100%|██████████| 3/3 [00:06<00:00,  2.17s/it][A100%|██████████| 3/3 [00:06<00:00,  2.18s/it]
+ 60%|██████    | 6/10 [00:59<00:32,  8.08s/it]DEBUG [TRT] Task ID: 5, Desc: pick up the black bowl on the ramekin and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.41921768707483
+DEBUG [TRT] State: shape=(8,), first10=[-2.12025240e-01  5.12137270e-03  1.16721688e+00  3.56890544e-04
+ -5.82355325e-02 -1.02519125e-03  3.87255076e-02 -3.87200624e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0634, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0156, min=-0.9843, max=0.7961
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2620, min=-2.7694, max=0.9179
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=862.5150, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0850, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0394, min=-2.3052, max=2.8611
+===== RESULT: Episode 1/3: FAILURE =====
+DEBUG [TRT] Task ID: 5, Desc: pick up the black bowl on the ramekin and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 236], mean=119.71788637329932
+DEBUG [TRT] State: shape=(8,), first10=[-2.10534193e-01  5.83758145e-03  1.17552786e+00  5.60072619e-05
+ -5.61459706e-02  4.98345741e-04  3.87225587e-02 -3.87230214e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0610, min=-0.9529, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0071, min=-0.9765, max=0.7412
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2590, min=-2.7697, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=862.5150, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0850, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0765, min=-3.0003, max=2.5108
+===== RESULT: Episode 2/3: FAILURE =====
+DEBUG [TRT] Task ID: 5, Desc: pick up the black bowl on the ramekin and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 236], mean=119.55212983630952
+DEBUG [TRT] State: shape=(8,), first10=[-2.11057045e-01  1.06618001e-02  1.16543400e+00  3.68305671e-03
+ -5.81666591e-02  5.45003303e-04  3.87221766e-02 -3.87234111e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0623, min=-0.9529, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0029, min=-0.9843, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2589, min=-2.7655, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=862.5150, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0850, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0238, min=-2.4341, max=2.5946
+===== RESULT: Episode 3/3: FAILURE =====
+===== TASK 5 COMPLETE: 0/3 (0.00%) =====
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+DEBUG [TRT] InitState[0]: shape=(92,), mean=0.13387379326708856, first10=[ 0.         -0.03313924 -0.16461371  0.01098166 -2.42382952 -0.00614473
+  2.19769249  0.75934274  0.020833   -0.020833  ]
+
+  0%|          | 0/3 [00:00<?, ?it/s][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+ 33%|███▎      | 1/3 [00:02<00:04,  2.32s/it][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+ 67%|██████▋   | 2/3 [00:04<00:02,  2.20s/it][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+100%|██████████| 3/3 [00:06<00:00,  2.16s/it][A100%|██████████| 3/3 [00:06<00:00,  2.18s/it]
+ 70%|███████   | 7/10 [01:06<00:23,  7.77s/it]DEBUG [TRT] Task ID: 6, Desc: pick up the black bowl next to the cookie box and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 236], mean=119.44340587797619
+DEBUG [TRT] State: shape=(8,), first10=[-2.06028497e-01 -8.31933089e-03  1.18009955e+00  1.36217394e-03
+ -5.77362061e-02  1.05878728e-04  3.87218866e-02 -3.87236785e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0632, min=-0.9608, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0052, min=-0.9922, max=0.8431
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2617, min=-2.7682, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=374.4500, min=0.0000, max=18075.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0394, min=-2.3052, max=2.8611
+===== RESULT: Episode 1/3: FAILURE =====
+DEBUG [TRT] Task ID: 6, Desc: pick up the black bowl next to the cookie box and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 236], mean=120.01549877763605
+DEBUG [TRT] State: shape=(8,), first10=[-1.99387402e-01  3.91912715e-03  1.17715517e+00  6.56705697e-04
+ -5.49981613e-02 -7.25739831e-04  3.87244598e-02 -3.87211162e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0587, min=-0.9608, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0187, min=-0.9686, max=0.8353
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2538, min=-2.7690, max=0.9179
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=374.4500, min=0.0000, max=18075.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0765, min=-3.0003, max=2.5108
+===== RESULT: Episode 2/3: FAILURE =====
+DEBUG [TRT] Task ID: 6, Desc: pick up the black bowl next to the cookie box and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 235], mean=119.04757254464286
+DEBUG [TRT] State: shape=(8,), first10=[-2.15056507e-01 -7.50018814e-04  1.16128094e+00  2.03527978e-03
+ -5.85227401e-02  3.16177253e-04  3.87218850e-02 -3.87237065e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0663, min=-0.9608, max=0.8431
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0097, min=-0.9843, max=0.8588
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2668, min=-2.7674, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=374.4500, min=0.0000, max=18075.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0238, min=-2.4341, max=2.5946
+===== RESULT: Episode 3/3: FAILURE =====
+===== TASK 6 COMPLETE: 0/3 (0.00%) =====
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+DEBUG [TRT] InitState[0]: shape=(92,), mean=0.13457730272565993, first10=[ 0.          0.03158169 -0.14342057  0.01854788 -2.48302965 -0.00470631
+  2.24781863  0.76774716  0.020833   -0.020833  ]
+
+  0%|          | 0/3 [00:00<?, ?it/s][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+ 33%|███▎      | 1/3 [00:02<00:04,  2.31s/it][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+ 67%|██████▋   | 2/3 [00:04<00:02,  2.20s/it][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+100%|██████████| 3/3 [00:06<00:00,  2.18s/it][A100%|██████████| 3/3 [00:06<00:00,  2.20s/it]
+ 80%|████████  | 8/10 [01:13<00:15,  7.57s/it]DEBUG [TRT] Task ID: 7, Desc: pick up the black bowl on the stove and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=120.93782552083333
+DEBUG [TRT] State: shape=(8,), first10=[-2.16855054e-01  1.53911791e-02  1.15790392e+00  3.28712535e-03
+ -5.86171922e-02  3.73535425e-04  3.87226703e-02 -3.87228763e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0515, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0192, min=-0.9843, max=0.8431
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2615, min=-2.7660, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=446.4850, min=0.0000, max=37932.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0800, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0394, min=-2.3052, max=2.8611
+===== RESULT: Episode 1/3: FAILURE =====
+DEBUG [TRT] Task ID: 7, Desc: pick up the black bowl on the stove and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 231], mean=120.70120509141157
+DEBUG [TRT] State: shape=(8,), first10=[-2.13947048e-01  8.51907444e-03  1.17013025e+00  1.42414845e-03
+ -5.83333572e-02 -6.03724161e-04  3.87241010e-02 -3.87214529e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0533, min=-0.9529, max=0.8118
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0263, min=-0.9686, max=0.8431
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2608, min=-2.7682, max=0.9179
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=446.4850, min=0.0000, max=37932.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0800, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0765, min=-3.0003, max=2.5108
+===== RESULT: Episode 2/3: FAILURE =====
+DEBUG [TRT] Task ID: 7, Desc: pick up the black bowl on the stove and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 236], mean=120.58608365221089
+DEBUG [TRT] State: shape=(8,), first10=[-2.02070893e-01  2.14319176e-03  1.17891307e+00  3.21172101e-04
+ -5.50945751e-02  6.39160127e-04  3.87214157e-02 -3.87241763e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0542, min=-0.9529, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0068, min=-0.9765, max=0.8510
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2554, min=-2.7694, max=0.9177
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=446.4850, min=0.0000, max=37932.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0800, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0238, min=-2.4341, max=2.5946
+===== RESULT: Episode 3/3: FAILURE =====
+===== TASK 7 COMPLETE: 0/3 (0.00%) =====
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+DEBUG [TRT] InitState[0]: shape=(92,), mean=0.14197101687584124, first10=[ 0.         -0.01428359 -0.17808337 -0.02550363 -2.44355065 -0.00672515
+  2.2269603   0.77076357  0.020833   -0.020833  ]
+
+  0%|          | 0/3 [00:00<?, ?it/s][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+ 33%|███▎      | 1/3 [00:02<00:04,  2.30s/it][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+ 67%|██████▋   | 2/3 [00:04<00:02,  2.19s/it][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+100%|██████████| 3/3 [00:06<00:00,  2.16s/it][A100%|██████████| 3/3 [00:06<00:00,  2.18s/it]
+ 90%|█████████ | 9/10 [01:20<00:07,  7.43s/it]DEBUG [TRT] Task ID: 8, Desc: pick up the black bowl next to the plate and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.31709715136054
+DEBUG [TRT] State: shape=(8,), first10=[-2.08653886e-01 -1.33079721e-02  1.17845899e+00 -8.01135186e-04
+ -5.56298473e-02  4.84401107e-05  3.87221561e-02 -3.87233789e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0642, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0079, min=-0.9765, max=0.8353
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2657, min=-2.7707, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=312.4650, min=0.0000, max=18075.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0850, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0394, min=-2.3052, max=2.8611
+===== RESULT: Episode 1/3: FAILURE =====
+DEBUG [TRT] Task ID: 8, Desc: pick up the black bowl next to the plate and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.76209077380952
+DEBUG [TRT] State: shape=(8,), first10=[-2.02696434e-01  4.98291025e-03  1.17462505e+00  2.64656068e-03
+ -5.74034356e-02  3.91752695e-04  3.87220605e-02 -3.87235301e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0607, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0274, min=-0.9765, max=0.8275
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2552, min=-2.7667, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=312.4650, min=0.0000, max=18075.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0850, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0765, min=-3.0003, max=2.5108
+===== RESULT: Episode 2/3: FAILURE =====
+DEBUG [TRT] Task ID: 8, Desc: pick up the black bowl next to the plate and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 231], mean=119.17416693239795
+DEBUG [TRT] State: shape=(8,), first10=[-2.07641733e-01 -1.93747708e-02  1.18412715e+00 -1.24166046e-03
+ -5.55097757e-02 -7.90789105e-05  3.87218892e-02 -3.87236131e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0653, min=-0.9529, max=0.8118
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0245, min=-0.9765, max=0.8118
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2666, min=-2.7712, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=312.4650, min=0.0000, max=18075.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0850, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0238, min=-2.4341, max=2.5946
+===== RESULT: Episode 3/3: FAILURE =====
+===== TASK 8 COMPLETE: 0/3 (0.00%) =====
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+DEBUG [TRT] InitState[0]: shape=(92,), mean=0.13386254912948478, first10=[ 0.         -0.03641788 -0.18693179  0.02411552 -2.45261795 -0.01159895
+  2.21564817  0.79910455  0.020833   -0.020833  ]
+
+  0%|          | 0/3 [00:00<?, ?it/s][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+ 33%|███▎      | 1/3 [00:02<00:04,  2.31s/it][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+ 67%|██████▋   | 2/3 [00:04<00:02,  2.20s/it][AWARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+100%|██████████| 3/3 [00:06<00:00,  2.16s/it][A100%|██████████| 3/3 [00:06<00:00,  2.18s/it]
+100%|██████████| 10/10 [01:27<00:00,  7.34s/it]100%|██████████| 10/10 [01:27<00:00,  8.79s/it]
+DEBUG [TRT] Task ID: 9, Desc: pick up the black bowl on the wooden cabinet and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=121.21272454294218
+DEBUG [TRT] State: shape=(8,), first10=[-2.11997547e-01 -5.04372135e-03  1.17818518e+00 -3.69395131e-04
+ -5.58969244e-02  4.68940582e-04  3.87217177e-02 -3.87238481e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0493, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0044, min=-0.9843, max=0.8510
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2638, min=-2.7702, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=427.6800, min=0.0000, max=22402.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0850, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0394, min=-2.3052, max=2.8611
+===== RESULT: Episode 1/3: FAILURE =====
+DEBUG [TRT] Task ID: 9, Desc: pick up the black bowl on the wooden cabinet and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 235], mean=121.354598480017
+DEBUG [TRT] State: shape=(8,), first10=[-2.05286561e-01  1.43764931e-02  1.17563023e+00  1.88050462e-04
+ -5.75430259e-02  3.41871759e-04  3.87231403e-02 -3.87223996e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0482, min=-0.9529, max=0.8431
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0296, min=-0.9765, max=0.8431
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2528, min=-2.7696, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=427.6800, min=0.0000, max=22402.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0850, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0765, min=-3.0003, max=2.5108
+===== RESULT: Episode 2/3: FAILURE =====
+DEBUG [TRT] Task ID: 9, Desc: pick up the black bowl on the wooden cabinet and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 236], mean=120.78904257015306
+DEBUG [TRT] State: shape=(8,), first10=[-2.13780062e-01 -6.23595176e-03  1.16500778e+00  3.95259619e-04
+ -5.82072370e-02 -9.62824508e-04  3.87254248e-02 -3.87201633e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0526, min=-0.9529, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0023, min=-0.9843, max=0.8431
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2681, min=-2.7693, max=0.9179
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=427.6800, min=0.0000, max=22402.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0850, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0238, min=-2.4341, max=2.5946
+===== RESULT: Episode 3/3: FAILURE =====
+===== TASK 9 COMPLETE: 0/3 (0.00%) =====
+Exception ignored in: <function MjRenderContext.__del__ at 0xfffeaeef2fc0>
+Traceback (most recent call last):
+  File "/home/taco/.venv/lib/python3.12/site-packages/robosuite/utils/binding_utils.py", line 199, in __del__
+    self.gl_ctx.free()
+  File "/home/taco/.venv/lib/python3.12/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/home/taco/.venv/lib/python3.12/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0xfffe4a54c450>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0xfffeaf683f50>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0xfffeaf683f50>,
+		<OpenGL._opaque.EGLContext_pointer object at 0xfffeaf683e50>,
+	),
+	result = 0
+)
+Exception ignored in: <function EGLGLContext.__del__ at 0xfffeaeef2e80>
+Traceback (most recent call last):
+  File "/home/taco/.venv/lib/python3.12/site-packages/robosuite/renderers/context/egl_context.py", line 155, in __del__
+    self.free()
+  File "/home/taco/.venv/lib/python3.12/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/home/taco/.venv/lib/python3.12/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0xfffe4a54c450>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0xfffeaf683f50>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0xfffeaf683f50>,
+		<OpenGL._opaque.EGLContext_pointer object at 0xfffeaf683e50>,
+	),
+	result = 0
+)
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

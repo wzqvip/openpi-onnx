@@ -1,3 +1,4 @@
+<!-- Last Updated: 2026-01-29 -->
 # DROID Policies in openpi
 
 We offer instructions for:

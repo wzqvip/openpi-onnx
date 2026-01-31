@@ -1,0 +1,1189 @@
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/taco/.venv/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+<frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+<frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+DEBUG: tensorrt_remote_policy file: /home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py
+DEBUG Stats Keys: ['state', 'actions']
+DEBUG Stats Keys: ['state', 'actions']
+DEBUG: input_transforms:
+  0: LiberoInputs(model_type=<ModelType.PI05: 'pi05'>)
+  1: ImageNormalize()
+  2: Normalize(norm_stats={'state': NormStats(mean=array([-0.0436387 ,  0.03525488,  0.76370335,  2.96736836, -0.21080354,
+       -0.12975203,  0.02778869, -0.02801023]), std=array([0.10337679, 0.15188012, 0.3815425 , 0.35452312, 0.92917639,
+       0.33074805, 0.01412893, 0.0139609 ]), q01=array([-3.52446890e-01, -2.68248648e-01,  4.08374592e-02,  1.53176537e+00,
+       -2.71523300e+00, -1.07653814e+00,  1.71582562e-03, -4.00372256e-02]), q99=array([ 1.38912787e-01,  3.25199161e-01,  1.25689629e+00,  3.26276857e+00,
+        2.44372332e+00,  5.63846984e-01,  4.03078087e-02, -1.71316169e-03])), 'actions': NormStats(mean=array([ 0.02682784,  0.08886061, -0.09983397,  0.00024007,  0.00128381,
+       -0.00294432, -0.13052438]), std=array([0.33119109, 0.37191954, 0.45225635, 0.03948825, 0.06278067,
+       0.0731762 , 0.99144512]), q01=array([-0.747375  , -0.796125  , -0.9375    , -0.115803  , -0.16942972,
+       -0.19450221, -1.        ]), q99=array([0.937125  , 0.8595    , 0.937125  , 0.14022601, 0.18103543,
+       0.31154571, 0.9996    ]))}, use_quantiles=True, strict=False)
+  3: InjectDefaultPrompt(prompt=None)
+  4: TokenizePrompt(tokenizer=<openpi.models.tokenizer.PaligemmaTokenizer object at 0xfffe37cbdf10>, discrete_state_input=False)
+DEBUG: Padding action stats from 7 to 32
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  0%|          | 0/10 [00:00<?, ?it/s][Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+DEBUG [TRT] InitState[0]: shape=(92,), mean=0.14017316975601676, first10=[ 0.00000000e+00 -1.38453941e-04 -1.76734475e-01 -3.65575975e-02
+ -2.45711298e+00  5.93502672e-03  2.23521997e+00  7.99383438e-01
+  2.08330000e-02 -2.08330000e-02]
+
+  0%|          | 0/3 [00:00<?, ?it/s][ADEBUG [TRT] Task ID: 0, Desc: pick up the black bowl between the plate and the ramekin and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.49360251913265
+DEBUG [TRT] State: shape=(8,), first10=[-2.11241627e-01 -1.10906019e-02  1.17424952e+00 -1.81290888e-03
+ -5.58544375e-02 -5.29339427e-04  3.87233651e-02 -3.87222021e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0628, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0233, min=-0.9843, max=0.8275
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2671, min=-2.7719, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0394, min=-2.3052, max=2.8611
+DEBUG Actions: min=-0.9771943895134032, max=0.8766009122670292, mean=0.015970555780217943, has_nan=False
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.59795519770408
+DEBUG [TRT] State: shape=(8,), first10=[-0.19778465  0.00134269  1.17679469  0.00270549 -0.03658523  0.00946831
+  0.03908517 -0.03901755]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0620, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0126, min=-0.9765, max=0.8588
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2510, min=-2.7667, max=0.9366
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0640, min=-3.0825, max=2.5108
+DEBUG Actions: min=-0.9826398561563194, max=0.9177407827463148, mean=0.0610327431794843, has_nan=False
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.85275164753402
+DEBUG [TRT] State: shape=(8,), first10=[-0.15296776  0.03064679  1.17966889  0.00435413 -0.00592344  0.03776672
+  0.03927192 -0.039204  ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0600, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0361, min=-0.9686, max=0.8667
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2092, min=-2.7648, max=0.9463
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0334, min=-2.2695, max=2.5946
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.86292915603741
+DEBUG [TRT] State: shape=(8,), first10=[-0.09804874  0.06104083  1.17738591  0.00448309  0.01142576  0.06693851
+  0.03941518 -0.03936053]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0599, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0935, min=-0.9922, max=0.8667
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1637, min=-2.7646, max=0.9537
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0281, min=-3.2555, max=2.3634
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=120.42415364583333
+DEBUG [TRT] State: shape=(8,), first10=[-0.04168819  0.08827934  1.16010397  0.0025918   0.02045673  0.07514175
+  0.03952206 -0.03949446]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0555, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1547, min=-0.9765, max=0.7412
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1259, min=-2.7668, max=0.9592
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0016, min=-2.9057, max=3.7429
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 239], mean=119.2983697385204
+DEBUG [TRT] State: shape=(8,), first10=[-0.00267724  0.10478176  1.11577361 -0.00302639  0.02573907  0.04330438
+  0.03960557 -0.03960446]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0643, min=-0.9529, max=0.8745
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1921, min=-0.9922, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1138, min=-2.7733, max=0.9636
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.1138, min=-2.9914, max=3.5001
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 236], mean=118.4083027742347
+DEBUG [TRT] State: shape=(8,), first10=[ 0.00286385  0.12140578  1.06582325 -0.00248091  0.03353547  0.02842611
+  0.03968237 -0.03968309]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0713, min=-0.9529, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1954, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1161, min=-2.7727, max=0.9675
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0114, min=-3.1262, max=2.9243
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 242], mean=118.3853303039966
+DEBUG [TRT] State: shape=(8,), first10=[-0.01139604  0.14111504  1.01445755  0.00549109  0.054393    0.02678612
+  0.0397444  -0.0397459 ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0715, min=-0.9529, max=0.8980
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1787, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1237, min=-2.7635, max=0.9708
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.1352, min=-2.6819, max=2.8039
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 243], mean=118.5834196960034
+
+ 33%|███▎      | 1/3 [00:07<00:14,  7.37s/it][ADEBUG [TRT] State: shape=(8,), first10=[-0.03890075  0.1487188   0.96015951  0.01016367  0.06864517  0.00839173
+  0.03938855 -0.03941742]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0699, min=-0.9529, max=0.9059
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1596, min=-1.0000, max=0.7569
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1472, min=-2.7581, max=0.9523
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0607, min=-3.2060, max=3.4157
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=118.72667543579932
+DEBUG [TRT] State: shape=(8,), first10=[-0.05071331  0.14665431  0.93697828  0.00413595  0.08653778 -0.00159725
+  0.02066632 -0.02066724]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0688, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1812, min=-1.0000, max=0.7569
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1594, min=-2.7650, max=0.4738
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0978, min=-3.0505, max=2.4811
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 242], mean=118.66177056760205
+DEBUG [TRT] State: shape=(8,), first10=[-0.0509373   0.14677913  0.94777206 -0.03975385  0.07912592  0.00129648
+  0.00383573 -0.00386028]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0693, min=-0.9529, max=0.8980
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1457, min=-1.0000, max=0.8667
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1629, min=-2.8157, max=0.8879
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0129, min=-3.4157, max=2.6912
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 243], mean=118.32716836734694
+DEBUG [TRT] State: shape=(8,), first10=[-0.04151914  0.14890167  0.99020447 -0.10254367  0.04646442  0.01094316
+  0.00198243 -0.00199664]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0719, min=-0.9529, max=0.9059
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1105, min=-1.0000, max=0.7882
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1575, min=-2.8883, max=0.9852
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0081, min=-3.5344, max=2.7205
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 238], mean=118.1023331207483
+DEBUG [TRT] State: shape=(8,), first10=[-0.01671219  0.14859473  1.04308797 -0.16016418  0.02786225  0.02106911
+  0.0019706  -0.00198767]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0737, min=-0.9529, max=0.8667
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1241, min=-1.0000, max=0.7882
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1418, min=-2.9549, max=0.9856
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0619, min=-2.8294, max=3.5582
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 244], mean=117.89513578869048
+DEBUG [TRT] State: shape=(8,), first10=[ 0.02826265  0.15047755  1.05923427 -0.19209122  0.04808686  0.01977034
+  0.0019721  -0.00198837]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0753, min=-0.9529, max=0.9137
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1290, min=-1.0000, max=0.7961
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1187, min=-2.9917, max=0.9856
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0041, min=-2.6976, max=2.9912
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 241], mean=117.63046077806122
+DEBUG [TRT] State: shape=(8,), first10=[ 0.05809828  0.15681182  1.02880097 -0.20906438  0.05558787 -0.01552123
+  0.00197455 -0.0019868 ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0774, min=-0.9529, max=0.8902
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1185, min=-1.0000, max=0.7961
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1145, min=-3.0114, max=0.9857
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0562, min=-3.1146, max=2.9524
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 244], mean=117.47575866284014
+DEBUG [TRT] State: shape=(8,), first10=[ 0.05399531  0.16123017  0.98201171 -0.19335979  0.03019855 -0.03343553
+  0.00198018 -0.00197936]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0786, min=-0.9529, max=0.9137
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1232, min=-1.0000, max=0.8039
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1260, min=-2.9932, max=0.9861
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0184, min=-3.2340, max=2.7660
+===== RESULT: Episode 1/3: SUCCESS =====
+DEBUG [TRT] Task ID: 0, Desc: pick up the black bowl between the plate and the ramekin and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.39492984693878
+DEBUG [TRT] State: shape=(8,), first10=[-2.06850850e-01 -2.23248190e-02  1.17398127e+00 -1.74375111e-03
+ -5.71822187e-02 -2.06870424e-04  3.87220294e-02 -3.87234703e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0636, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0388, min=-0.9765, max=0.8353
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2697, min=-2.7718, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0056, min=-3.1681, max=2.1281
+DEBUG Actions: min=-0.9887195088835656, max=0.883937338261008, mean=-0.011479554960095784, has_nan=False
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.45744977678571
+DEBUG [TRT] State: shape=(8,), first10=[-2.00273720e-01 -1.27196889e-02  1.17572676e+00  4.35941248e-03
+ -4.60021612e-02  1.14351486e-03  3.90780262e-02 -3.90267408e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0631, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0314, min=-0.9922, max=0.8510
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2600, min=-2.7648, max=0.9362
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0324, min=-3.2367, max=3.0896
+DEBUG Actions: min=-0.9894684706114233, max=0.947738310033798, mean=0.04803652073685636, has_nan=False
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.74972762542517
+DEBUG [TRT] State: shape=(8,), first10=[-0.1607346   0.01502429  1.17187363  0.01813006 -0.01315946  0.00283997
+  0.03927077 -0.03920679]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0608, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0260, min=-0.9843, max=0.8431
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2251, min=-2.7489, max=0.9462
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0739, min=-3.0356, max=2.5186
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.92664487670068
+DEBUG [TRT] State: shape=(8,), first10=[-0.1068924   0.04289497  1.16559569  0.02121276  0.00595871  0.01642995
+  0.03942047 -0.03935656]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0594, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0944, min=-0.9686, max=0.8510
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1838, min=-2.7453, max=0.9540
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0471, min=-2.8114, max=3.3751
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 243], mean=120.59180351828232
+DEBUG [TRT] State: shape=(8,), first10=[-0.05037686  0.0708472   1.14494918  0.02174001  0.01885826  0.01618973
+  0.03953931 -0.03947827]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0542, min=-0.9529, max=0.9059
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1623, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1469, min=-2.7447, max=0.9601
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0053, min=-2.7997, max=2.6623
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.47583838222789
+DEBUG [TRT] State: shape=(8,), first10=[-0.00681377  0.09247913  1.09636385  0.01956637  0.03880071  0.00966468
+  0.03963098 -0.03957987]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0629, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1926, min=-0.9922, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1260, min=-2.7472, max=0.9649
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0091, min=-2.7336, max=3.3904
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=118.47803066539116
+DEBUG [TRT] State: shape=(8,), first10=[ 0.0022014   0.11828346  1.04669376  0.02238589  0.05261632  0.01006097
+  0.03971176 -0.03965432]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0708, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1966, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1196, min=-2.7439, max=0.9691
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0827, min=-3.0064, max=3.0162
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 240], mean=118.4178159545068
+DEBUG [TRT] State: shape=(8,), first10=[-0.01142422  0.14141725  0.99643116  0.02586673  0.07025029  0.01469913
+  0.03976958 -0.0397212 ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0712, min=-0.9529, max=0.8824
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1774, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1251, min=-2.7399, max=0.9721
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0354, min=-3.2374, max=3.0175
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 245], mean=118.65229060374149
+DEBUG [TRT] State: shape=(8,), first10=[-0.03571856  0.14541527  0.95457435  0.02292201  0.09137763  0.01842139
+  0.0339189  -0.03395615]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0694, min=-0.9529, max=0.9216
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1533, min=-1.0000, max=0.8118
+
+ 67%|██████▋   | 2/3 [00:14<00:07,  7.24s/it][ADEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1435, min=-2.7433, max=0.6689
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0098, min=-3.0610, max=2.9492
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 251], mean=118.76569143282313
+DEBUG [TRT] State: shape=(8,), first10=[-4.40835776e-02  1.44852578e-01  9.45353171e-01 -8.23849246e-04
+  1.10990846e-01  1.50699093e-02  1.09025482e-02 -1.09578903e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0685, min=-0.9529, max=0.9686
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1488, min=-1.0000, max=0.8745
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1520, min=-2.7708, max=0.5175
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0331, min=-2.4717, max=2.5156
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 247], mean=118.6448899872449
+DEBUG [TRT] State: shape=(8,), first10=[-0.04476492  0.14464299  0.96158257 -0.04334993  0.10465823  0.01743244
+  0.00256398 -0.00262941]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0695, min=-0.9529, max=0.9373
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1168, min=-1.0000, max=0.8588
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1548, min=-2.8199, max=0.9521
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0180, min=-2.9271, max=3.3232
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 248], mean=118.32186038477892
+DEBUG [TRT] State: shape=(8,), first10=[-0.03565672  0.14499706  1.00211191 -0.09448501  0.0638232   0.03354183
+  0.00220355 -0.002265  ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0720, min=-0.9529, max=0.9451
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1258, min=-1.0000, max=0.7647
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1486, min=-2.8790, max=0.9712
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0086, min=-2.6195, max=3.3332
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 243], mean=118.11598506590136
+DEBUG [TRT] State: shape=(8,), first10=[-0.00765143  0.14704704  1.05214262 -0.1375651   0.04801584  0.04162859
+  0.00217573 -0.00223933]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0736, min=-0.9529, max=0.9059
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1382, min=-0.9922, max=0.7647
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1289, min=-2.9287, max=0.9725
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0567, min=-2.4515, max=2.8154
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 251], mean=117.87899925595238
+DEBUG [TRT] State: shape=(8,), first10=[ 0.0405333   0.14719969  1.05899472 -0.16741313  0.07043329  0.03548103
+  0.0021674  -0.00223056]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0755, min=-0.9529, max=0.9686
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1406, min=-1.0000, max=0.7882
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1071, min=-2.9632, max=0.9729
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0336, min=-2.8147, max=2.7928
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 246], mean=117.5225605867347
+DEBUG [TRT] State: shape=(8,), first10=[ 0.06504248  0.15235333  1.02443833 -0.17886963  0.06464194  0.00490144
+  0.00216594 -0.00222436]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0783, min=-0.9529, max=0.9294
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1263, min=-1.0000, max=0.8118
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1061, min=-2.9765, max=0.9733
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0209, min=-2.9414, max=2.9332
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 243], mean=117.34833386479592
+DEBUG [TRT] State: shape=(8,), first10=[ 0.05656238  0.15440178  0.97962718 -0.16369333  0.03040237 -0.01506914
+  0.00216933 -0.00221592]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0796, min=-0.9529, max=0.9059
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1119, min=-1.0000, max=0.8196
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1212, min=-2.9589, max=0.9737
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0221, min=-2.6151, max=2.5845
+===== RESULT: Episode 2/3: SUCCESS =====
+DEBUG [TRT] Task ID: 0, Desc: pick up the black bowl between the plate and the ramekin and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.39086415816327
+DEBUG [TRT] State: shape=(8,), first10=[-2.00501341e-01 -3.26849405e-03  1.18724183e+00 -2.83571160e-03
+ -5.48904798e-02 -1.12595918e-03  3.87260678e-02 -3.87195708e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0636, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0328, min=-0.9765, max=0.8196
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2559, min=-2.7731, max=0.9180
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0463, min=-3.1963, max=2.5782
+DEBUG Actions: min=-0.9901197002232969, max=0.8902081757143735, mean=0.02270464379649519, has_nan=False
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.46255846088435
+DEBUG [TRT] State: shape=(8,), first10=[-1.86438046e-01  7.11329684e-03  1.19234182e+00  4.57679554e-04
+ -5.60217133e-02  1.01607242e-02  3.90816657e-02 -3.90244627e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0630, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0227, min=-0.9922, max=0.8431
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2408, min=-2.7693, max=0.9364
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.1028, min=-3.4245, max=2.8132
+DEBUG Actions: min=-1.0040029644480943, max=0.9035079014532564, mean=0.05423808307865048, has_nan=False
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.6012037627551
+DEBUG [TRT] State: shape=(8,), first10=[-0.13977846  0.03808774  1.19391688  0.00339973 -0.03860614  0.01052259
+  0.03927393 -0.03920469]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0620, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0389, min=-0.9686, max=0.8353
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2023, min=-2.7659, max=0.9464
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0397, min=-2.0875, max=2.4597
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.53148915816327
+DEBUG [TRT] State: shape=(8,), first10=[-0.08430569  0.06718058  1.1860866   0.00274456 -0.02674188  0.0164507
+  0.03942321 -0.03935465]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0625, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1058, min=-0.9686, max=0.8275
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1621, min=-2.7666, max=0.9541
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.1029, min=-3.0699, max=2.5343
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 238], mean=120.04274952168367
+DEBUG [TRT] State: shape=(8,), first10=[-0.03209787  0.09679908  1.15105306  0.00244446 -0.01466595  0.01262169
+  0.03954401 -0.03947423]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0585, min=-0.9529, max=0.8667
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1774, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1303, min=-2.7670, max=0.9604
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0049, min=-2.8830, max=2.5900
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=118.55929793792517
+DEBUG [TRT] State: shape=(8,), first10=[-0.01269994  0.11561463  1.10084612 -0.002912   -0.01697144 -0.00672372
+  0.03963405 -0.03957734]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0701, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1932, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1267, min=-2.7732, max=0.9650
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0367, min=-2.6425, max=2.9168
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=117.93295599489795
+DEBUG [TRT] State: shape=(8,), first10=[-0.01955353  0.12704337  1.04943734 -0.0012016  -0.02272666 -0.02227283
+  0.03970992 -0.03965666]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0750, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1829, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1384, min=-2.7712, max=0.9690
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.1390, min=-3.0640, max=3.2808
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=117.97002551020408
+DEBUG [TRT] State: shape=(8,), first10=[-0.04501747  0.13728472  0.99552879  0.00324403 -0.02097831 -0.03120558
+  0.03977253 -0.0397187 ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0747, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1484, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1588, min=-2.7661, max=0.9722
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0630, min=-2.8281, max=2.6971
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=118.42072571215986
+DEBUG [TRT] State: shape=(8,), first10=[-0.07096706  0.13960252  0.94278056  0.00529709 -0.00343226 -0.04584087
+  0.0373344  -0.03726945]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0712, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1773, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1827, min=-2.7637, max=0.8459
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+
+100%|██████████| 3/3 [00:21<00:00,  7.28s/it][A100%|██████████| 3/3 [00:21<00:00,  7.29s/it]
+ 10%|█         | 1/10 [00:23<03:31, 23.48s/it]DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0993, min=-2.6470, max=3.0186
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=118.6064453125
+DEBUG [TRT] State: shape=(8,), first10=[-0.0831924   0.13977373  0.9299963   0.00153611  0.0213444  -0.05071235
+  0.01588682 -0.01580393]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0698, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1738, min=-1.0000, max=0.7804
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1905, min=-2.7680, max=0.4624
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0767, min=-2.3181, max=2.4235
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=118.46152875212584
+DEBUG [TRT] State: shape=(8,), first10=[-0.08389095  0.14209456  0.94541642 -0.04999892  0.03360871 -0.05167944
+  0.0022966  -0.00219967]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0709, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1319, min=-1.0000, max=0.7490
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1930, min=-2.8276, max=0.9746
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.1409, min=-2.4440, max=2.8430
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=118.17849835246598
+DEBUG [TRT] State: shape=(8,), first10=[-0.07484163  0.14730786  0.98240332 -0.12719416  0.02103327 -0.05244182
+  0.00182424 -0.0017072 ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0731, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1009, min=-1.0000, max=0.7725
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1903, min=-2.9168, max=1.0003
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.1256, min=-2.5734, max=2.4481
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=117.95632706207483
+DEBUG [TRT] State: shape=(8,), first10=[-0.05245927  0.14983224  1.03383495 -0.19821039 -0.00310508 -0.03865785
+  0.00182183 -0.00170408]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0749, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1073, min=-1.0000, max=0.7647
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1766, min=-2.9988, max=1.0004
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0284, min=-2.9230, max=2.4180
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=117.6530147215136
+DEBUG [TRT] State: shape=(8,), first10=[-0.01342914  0.1573448   1.06920851 -0.25630231  0.01281345 -0.01278504
+  0.00181967 -0.00170416]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0772, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1220, min=-0.9922, max=0.7647
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1500, min=-3.0659, max=1.0004
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0201, min=-3.1149, max=2.4820
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 242], mean=117.20677880527211
+DEBUG [TRT] State: shape=(8,), first10=[ 0.03391193  0.1598016   1.06685103 -0.30396601  0.03496064 -0.02064299
+  0.00181306 -0.00170963]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0807, min=-0.9529, max=0.8980
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1235, min=-1.0000, max=0.8039
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1325, min=-3.1210, max=1.0001
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0182, min=-2.8658, max=2.3046
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 245], mean=116.97483524659864
+DEBUG [TRT] State: shape=(8,), first10=[ 0.06956717  0.1623012   1.03579711 -0.33654594  0.05661508 -0.05188351
+  0.00181085 -0.00171163]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0826, min=-0.9529, max=0.9216
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1135, min=-1.0000, max=0.8118
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1281, min=-3.1586, max=1.0000
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0476, min=-3.1055, max=2.4529
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 244], mean=116.85394743835035
+DEBUG [TRT] State: shape=(8,), first10=[ 0.07110721  0.16379548  0.98788243 -0.3324509   0.04827437 -0.05934368
+  0.00181237 -0.00171079]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0835, min=-0.9529, max=0.9137
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1104, min=-1.0000, max=0.8196
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1375, min=-3.1539, max=1.0001
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=918.5950, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.1000, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0043, min=-2.3585, max=2.7752
+===== RESULT: Episode 3/3: SUCCESS =====
+===== TASK 0 COMPLETE: 3/3 (100.00%) =====
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+DEBUG [TRT] InitState[0]: shape=(92,), mean=0.13935676991805657, first10=[ 0.00000000e+00  1.29388721e-02 -2.00546496e-01  1.96853965e-03
+ -2.44585237e+00  8.17410117e-03  2.22499861e+00  7.62673719e-01
+  2.08330000e-02 -2.08330000e-02]
+
+  0%|          | 0/3 [00:00<?, ?it/s][ADEBUG [TRT] Task ID: 1, Desc: pick up the black bowl next to the ramekin and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.27731717687075
+DEBUG [TRT] State: shape=(8,), first10=[-2.08966682e-01  5.33552476e-03  1.18472516e+00  1.60647667e-03
+ -5.57996710e-02 -4.72293390e-04  3.87235280e-02 -3.87220437e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0645, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0089, min=-0.9765, max=0.8510
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2564, min=-2.7679, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0394, min=-2.3052, max=2.8611
+DEBUG Actions: min=-0.9925571630330384, max=0.7978298488571642, mean=-0.05037680071330157, has_nan=False
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.33445604804422
+DEBUG [TRT] State: shape=(8,), first10=[-0.20771613  0.02754355  1.18493829  0.00833442 -0.05356993 -0.00292729
+  0.0391352  -0.03898808]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0640, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0327, min=-0.9765, max=0.8667
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2447, min=-2.7602, max=0.9392
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0640, min=-3.0825, max=2.5108
+DEBUG Actions: min=-0.9904743962930143, max=0.7898386969146727, mean=-0.026432853323310274, has_nan=False
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.1918712797619
+DEBUG [TRT] State: shape=(8,), first10=[-0.20484611  0.07555163  1.18540505  0.01342662 -0.03174926 -0.00366023
+  0.03933755 -0.0391549 ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0652, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0869, min=-0.9922, max=0.8824
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2210, min=-2.7543, max=0.9497
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0334, min=-2.2695, max=2.5946
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.52130500637755
+DEBUG [TRT] State: shape=(8,), first10=[-0.20163381  0.12718363  1.18532269  0.01577814  0.01195856 -0.00462208
+  0.03950166 -0.03928714]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0626, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1246, min=-0.9843, max=0.9059
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1952, min=-2.7516, max=0.9582
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0281, min=-3.2555, max=2.3634
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.68095636692176
+DEBUG [TRT] State: shape=(8,), first10=[-0.19748343  0.17860732  1.1819093   0.01761108  0.06304281 -0.00899587
+  0.03963312 -0.03939378]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0613, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1547, min=-0.9608, max=0.9059
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1699, min=-2.7495, max=0.9650
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0016, min=-2.9057, max=3.7429
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.77154416454081
+DEBUG [TRT] State: shape=(8,), first10=[-0.19088095  0.22894158  1.1739811   0.01738697  0.10724794 -0.01707111
+  0.03973831 -0.03947989]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0606, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1827, min=-0.9451, max=0.9059
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1459, min=-2.7497, max=0.9704
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.1138, min=-2.9914, max=3.5001
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.68443080357143
+DEBUG [TRT] State: shape=(8,), first10=[-0.17975322  0.27709451  1.15637773  0.0147248   0.1339499  -0.02206021
+  0.03982082 -0.03955108]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0613, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1846, min=-0.9608, max=0.8980
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1234, min=-2.7528, max=0.9747
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0114, min=-3.1262, max=2.9243
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 233], mean=119.25398596938776
+DEBUG [TRT] State: shape=(8,), first10=[-0.16128094  0.31652036  1.13008466  0.0054425   0.14473884 -0.01076858
+  0.03987227 -0.03962315]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0647, min=-0.9529, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.2003, min=-0.9608, max=0.8902
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1020, min=-2.7635, max=0.9774
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.1352, min=-2.6819, max=2.8039
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 237], mean=119.07886240433673
+DEBUG [TRT] State: shape=(8,), first10=[-0.15093421  0.33442055  1.08242751 -0.00844664  0.13866209  0.0141152
+  0.03989601 -0.0396987 ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0660, min=-0.9529, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.2061, min=-0.8980, max=0.8745
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.0978, min=-2.7796, max=1.0311
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0607, min=-3.2060, max=3.4157
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 239], mean=119.10060586734694
+DEBUG [TRT] State: shape=(8,), first10=[-0.1509735   0.34043733  1.02792824 -0.01100877  0.15140745  0.0281995
+  0.03990956 -0.03976491]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0659, min=-0.9529, max=0.8745
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.2151, min=-0.8980, max=0.7882
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1045, min=-2.7825, max=1.0514
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0978, min=-3.0505, max=2.4811
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 236], mean=118.92087186437075
+DEBUG [TRT] State: shape=(8,), first10=[-0.1637053   0.34117546  0.97473519 -0.00848992  0.17495217  0.03409417
+  0.03991982 -0.03981873]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0673, min=-0.9529, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1928, min=-0.8980, max=0.7333
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1195, min=-2.7796, max=1.0538
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0129, min=-3.4157, max=2.6912
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 236], mean=118.8699112457483
+DEBUG [TRT] State: shape=(8,), first10=[-0.17697825  0.34286997  0.93860049 -0.00750088  0.19371332  0.04296
+  0.03733784 -0.03735749]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0677, min=-0.9529, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1603, min=-0.8980, max=0.7647
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1312, min=-2.7785, max=1.0595
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0081, min=-3.5344, max=2.7205
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 236], mean=118.9068678252551
+DEBUG [TRT] State: shape=(8,), first10=[-0.18870739  0.34193348  0.92667123 -0.02427985  0.19078904  0.0654851
+  0.01576863 -0.01598906]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0674, min=-0.9529, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1303, min=-0.8667, max=0.7647
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1395, min=-2.7979, max=1.0564
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0619, min=-2.8294, max=3.5582
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 232], mean=118.87059550382654
+DEBUG [TRT] State: shape=(8,), first10=[-0.19584073  0.34126574  0.93098678 -0.05566018  0.17073858  0.0831583
+  0.0035721  -0.00378292]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0677, min=-0.9529, max=0.8196
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1423, min=-0.7882, max=0.7961
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1447, min=-2.8341, max=1.0541
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0041, min=-2.6976, max=2.9912
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 232], mean=119.13125797193878
+DEBUG [TRT] State: shape=(8,), first10=[-0.19236077  0.34234245  0.96132571 -0.07590151  0.17611     0.10015004
+  0.00234718 -0.00253876]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0656, min=-0.9529, max=0.8196
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1560, min=-0.7725, max=0.8039
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1361, min=-2.8575, max=1.0578
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0562, min=-3.1146, max=2.9524
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 240], mean=119.46286405187075
+DEBUG [TRT] State: shape=(8,), first10=[-0.17653137  0.34082259  1.01257131 -0.10510144  0.18073633  0.11878666
+  0.00227903 -0.00248116]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0630, min=-0.9529, max=0.8824
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1600, min=-0.7725, max=0.8039
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1194, min=-2.8912, max=1.0526
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0184, min=-3.2340, max=2.7660
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 244], mean=119.24503082482993
+DEBUG [TRT] State: shape=(8,), first10=[-0.13435116  0.32470304  1.06382353 -0.11937817  0.17403403  0.11647424
+  0.00220797 -0.00243451]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0647, min=-0.9529, max=0.9137
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1520, min=-0.9765, max=0.8118
+
+ 33%|███▎      | 1/3 [00:09<00:19,  9.51s/it][ADEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.0971, min=-2.9077, max=0.9983
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0288, min=-3.1681, max=2.7991
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 242], mean=119.20369632227892
+DEBUG [TRT] State: shape=(8,), first10=[-0.08436593  0.2962736   1.09818717 -0.12056321  0.16698292  0.09851839
+  0.00219412 -0.00243778]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0651, min=-0.9529, max=0.8980
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1515, min=-0.9843, max=0.8118
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.0799, min=-2.9091, max=0.9621
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0259, min=-2.6929, max=3.0896
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 253], mean=119.37720556972789
+DEBUG [TRT] State: shape=(8,), first10=[-0.03171484  0.26426786  1.10903896 -0.12024315  0.17145961  0.06308845
+  0.00219336 -0.00243432]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0637, min=-0.9529, max=0.9843
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1620, min=-0.9765, max=0.8118
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.0695, min=-2.9087, max=0.9623
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0104, min=-3.2367, max=2.5186
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 255], mean=119.16254118835035
+DEBUG [TRT] State: shape=(8,), first10=[ 0.02220884  0.23482065  1.0987699  -0.11760388  0.18355809  0.02872344
+  0.002204   -0.0024188 ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0654, min=-0.9529, max=1.0000
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1797, min=-0.9843, max=0.8118
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.0607, min=-2.9057, max=0.9631
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0342, min=-2.8114, max=3.3751
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 255], mean=118.14842421343538
+DEBUG [TRT] State: shape=(8,), first10=[ 0.07102826  0.21803029  1.06565169 -0.10994618  0.19350362  0.01102499
+  0.00222464 -0.00239441]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0733, min=-0.9529, max=1.0000
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1886, min=-0.7647, max=0.8196
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.0506, min=-2.8968, max=0.9644
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0340, min=-2.7997, max=2.6623
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 255], mean=117.95813403486395
+DEBUG [TRT] State: shape=(8,), first10=[ 0.09335937  0.21593121  1.02478417 -0.10151992  0.20044906  0.01650467
+  0.00223562 -0.00236608]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0748, min=-0.9529, max=1.0000
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1907, min=-0.7725, max=0.8196
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.0458, min=-2.8871, max=0.9659
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0009, min=-2.7336, max=3.3904
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 255], mean=117.95511798469387
+DEBUG [TRT] State: shape=(8,), first10=[ 0.09021113  0.22108016  0.98322308 -0.09640762  0.22414831  0.03192627
+  0.00223816 -0.00234883]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0749, min=-0.9529, max=1.0000
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1912, min=-0.7569, max=0.8353
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.0494, min=-2.8812, max=0.9668
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0653, min=-3.0064, max=3.0162
+===== RESULT: Episode 1/3: SUCCESS =====
+DEBUG [TRT] Task ID: 1, Desc: pick up the black bowl next to the ramekin and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 236], mean=119.27954267644557
+DEBUG [TRT] State: shape=(8,), first10=[-2.05716943e-01  1.40105831e-02  1.16741444e+00  5.65992045e-04
+ -5.71073841e-02  2.48760756e-04  3.87230467e-02 -3.87224965e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0645, min=-0.9608, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0195, min=-0.9765, max=0.8510
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2548, min=-2.7691, max=0.9178
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0484, min=-3.0491, max=3.0175
+DEBUG Actions: min=-0.9814368572384119, max=0.7982342517895697, mean=-0.018410499876091665, has_nan=False
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 236], mean=119.25469015731292
+DEBUG [TRT] State: shape=(8,), first10=[-0.2007827   0.04858836  1.16700341  0.01104977 -0.04536419 -0.00666246
+  0.03918802 -0.03896021]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0647, min=-0.9608, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0676, min=-0.9765, max=0.8588
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2353, min=-2.7570, max=0.9419
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0022, min=-3.0610, max=2.9492
+DEBUG Actions: min=-0.9908149688801169, max=0.8066452012124059, mean=-0.018799874027150793, has_nan=False
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 236], mean=119.22259646045919
+DEBUG [TRT] State: shape=(8,), first10=[-0.19401215  0.09880661  1.16545302  0.01573879 -0.03153671 -0.00732433
+  0.03938102 -0.03913124]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0649, min=-0.9608, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1080, min=-0.9765, max=0.8902
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2096, min=-2.7516, max=0.9519
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0099, min=-2.7471, max=2.5156
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 236], mean=119.43304235756803
+DEBUG [TRT] State: shape=(8,), first10=[-0.18780053  0.15126416  1.16335936  0.01903201 -0.00692609 -0.00980793
+  0.03953827 -0.03926644]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0633, min=-0.9608, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1303, min=-0.9765, max=0.9059
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1834, min=-2.7478, max=0.9601
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0358, min=-2.9271, max=3.3232
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 236], mean=119.37712585034014
+DEBUG [TRT] State: shape=(8,), first10=[-0.18056989  0.20270215  1.15837999  0.02182269  0.02366794 -0.01441992
+  0.03966394 -0.03937575]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0637, min=-0.9608, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1546, min=-0.9765, max=0.9137
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1577, min=-2.7446, max=0.9666
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0080, min=-2.6195, max=3.3332
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 236], mean=119.42856478528911
+DEBUG [TRT] State: shape=(8,), first10=[-0.17075085  0.25338263  1.14523278  0.02261749  0.05255692 -0.02153355
+  0.03976398 -0.0394645 ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0633, min=-0.9608, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1786, min=-0.9765, max=0.8980
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1336, min=-2.7437, max=0.9718
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0514, min=-2.4515, max=2.8154
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 236], mean=119.21349516369048
+DEBUG [TRT] State: shape=(8,), first10=[-0.15145811  0.2922377   1.11841117  0.00965803  0.06920656 -0.02259814
+  0.03982535 -0.03955484]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0650, min=-0.9608, max=0.8510
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1929, min=-0.8980, max=0.8824
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1144, min=-2.7586, max=0.9749
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0382, min=-2.8147, max=2.7928
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 241], mean=118.95505819515306
+DEBUG [TRT] State: shape=(8,), first10=[-0.13356607  0.3102257   1.07550367 -0.01517822  0.07598107 -0.00658252
+  0.0398624  -0.03963976]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0670, min=-0.9608, max=0.8902
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1937, min=-0.8980, max=0.8667
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1076, min=-2.7873, max=0.9769
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0185, min=-2.9414, max=2.9332
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 240], mean=118.8606571534864
+DEBUG [TRT] State: shape=(8,), first10=[-0.13296187  0.32198805  1.02290687 -0.01387442  0.10305842  0.00736687
+  0.03989129 -0.03970884]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0678, min=-0.9608, max=0.8824
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1967, min=-0.8980, max=0.7176
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1098, min=-2.7858, max=0.9892
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0311, min=-2.6151, max=2.5845
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 233], mean=118.54401838860544
+DEBUG [TRT] State: shape=(8,), first10=[-0.14458619  0.33063799  0.97121861 -0.00729886  0.13725635  0.02663736
+  0.03990908 -0.03976974]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0702, min=-0.9608, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1817, min=-0.8980, max=0.7647
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1174, min=-2.7782, max=1.0183
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0133, min=-3.6714, max=2.5782
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 233], mean=118.54067681760205
+DEBUG [TRT] State: shape=(8,), first10=[-0.1548924   0.33532409  0.93855324 -0.01017257  0.1502941   0.05134041
+  0.03732728 -0.03734619]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0703, min=-0.9608, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1395, min=-0.8980, max=0.8039
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1244, min=-2.7816, max=1.0341
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.1169, min=-3.4245, max=2.8132
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 233], mean=118.44237616921768
+DEBUG [TRT] State: shape=(8,), first10=[-0.1686957   0.3360976   0.92879072 -0.03248658  0.11789607  0.05975362
+  0.0157641  -0.01597866]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0710, min=-0.9608, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1091, min=-0.8588, max=0.8039
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1369, min=-2.8073, max=1.0367
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0199, min=-2.8547, max=2.6696
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 233], mean=118.30226270195578
+DEBUG [TRT] State: shape=(8,), first10=[-0.16999291  0.33461519  0.94046882 -0.04949929  0.0881583   0.07504102
+  0.00247921 -0.00276865]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0721, min=-0.9608, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1420, min=-0.7961, max=0.8118
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1372, min=-2.8270, max=1.0317
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0214, min=-3.0699, max=2.5343
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 233], mean=118.63645966198979
+DEBUG [TRT] State: shape=(8,), first10=[-0.16310781  0.33636281  0.98118794 -0.06425369  0.08246059  0.09630059
+  0.0018184  -0.00204679]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0695, min=-0.9608, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1488, min=-0.7804, max=0.8039
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1233, min=-2.8440, max=1.0376
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0149, min=-2.8830, max=2.5900
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 233], mean=118.6945418792517
+DEBUG [TRT] State: shape=(8,), first10=[-0.13336722  0.33370519  1.03466579 -0.07536118  0.08047707  0.11018259
+  0.00180505 -0.00203966]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0691, min=-0.9608, max=0.8275
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1548, min=-0.7804, max=0.8275
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.0980, min=-2.8569, max=1.0287
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0755, min=-2.6425, max=2.9168
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 237], mean=118.38567575467687
+DEBUG [TRT] State: shape=(8,), first10=[-0.08664334  0.3115929   1.07509188 -0.07983528  0.05920045  0.10142565
+  0.00179899 -0.00205685]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0715, min=-0.9608, max=0.8588
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1554, min=-0.9686, max=0.8039
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.0784, min=-2.8620, max=0.9820
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.1365, min=-3.0640, max=2.5237
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 239], mean=118.16598240858843
+DEBUG [TRT] State: shape=(8,), first10=[-0.03594417  0.27805085  1.08474003 -0.07918443  0.05559843  0.06880761
+  0.00179687 -0.00206523]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0732, min=-0.9608, max=0.8745
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1562, min=-0.9843, max=0.8118
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.0698, min=-2.8613, max=0.9816
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0901, min=-2.7324, max=3.2808
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 254], mean=117.95715747236395
+DEBUG [TRT] State: shape=(8,), first10=[ 0.01532393  0.24613695  1.07515842 -0.07138106  0.07112387  0.0301537
+  0.00181075 -0.00205498]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0748, min=-0.9608, max=0.9922
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1649, min=-1.0000, max=0.8118
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.0630, min=-2.8523, max=0.9821
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.1151, min=-2.8281, max=3.0186
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 255], mean=117.44152582908163
+DEBUG [TRT] State: shape=(8,), first10=[ 0.0537786   0.23514324  1.0367477  -0.05913829  0.11485966  0.02506149
+  0.00183683 -0.00203281]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0789, min=-0.9608, max=1.0000
+
+ 67%|██████▋   | 2/3 [00:18<00:09,  9.10s/it][ADEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1781, min=-0.7804, max=0.8275
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.0526, min=-2.8381, max=0.9833
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0705, min=-2.3181, max=2.4235
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 255], mean=117.84954958545919
+DEBUG [TRT] State: shape=(8,), first10=[ 0.06715403  0.23470521  0.99494096 -0.03433185  0.1705489   0.03472284
+  0.00185352 -0.00201927]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0757, min=-0.9608, max=1.0000
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1852, min=-0.7569, max=0.8431
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.0466, min=-2.8095, max=0.9840
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.1108, min=-2.4440, max=2.8430
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[5, 255], mean=118.14687632865646
+DEBUG [TRT] State: shape=(8,), first10=[ 0.05956131  0.23519206  0.94973605 -0.00949982  0.23543546  0.04136406
+  0.00192616 -0.00277078]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0734, min=-0.9608, max=1.0000
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1816, min=-0.7804, max=0.8667
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.0562, min=-2.7808, max=0.9448
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.1252, min=-2.5734, max=2.4481
+===== RESULT: Episode 2/3: SUCCESS =====
+DEBUG [TRT] Task ID: 1, Desc: pick up the black bowl next to the ramekin and place it on the plate
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 230], mean=118.97713382227892
+DEBUG [TRT] State: shape=(8,), first10=[-2.06960779e-01 -4.41078671e-03  1.18365483e+00  2.28839803e-03
+ -5.55950618e-02  7.01681474e-04  3.87205676e-02 -3.87250138e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0668, min=-0.9529, max=0.8039
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0029, min=-0.9765, max=0.8196
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2595, min=-2.7672, max=0.9177
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0148, min=-2.9230, max=2.4180
+DEBUG Actions: min=-0.9955123676864803, max=0.7897392244510648, mean=-0.03403815822093135, has_nan=False
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 229], mean=119.08258928571429
+DEBUG [TRT] State: shape=(8,), first10=[-0.20532947  0.02282417  1.18511622  0.01123006 -0.05267468 -0.00380502
+  0.03915975 -0.03897632]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0660, min=-0.9529, max=0.7961
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0273, min=-0.9686, max=0.8980
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2449, min=-2.7568, max=0.9405
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0292, min=-3.1149, max=2.4820
+DEBUG Actions: min=-0.9916169085659683, max=0.7727055518882273, mean=-0.011660108819542006, has_nan=False
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 229], mean=118.94563137755102
+DEBUG [TRT] State: shape=(8,), first10=[-0.19872828  0.07185079  1.18663387  0.01535815 -0.03324745  0.00219163
+  0.03935594 -0.03914662]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0671, min=-0.9529, max=0.7961
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.0730, min=-0.9843, max=0.8745
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.2180, min=-2.7521, max=0.9506
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0220, min=-2.8658, max=2.3046
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 229], mean=119.24571508290816
+DEBUG [TRT] State: shape=(8,), first10=[-1.87913336e-01  1.21857132e-01  1.18601610e+00  1.70699061e-02
+ -7.04338030e-04  8.64703121e-03  3.95116653e-02 -3.92852755e-02]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0647, min=-0.9529, max=0.7961
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1174, min=-0.9686, max=0.8824
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1886, min=-2.7501, max=0.9587
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0533, min=-3.1055, max=2.4529
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 229], mean=119.33793048469387
+DEBUG [TRT] State: shape=(8,), first10=[-0.17903383  0.17249444  1.18474975  0.01854987  0.03337401  0.00783385
+  0.03963714 -0.03939631]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0640, min=-0.9529, max=0.7961
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1456, min=-0.9529, max=0.8980
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1612, min=-2.7484, max=0.9652
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0000, min=-2.3585, max=2.6524
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 229], mean=119.3972549957483
+DEBUG [TRT] State: shape=(8,), first10=[-0.16956169  0.22217473  1.17848392  0.0203748   0.06791676  0.00672428
+  0.03973701 -0.03948645]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0636, min=-0.9529, max=0.7961
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1688, min=-0.9608, max=0.8902
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1349, min=-2.7463, max=0.9704
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0466, min=-3.0257, max=2.8865
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 229], mean=119.35776732568027
+DEBUG [TRT] State: shape=(8,), first10=[-0.15817908  0.27100742  1.16802983  0.02223014  0.09705582  0.00855057
+  0.03981537 -0.03956075]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0639, min=-0.9529, max=0.7961
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1868, min=-0.9686, max=0.8902
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1087, min=-2.7441, max=0.9744
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0553, min=-3.1117, max=3.8518
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 229], mean=118.7641900510204
+DEBUG [TRT] State: shape=(8,), first10=[-0.13958775  0.3114598   1.14376943  0.02137533  0.10896726  0.02593342
+  0.0398624  -0.0396364 ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0685, min=-0.9529, max=0.7961
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1949, min=-0.9686, max=0.8510
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.0843, min=-2.7451, max=0.9769
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0493, min=-2.6462, max=2.5764
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 229], mean=118.32562048256803
+DEBUG [TRT] State: shape=(8,), first10=[-0.1293682   0.33379894  1.09839931  0.01641804  0.1020207   0.06115532
+  0.0398828  -0.03971463]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0720, min=-0.9529, max=0.7961
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.2108, min=-0.9373, max=0.8039
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.0751, min=-2.7508, max=1.0290
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0347, min=-3.3840, max=2.9551
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 229], mean=118.42478475765306
+DEBUG [TRT] State: shape=(8,), first10=[-0.12796107  0.34013326  1.04688223  0.01519395  0.12609354  0.08271124
+  0.03988792 -0.03978874]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0712, min=-0.9529, max=0.7961
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.2175, min=-0.8980, max=0.8118
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.0784, min=-2.7522, max=1.0503
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0726, min=-3.5962, max=3.2735
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 235], mean=118.53661112882654
+DEBUG [TRT] State: shape=(8,), first10=[-0.13727175  0.34082248  0.99342613  0.01594044  0.17488007  0.08920312
+  0.0398906  -0.0398497 ]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0703, min=-0.9529, max=0.8431
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.2187, min=-0.8980, max=0.8039
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.0908, min=-2.7514, max=1.0526
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.1030, min=-3.3770, max=3.0343
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 242], mean=118.64310294430273
+DEBUG [TRT] State: shape=(8,), first10=[-0.15402319  0.33650719  0.9386697   0.01939253  0.21143277  0.09058837
+  0.03989195 -0.03989947]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0695, min=-0.9529, max=0.8980
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1854, min=-0.8980, max=0.7255
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1102, min=-2.7474, max=1.0381
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=-0.0016, min=-3.1857, max=3.2739
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 247], mean=118.85707642431973
+DEBUG [TRT] State: shape=(8,), first10=[-0.1671536   0.33824963  0.91936743  0.00798428  0.2302681   0.09597234
+  0.02531129 -0.02546281]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0678, min=-0.9529, max=0.9373
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1373, min=-0.8980, max=0.7176
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1203, min=-2.7606, max=1.0440
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0269, min=-2.7141, max=3.2281
+DEBUG [TRT] Image: shape=(224, 224, 3), range=[6, 247], mean=118.77091305272108
+DEBUG [TRT] State: shape=(8,), first10=[-0.17279889  0.33966514  0.92632626 -0.01357598  0.21782278  0.1153927
+  0.00408266 -0.01272005]
+DEBUG [TRT Sending] base_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-0.0685, min=-0.9529, max=0.9373
+DEBUG [TRT Sending] left_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=0.1735, min=-0.8745, max=0.6706
+DEBUG [TRT Sending] right_wrist_0_rgb: shape=(1, 3, 224, 224), dtype=float32, mean=-1.0000, min=-1.0000, max=-1.0000
+DEBUG [TRT Sending] state: shape=(1, 8), dtype=float64, mean=-0.1763, min=-2.7855, max=1.0487
+DEBUG [TRT Sending] tokenized_prompt: shape=(1, 200), dtype=int32, mean=874.1000, min=0.0000, max=117064.0000
+WARNING:root:Connection closed. Reconnecting (attempt 1/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 2/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+WARNING:root:Connection closed. Reconnecting (attempt 3/3)...
+ERROR:root:Reconnection failed: [Errno 111] Connection refused
+ERROR:root:Error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 114, in infer
+    self._ws.send(data)
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 480, in send
+    with self.send_context():
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/connection.py", line 1020, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taco/openpi-onnx/scripts/eval_libero_trt.py", line 303, in eval_libero
+    action_chunk = client.infer(element)["actions"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 121, in infer
+    self._ws = self._connect()
+               ^^^^^^^^^^^^^^^
+  File "/home/taco/openpi/src/openpi/policies/tensorrt_remote_policy.py", line 47, in _connect
+    return websockets.sync.client.connect(self._uri, max_size=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taco/.venv/lib/python3.12/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+100%|██████████| 3/3 [00:24<00:00,  7.87s/it][A100%|██████████| 3/3 [00:24<00:00,  8.24s/it]
+ 20%|██        | 2/10 [00:48<03:16, 24.56s/it]DEBUG [TRT Sending] tokenized_prompt_mask: shape=(1, 200), dtype=bool, mean=0.0900, min=0.0000, max=1.0000
+DEBUG [TRT Sending] noise: shape=(1, 10, 32), dtype=float32, mean=0.0429, min=-3.3020, max=2.7227
+===== RESULT: Episode 3/3: FAILURE =====
+===== TASK 1 COMPLETE: 2/3 (66.67%) =====
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+[Warning]: datasets path /home/taco/openpi/third_party/libero/libero/datasets does not exist!
+DEBUG [TRT] InitState[0]: shape=(92,), mean=0.1398337442675567, first10=[ 0.          0.00671314 -0.19188476 -0.0099483  -2.43256078 -0.03991007
+  2.193524    0.80137118  0.020833   -0.020833  ]
+
+  0%|          | 0/3 [00:00<?, ?it/s][A

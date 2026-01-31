@@ -1,3 +1,4 @@
+<!-- Last Updated: 2026-01-29 -->
 # LIBERO Benchmark
 
 This example runs the LIBERO benchmark: https://github.com/Lifelong-Robot-Learning/LIBERO
