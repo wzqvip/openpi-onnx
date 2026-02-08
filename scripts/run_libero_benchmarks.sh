@@ -24,9 +24,10 @@ for task in "${TASKS[@]}"; do
         
         if [ "$model" == "torch" ]; then
             # PyTorch Baseline
+            # PyTorch Baseline
             /home/taco/.venv/bin/python scripts/eval_libero_torch.py \
                 --task_suite_name $task \
-                --num_trials_per_task 3
+                --num_trials_per_task 3 2>&1 | tee "$RESULTS_DIR/${task}_${model}.log"
                 
         elif [ "$model" == "int8" ]; then
             # INT8 TensorRT
@@ -49,10 +50,11 @@ for task in "${TASKS[@]}"; do
             sleep 15
             
             echo "Running Benchmark Client..."
+            echo "Running Benchmark Client..."
             /home/taco/.venv/bin/python scripts/eval_libero_trt.py \
                 --task_suite_name $task \
                 --num_trials_per_task 3 \
-                --port 8015 || true # Continue even if client fails
+                --port 8015 2>&1 | tee "$RESULTS_DIR/${task}_${model}.log" || true # Continue even if client fails
                 
             # Kill server
             echo "Stopping Inference Server..."
@@ -61,9 +63,10 @@ for task in "${TASKS[@]}"; do
                 
         elif [ "$model" == "fp4" ]; then
              # FP4 Simulated
+             # FP4 Simulated
              /home/taco/.venv/bin/python scripts/eval_fp4_torch.py \
                 --task_suite_name $task \
-                --num_trials_per_task 3
+                --num_trials_per_task 3 2>&1 | tee "$RESULTS_DIR/${task}_${model}.log"
         fi
         
         echo "Finished $model on $task"

@@ -13,7 +13,6 @@ except ImportError:
 sys.path.append(os.path.join(os.path.dirname(__file__)))
 import numpy as np
 import websockets
-from websockets.server import serve
 import msgpack
 import msgpack_numpy
 import time
@@ -22,11 +21,26 @@ import ctypes
 # Patch msgpack
 msgpack_numpy.patch()
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.WARNING)
 logger = logging.getLogger("TRTServer")
+logger.setLevel(logging.WARNING)
 
 # --- CTYPES CUDART WRAPPER ---
 libcudart = ctypes.CDLL("libcudart.so") # Use symlink
+
+# Set return types for CUDA functions
+libcudart.cudaMalloc.restype = ctypes.c_int
+libcudart.cudaMemcpy.restype = ctypes.c_int
+libcudart.cudaMemcpyAsync.restype = ctypes.c_int
+libcudart.cudaStreamSynchronize.restype = ctypes.c_int
+libcudart.cudaFree.restype = ctypes.c_int
+libcudart.cudaStreamCreate.restype = ctypes.c_int
+libcudart.cudaStreamDestroy.restype = ctypes.c_int
+libcudart.cudaStreamBeginCapture.restype = ctypes.c_int
+libcudart.cudaStreamEndCapture.restype = ctypes.c_int
+libcudart.cudaGraphInstantiate.restype = ctypes.c_int
+libcudart.cudaGraphLaunch.restype = ctypes.c_int
+libcudart.cudaGraphDestroy.restype = ctypes.c_int
 
 # Define constants
 cudaMemcpyHostToDevice = 1
@@ -42,6 +56,8 @@ _calibration_buffer = []
 
 
 def check_cuda_err(err):
+    if err is None:
+        raise RuntimeError(f"CUDA function returned None - ctypes restype not set correctly")
     if err != 0:
         raise RuntimeError(f"CUDA Error code: {err}")
 
@@ -56,8 +72,14 @@ def cudaMemcpy(dst, src, count, kind):
     check_cuda_err(err)
 
 def cudaStreamSynchronize(stream):
+    # Ensure restype is set (defensive programming)
+    libcudart.cudaStreamSynchronize.restype = ctypes.c_int
     err = libcudart.cudaStreamSynchronize(ctypes.c_void_p(stream))
+    if err is None:
+        logger.error("BUG: cudaStreamSynchronize returned None despite restype=ctypes.c_int")
+        logger.error(f"libcudart.cudaStreamSynchronize.restype = {libcudart.cudaStreamSynchronize.restype}")
     check_cuda_err(err)
+    return err
     
 def cudaFree(ptr):
     err = libcudart.cudaFree(ctypes.c_void_p(ptr))
@@ -132,6 +154,7 @@ class TensorRTModel:
             # Size calc
             if -1 in shape:
                  min_shape, opt_shape, max_shape = self.engine.get_tensor_profile_shape(name, 0)
+                 logger.info(f"Tensor '{name}': shape={shape}, min={min_shape}, opt={opt_shape}, max={max_shape}")
                  alloc_shape = max_shape
             else:
                  alloc_shape = shape
@@ -143,7 +166,34 @@ class TensorRTModel:
             elif dtype == 'INT8': np_dtype = np.int8
             elif dtype == 'BOOL': np_dtype = np.bool_
             
-            size = np.dtype(np_dtype).itemsize * np.prod(alloc_shape)
+            # Convert TensorRT Dims to a safe list
+            def _shape_list(s):
+                try:
+                    return list(s)
+                except Exception:
+                    try:
+                        return list(s.d)
+                    except Exception:
+                        return [int(x) for x in s]
+
+            shape_list = _shape_list(alloc_shape)
+            shape_list = [1 if x == -1 else x for x in shape_list]
+            
+            # 确保shape_list至少是1D（防止标量被当作0D）
+            if not shape_list or (len(shape_list) == 1 and isinstance(shape_list[0], int) and shape_list[0] < 10):
+                # 可疑的标量shape，尝试从实际tensor维度推断
+                logger.warning(f"Suspicious shape for '{name}': {shape_list}, trying to infer from tensor dimensions")
+                if mode == trt.TensorIOMode.OUTPUT:
+                    # 对于输出，假设batch维度=1，然后根据输出特性推断
+                    # 对于actions输出，假设shape为[1, 10, 32]
+                    if name == "actions":
+                        shape_list = [1, 10, 32]
+                        logger.info(f"Using default actions shape: {shape_list}")
+                    else:
+                        shape_list = [1, shape_list[0] if shape_list else 1]
+            
+            size = int(np.dtype(np_dtype).itemsize * np.prod(shape_list))
+            logger.info(f"Allocating {size} bytes for '{name}' with shape {shape_list}, dtype={np_dtype}")
             
             # Allocate device memory
             ptr = cudaMalloc(size)
@@ -201,8 +251,6 @@ class TensorRTModel:
             elif name in KEY_MAPPING and KEY_MAPPING[name] in input_dict:
                 data = input_dict[KEY_MAPPING[name]]
             
-
-            
             if data is None:
                 logger.warning(f"Warning: Input '{name}' not found in request! Available keys: {list(input_dict.keys())}")
                 continue
@@ -219,14 +267,20 @@ class TensorRTModel:
                     logger.error(f"ERROR: Input '{name}' contains NaNs or Infs!")
                     logger.error(f"  Min: {np.min(data)}, Max: {np.max(data)}")
                 else:
-                    logger.info(f"DEBUG: Input '{name}' OK. Range: [{np.min(data)}, {np.max(data)}]")
+                    logger.debug(f"DEBUG: Input '{name}' OK. Range: [{np.min(data)}, {np.max(data)}], Shape: {data.shape}, DType: {data.dtype}")
             else:
-                 logger.info(f"DEBUG: Input '{name}' OK (Integer). Shape: {data.shape}")
+                 logger.debug(f"DEBUG: Input '{name}' OK (Integer). Shape: {data.shape}, DType: {data.dtype}")
             
             # Copy Async
             cudaMemcpyAsync(inp["ptr"], data.ctypes.data, data.nbytes, cudaMemcpyHostToDevice, self.stream)
 
-        # 2. Execute
+        # 2. Bind addresses (ensure updated bindings)
+        for inp in self.inputs:
+            self.context.set_tensor_address(inp["name"], inp["ptr"])
+        for out in self.outputs:
+            self.context.set_tensor_address(out["name"], out["ptr"])
+        
+        # 3. Execute
         
         # --- Save Calibration Data ---
         global _calibration_buffer, COLLECT_CALIBRATION
@@ -252,7 +306,7 @@ class TensorRTModel:
                     input_dict["noise"]
                 )
                 _calibration_buffer.append(sample)
-                logger.info(f"Captured calibration sample {len(_calibration_buffer)}/{CALIBRATION_SAMPLES}")
+                logger.debug(f"Captured calibration sample {len(_calibration_buffer)}/{CALIBRATION_SAMPLES}")
                 
                 if len(_calibration_buffer) >= CALIBRATION_SAMPLES:
                      logger.info(f"Saving {len(_calibration_buffer)} calibration samples to {CALIBRATION_FILE}...")
@@ -287,9 +341,24 @@ class TensorRTModel:
                 except Exception as e:
                     logger.error(f"Graph capture failed: {e}. Falling back to standard execution.")
                     self.graph_exec = None
-                    self.context.execute_async_v3(self.stream)
+                    success = self.context.execute_async_v3(self.stream)
+                    if not success:
+                        logger.error("execute_async_v3 returned False - TRT inference failed")
+                        return {"error": "TRT execution failed"}
+                    logger.info(f"DEBUG: execute_async_v3 returned: {success}")
             else:
-                self.context.execute_async_v3(self.stream)
+                success = self.context.execute_async_v3(self.stream)
+                if not success:
+                    logger.error("execute_async_v3 returned False - TRT inference failed")
+                    return {"error": "TRT execution failed"}
+                logger.info(f"DEBUG: execute_async_v3 returned: {success}")
+        
+        # Synchronize stream before copying outputs
+        err = cudaStreamSynchronize(self.stream)
+        if err != 0:
+            logger.error(f"cudaStreamSynchronize failed with error code: {err}")
+            return {"error": f"CUDA stream sync failed: {err}"}
+        logger.debug(f"DEBUG: cudaStreamSynchronize completed successfully")
         
         self.inference_count += 1
         
@@ -298,10 +367,43 @@ class TensorRTModel:
         results = {}
         for out in self.outputs:
             name = out["name"]
+            # 获取实际执行后的输出形状（而非预分配的形状）
             out_shape = self.context.get_tensor_shape(name)
-            host_buffer = np.empty(out_shape, dtype=out["dtype"])
+            logger.info(f"DEBUG: Post-execution tensor '{name}' shape from context: {out_shape}")
             
-            cudaMemcpyAsync(host_buffer.ctypes.data, out["ptr"], host_buffer.nbytes, cudaMemcpyDeviceToHost, self.stream)
+            if -1 in out_shape:
+                try:
+                    _, _, max_shape = self.engine.get_tensor_profile_shape(name, 0)
+                    out_shape = max_shape
+                except Exception:
+                    out_shape = out_shape
+            # 安全转换 shape
+            try:
+                shape_list = list(out_shape)
+            except Exception:
+                try:
+                    shape_list = list(out_shape.d)
+                except Exception:
+                    shape_list = [int(x) for x in out_shape]
+            shape_list = [1 if x == -1 else x for x in shape_list]
+            host_buffer = np.empty(shape_list, dtype=out["dtype"])
+            
+            if host_buffer.nbytes == 0:
+                logger.warning(f"Warning: Output '{name}' has zero bytes with shape {shape_list}")
+                results[name] = host_buffer
+                continue
+            
+            logger.info(f"DEBUG: Output '{name}' shape {shape_list}, bytes {host_buffer.nbytes}")
+            logger.info(f"DEBUG: Output ptr=0x{out['ptr']:x}, allocated_size={out['size']}, copy_size={host_buffer.nbytes}")
+            
+            # 如果实际需要的大小超过分配的大小，只复制已分配的部分或报错
+            copy_size = min(host_buffer.nbytes, out['size'])
+            if host_buffer.nbytes > out['size']:
+                logger.warning(f"WARNING: Output '{name}' needs {host_buffer.nbytes} bytes but only {out['size']} allocated. Copying {copy_size} bytes.")
+                # 创建正确大小的buffer
+                host_buffer = np.empty(shape_list, dtype=out["dtype"])
+            
+            cudaMemcpyAsync(host_buffer.ctypes.data, out["ptr"], copy_size, cudaMemcpyDeviceToHost, self.stream)
                   
             results[name] = host_buffer
             
@@ -328,7 +430,9 @@ async def handler(websocket):
     except websockets.ConnectionClosed:
         logger.info("Client disconnected")
     except Exception as e:
+        import traceback
         logger.error(f"Error handling request: {e}")
+        logger.error(traceback.format_exc())
 
 async def main():
     global model
@@ -347,7 +451,7 @@ async def main():
 
     model = TensorRTModel(engine_path)
     
-    async with serve(handler, "0.0.0.0", port, max_size=None):
+    async with websockets.serve(handler, "0.0.0.0", port, max_size=None):
         logger.info(f"Server started on port {port}")
         await asyncio.get_running_loop().create_future()  # run forever
 

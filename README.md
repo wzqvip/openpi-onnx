@@ -85,36 +85,128 @@ bash check_int8_progress.sh
 watch -n 30 'bash check_int8_progress.sh'
 ```
 
-## 📁 项目结构
+## 📁 完整项目结构
+
+### 根目录文件
+
+#### 📄 核心文档 (INT8评估文档)
+- **README.md** - 本文件
+- **INT8_QUICK_REFERENCE.md** ⭐ - 快速参考（推荐首先阅读）
+- **INT8_SUMMARY.md** - 完整总结（问题诊断、解决方案、关键发现）
+- **INT8_FINAL_RESULTS.md** - 最终结果（所有40个任务的详细数据）
+- **INT8_EVALUATION_RESULTS_20_TRIALS.md** - 20次试验详情（libero_spatial）
+- **README_INT8.md** - 技术文档（配置、快速开始、故障排除）
+
+#### 🔧 关键脚本
+- **run_int8_all_suites_20trials.sh** - 自动化运行全部4个LIBERO套件评估
+- **check_int8_progress.sh** - 可视化进度监控工具
+
+#### 📊 数据文件
+- **calibration_data.pt** (284MB) - INT8校准数据（包含200个真实推理样本）
+- **torch_norm_stats.json** - 归一化统计（状态和动作的mean/std）
+
+#### 📋 配置文件
+- **pyproject.toml** - Python项目配置
+- **uv.lock** - uv包管理器lock文件
+- **LICENSE** - Apache 2.0许可证
+- **LICENSE_GEMMA.txt** - Gemma许可证
+
+### scripts目录
 
 ```
-openpi-onnx/
-├── README.md                              ← 本文件
-├── INT8_QUICK_REFERENCE.md                ← ⭐ 快速参考
-├── INT8_SUMMARY.md                        ← 完整总结
-├── INT8_FINAL_RESULTS.md                  ← 详细结果
-├── INT8_EVALUATION_RESULTS_20_TRIALS.md   ← 20试验详情
-├── README_INT8.md                         ← 技术文档
+scripts/
+├── eval_libero_trt_v1.py     ← INT8评估脚本（核心）
+│   ├── 支持4个LIBERO套件评估
+│   ├── 使用TensorRT INT8引擎
+│   ├── WebSocket客户端与serve_trt.py通信
+│   └── 输出成功率统计结果
 │
-├── scripts/
-│   ├── eval_libero_trt_v1.py             ← INT8评估脚本
-│   └── serve_trt.py                      ← TensorRT服务器
+├── serve_trt.py              ← TensorRT服务器
+│   ├── WebSocket服务（端口8012）
+│   ├── INT8引擎推理
+│   ├── 支持分布式部署
+│   └── 消息打包使用msgpack
 │
-├── checkpoints/
-│   └── pi05_libero_onnx_compat/
-│       ├── model.int8.modelopt.engine    ← INT8引擎 (4.6GB)
-│       ├── model.int8.modelopt.cleaned.onnx
-│       └── ...
-│
-├── calibration_data.pt                    ← 校准数据 (284MB)
-├── torch_norm_stats.json                  ← 归一化统计
-│
-├── run_int8_all_suites_20trials.sh        ← 全套件运行器
-├── check_int8_progress.sh                 ← 进度监控工具
-└── ...
+└── （其他支持脚本）
 ```
 
-## 🔧 技术细节
+### checkpoints目录
+
+```
+checkpoints/
+└── pi05_libero_onnx_compat/
+    ├── model.int8.modelopt.engine    ← TensorRT INT8引擎 (4.6GB)
+    │   └── ModelOpt W8A8量化
+    ├── model.int8.modelopt.cleaned.onnx  ← 清理后的ONNX模型
+    ├── model.fp32.onnx               ← FP32基线（用于对比）
+    └── （其他模型文件）
+```
+
+### docs目录
+
+#### 转换指南
+- **docs/conversion/pi05_onnx_conversion_guide.md** - ONNX模型转换指南
+- **docs/conversion/tutorial_libero_trt.md** - LIBERO TensorRT教程
+- **docs/conversion/norm_stats.md** - 归一化统计文档
+
+#### 开发文档
+- **docs/dev/CONTRIBUTING.md** - 贡献指南
+- **docs/dev/docker.md** - Docker配置文档
+
+### 清理后的文件统计
+
+| 类别 | 数量 | 说明 |
+|------|------|------|
+| 根目录文件 | 15 | 精简至核心文件 |
+| 文档 | 6 | INT8专项文档 |
+| 脚本 | 2 | 核心INT8脚本 |
+| docs目录 | 5 | 保留关键指南 |
+| **总计** | **28** | 删除了40+多余文件 |
+
+## � 保留文档详细说明
+
+### INT8评估文档组
+这些文档组成完整的INT8评估工作记录：
+
+1. **INT8_QUICK_REFERENCE.md** (3.4KB)
+   - 内容：一页纸快速查看、常用命令速查、文件导航地图
+   - 用途：新用户快速了解项目
+
+2. **INT8_SUMMARY.md** (4.6KB)
+   - 内容：完整总结、问题诊断、解决方案、关键发现、经验教训
+   - 用途：理解项目背景和技术决策
+
+3. **INT8_FINAL_RESULTS.md** (4.2KB)
+   - 内容：所有40个任务的最终成功率数据
+   - 用途：查看详细的评估结果
+
+4. **INT8_EVALUATION_RESULTS_20_TRIALS.md** (4.5KB)
+   - 内容：libero_spatial的20次试验详细分析
+   - 用途：深入研究单个套件的性能
+
+5. **README_INT8.md** (7.6KB)
+   - 内容：技术文档、快速开始、故障排除
+   - 用途：实际操作和部署指南
+
+### docs目录文档组
+保留的5个文档提供转换和部署的必要知识：
+
+1. **docs/conversion/pi05_onnx_conversion_guide.md**
+   - 指导如何将Pi05模型转换为ONNX格式
+
+2. **docs/conversion/tutorial_libero_trt.md**
+   - LIBERO数据集与TensorRT集成教程
+
+3. **docs/conversion/norm_stats.md**
+   - 解释归一化统计的计算和使用方法
+
+4. **docs/dev/CONTRIBUTING.md**
+   - 项目贡献指南
+
+5. **docs/dev/docker.md**
+   - Docker部署配置文档
+
+## �🔧 技术细节
 
 ### 量化配置
 ```yaml

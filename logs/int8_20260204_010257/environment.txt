@@ -1,0 +1,28 @@
+评估环境信息
+========================================
+时间: Wednesday, February 04, 2026 AM01:02:57 HKT
+主机: taco-thor
+用户: taco
+
+Python环境:
+  版本: Python 3.12.3
+  路径: /home/taco/openpi-onnx/.venv312/bin/python3
+  
+GPU信息:
+name, driver_version, memory.total [MiB], compute_cap
+NVIDIA Thor, 580.00, [N/A], 11.0
+
+TensorRT版本:
+TensorRT 10.13.3.9
+
+关键依赖:
+msgpack               1.1.2
+msgpack-numpy         0.4.8
+numpy                 1.26.4
+safetensors           0.7.0
+tensorrt              10.13.3.9
+tensorrt_dispatch     10.13.3.9
+tensorrt_lean         10.13.3.9
+websockets            16.0
+
+========================================

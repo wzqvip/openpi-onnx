@@ -1,2 +1,0 @@
-/home/taco/openpi-onnx/scripts/serve_trt.py:9: DeprecationWarning: websockets.server.serve is deprecated
-  from websockets.server import serve

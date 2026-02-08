@@ -1,0 +1,15 @@
+timestamp, name, utilization.gpu [%], memory.used [MiB], memory.total [MiB], temperature.gpu
+2026/02/04 01:04:15.876, NVIDIA Thor, 0 %, [N/A], [N/A], 36
+2026/02/04 01:04:16.886, NVIDIA Thor, 93 %, [N/A], [N/A], 37
+2026/02/04 01:04:17.890, NVIDIA Thor, 0 %, [N/A], [N/A], 36
+2026/02/04 01:04:18.892, NVIDIA Thor, 2 %, [N/A], [N/A], 36
+2026/02/04 01:04:19.896, NVIDIA Thor, 0 %, [N/A], [N/A], 36
+2026/02/04 01:04:20.899, NVIDIA Thor, 0 %, [N/A], [N/A], 36
+2026/02/04 01:04:21.902, NVIDIA Thor, 0 %, [N/A], [N/A], 36
+2026/02/04 01:04:22.905, NVIDIA Thor, 0 %, [N/A], [N/A], 36
+2026/02/04 01:04:23.908, NVIDIA Thor, 0 %, [N/A], [N/A], 36
+2026/02/04 01:04:24.912, NVIDIA Thor, 0 %, [N/A], [N/A], 36
+2026/02/04 01:04:25.914, NVIDIA Thor, 0 %, [N/A], [N/A], 36
+2026/02/04 01:04:26.917, NVIDIA Thor, 0 %, [N/A], [N/A], 36
+2026/02/04 01:04:27.920, NVIDIA Thor, 0 %, [N/A], [N/A], 36
+2026/02/04 01:04:28.923, NVIDIA Thor, 0 %, [N/A], [N/A], 36
