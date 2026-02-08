@@ -24,19 +24,23 @@ INT8模型量化和评估项目，基于NVIDIA ModelOpt W8A8量化框架。
    - 一页快速查看：关键数据、常用命令、文件地图
    - **适合**: 快速了解现状
 
-2. **[INT8_SUMMARY.md](INT8_SUMMARY.md)**
+2. **[docs/conversion/FP32_FP4_INT8_COMPARISON.md](docs/conversion/FP32_FP4_INT8_COMPARISON.md)** 🆕
+   - 模型对比：FP32基线 vs INT8量化 vs FP4 (即将推出)
+   - **适合**: 性能对比和部署选择
+
+3. **[INT8_SUMMARY.md](INT8_SUMMARY.md)**
    - 完整总结：问题诊断、解决方案、关键发现
    - **适合**: 理解项目背景和技术细节
 
-3. **[INT8_FINAL_RESULTS.md](INT8_FINAL_RESULTS.md)**
+4. **[INT8_FINAL_RESULTS.md](INT8_FINAL_RESULTS.md)**
    - 详细结果：所有40个任务的完整数据
    - **适合**: 查看具体的成功率和失败分析
 
-4. **[README_INT8.md](README_INT8.md)**
+5. **[README_INT8.md](README_INT8.md)**
    - 技术文档：配置、快速开始、故障排除
    - **适合**: 实际操作和部署
 
-5. **[INT8_EVALUATION_RESULTS_20_TRIALS.md](INT8_EVALUATION_RESULTS_20_TRIALS.md)**
+6. **[INT8_EVALUATION_RESULTS_20_TRIALS.md](INT8_EVALUATION_RESULTS_20_TRIALS.md)**
    - 20次试验详情：libero_spatial的详细分析
    - **适合**: 深入研究
 
@@ -85,6 +89,34 @@ bash check_int8_progress.sh
 watch -n 30 'bash check_int8_progress.sh'
 ```
 
+### 性能基准对比 (FP32 vs INT8)
+
+运行完整的基准对比（自动测试FP32和INT8）:
+```bash
+bash scripts/run_full_benchmark.sh
+```
+
+或分别测试单个模型:
+```bash
+# FP32基线 (仅需激活服务器)
+python scripts/serve_trt.py \
+  --engine_path=checkpoints/pi05_libero_onnx_compat/model.fp32.modelopt.engine \
+  --port=8012 &
+
+python scripts/benchmark_trt_models.py \
+  --model_type=fp32 --num_trials=10 --task_suite_name=all --port=8012
+
+# INT8量化
+python scripts/serve_trt.py \
+  --engine_path=checkpoints/pi05_libero_onnx_compat/model.int8.modelopt.engine \
+  --port=8012 &
+
+python scripts/benchmark_trt_models.py \
+  --model_type=int8 --num_trials=10 --task_suite_name=all --port=8012
+```
+
+结果保存在 `./benchmark_results/` 目录，详见 [docs/conversion/FP32_FP4_INT8_COMPARISON.md](docs/conversion/FP32_FP4_INT8_COMPARISON.md)
+
 ## 📁 完整项目结构
 
 ### 根目录文件
@@ -98,8 +130,11 @@ watch -n 30 'bash check_int8_progress.sh'
 - **README_INT8.md** - 技术文档（配置、快速开始、故障排除）
 
 #### 🔧 关键脚本
-- **run_int8_all_suites_20trials.sh** - 自动化运行全部4个LIBERO套件评估
+- **run_int8_all_suites_20trials.sh** - 自动化运行全部4个LIBERO套件评估 (INT8)
 - **check_int8_progress.sh** - 可视化进度监控工具
+- **scripts/benchmark_trt_models.py** - FP32/FP4/INT8 基准测试脚本
+- **scripts/serve_trt.py** - TensorRT WebSocket推理服务器
+- **scripts/eval_libero_trt_v1.py** - LIBERO基准评估脚本
 
 #### 📊 数据文件
 - **calibration_data.pt** (284MB) - INT8校准数据（包含200个真实推理样本）

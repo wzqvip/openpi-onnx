@@ -26,7 +26,6 @@ sys.modules["lerobot.common.datasets.lerobot_dataset"] = MagicMock()
 
 from openpi_client import image_tools
 from openpi.policies import tensorrt_remote_policy, libero_policy
-print(f"DEBUG: tensorrt_remote_policy file: {tensorrt_remote_policy.__file__}")
 from openpi.training import config as _config
 from openpi.training import checkpoints as _checkpoints
 from openpi import transforms
@@ -137,15 +136,6 @@ def eval_libero(args: Args) -> None:
             q01 = np.array(v["q01"], dtype=np.float32) if v.get("q01") is not None else None
             q99 = np.array(v["q99"], dtype=np.float32) if v.get("q99") is not None else None
             norm_stats[k] = NormStats(mean=mean, std=std, q01=q01, q99=q99)
-            
-        print(f"DEBUG: Overridden norm_stats keys: {list(norm_stats.keys())}")
-
-        
-    print(f"DEBUG Stats Keys: {list(norm_stats.keys())}")
-    
-    # DEBUG: Norm Keys check
-    print(f"DEBUG Stats Keys: {list(norm_stats.keys())}")
-    
     # Image normalization handled manually by ImageNormalize to [-1, 1]
 
 
@@ -164,10 +154,6 @@ def eval_libero(args: Args) -> None:
         # Filter out ResizeImages because we resize manually in the loop (and it breaks on CHW floats)
         *[t for t in data_config.model_transforms.inputs if not isinstance(t, (transforms.PadStatesAndActions, transforms.ResizeImages))],
     ]
-    
-    print("DEBUG: input_transforms:")
-    for i, t in enumerate(input_transforms):
-        print(f"  {i}: {t}")
     
     flat_stats = flatten_dict(norm_stats)
     output_stats_flat = {k: v for k, v in flat_stats.items() if "actions" in k}
