@@ -20,8 +20,6 @@ import numpy as np
 import torch
 import tqdm
 import tyro
-import websocket
-import msgpack
 
 from unittest.mock import MagicMock
 sys.modules["lerobot"] = MagicMock()
