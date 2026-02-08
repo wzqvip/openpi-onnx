@@ -121,8 +121,9 @@ python scripts/benchmark_trt_models.py \
 
 ### 根目录文件
 
-#### 📄 核心文档 (INT8评估文档)
+#### 📄 核心文档 (INT8评估和性能对比)
 - **README.md** - 本文件
+- **BENCHMARK_GUIDE.md** ✨ (新) - 性能基准对比指南（FP32 vs INT8 vs FP4）
 - **INT8_QUICK_REFERENCE.md** ⭐ - 快速参考（推荐首先阅读）
 - **INT8_SUMMARY.md** - 完整总结（问题诊断、解决方案、关键发现）
 - **INT8_FINAL_RESULTS.md** - 最终结果（所有40个任务的详细数据）
@@ -226,19 +227,23 @@ checkpoints/
 ### docs目录文档组
 保留的5个文档提供转换和部署的必要知识：
 
-1. **docs/conversion/pi05_onnx_conversion_guide.md**
+1. **docs/conversion/FP32_FP4_INT8_COMPARISON.md** ✨ (新)
+   - FP32基线 vs INT8量化 vs FP4的完整对比指南
+   - 基准测试方法论、运行方式、结果解释
+
+2. **docs/conversion/pi05_onnx_conversion_guide.md**
    - 指导如何将Pi05模型转换为ONNX格式
 
-2. **docs/conversion/tutorial_libero_trt.md**
+3. **docs/conversion/tutorial_libero_trt.md**
    - LIBERO数据集与TensorRT集成教程
 
-3. **docs/conversion/norm_stats.md**
+4. **docs/conversion/norm_stats.md**
    - 解释归一化统计的计算和使用方法
 
-4. **docs/dev/CONTRIBUTING.md**
+5. **docs/dev/CONTRIBUTING.md**
    - 项目贡献指南
 
-5. **docs/dev/docker.md**
+6. **docs/dev/docker.md**
    - Docker部署配置文档
 
 ## �🔧 技术细节
