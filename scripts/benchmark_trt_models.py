@@ -136,20 +136,38 @@ def build_transforms(data_config, norm_stats):
     return input_transforms, output_transforms
 
 
-def get_inference_function(port: int, input_transforms, output_transforms):
+def get_inference_function(port: int, input_transforms, output_transforms, resize_size=224):
     """Create inference function using TensorRT remote policy."""
+    from openpi_client import image_tools
     policy = tensorrt_remote_policy.TensorRTRemotePolicy(host="localhost", port=port)
     
     def inference_fn(obs):
         try:
-            data = {"observations": obs, "language": "pick up and place"}
+            # Process images
+            img = np.ascontiguousarray(obs["agentview_image"][::-1, ::-1])
+            wrist_img = np.ascontiguousarray(obs["robot0_eye_in_hand_image"][::-1, ::-1])
+            img = image_tools.convert_to_uint8(image_tools.resize_with_pad(img, resize_size, resize_size))
+            wrist_img = image_tools.convert_to_uint8(image_tools.resize_with_pad(wrist_img, resize_size, resize_size))
+            
+            # Build element dict
+            element = {
+                "observation/image": img,
+                "observation/wrist_image": wrist_img,
+                "observation/state": np.concatenate((
+                    obs["robot0_eef_pos"],
+                    obs.get("robot0_eef_quat", np.array([1, 0, 0, 0])),  # Add quat if missing
+                    obs["robot0_gripper_qpos"],
+                )),
+                "prompt": "pick up and place",
+            }
             
             # Apply input transforms
+            data = element
             for transform in input_transforms:
                 data = transform(data)
             
             # Get action from policy
-            action, _ = policy(data["observations"])
+            action, _ = policy(data)
             
             # Apply output transforms
             output_data = {"actions": action}
@@ -211,7 +229,7 @@ def benchmark_model(args: Args):
     logging.info(f"Assuming TensorRT server running on port {args.port}")
     
     # Get inference function
-    inference_fn = get_inference_function(args.port, input_transforms, output_transforms)
+    inference_fn = get_inference_function(args.port, input_transforms, output_transforms, resize_size=224)
     
     # Load benchmark
     libero_benchmark = benchmark.get_benchmark_dict()
