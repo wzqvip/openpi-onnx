@@ -33,7 +33,7 @@ sys.path.append(str(pathlib.Path("./third_party/libero").resolve()))
 from libero.libero import benchmark
 from libero.libero.envs import OffScreenRenderEnv
 
-from openpi.policies import tensorrt_remote_policy
+from openpi.policies import tensorrt_remote_policy, libero_policy
 from openpi.training import config as _config
 from openpi import transforms
 from openpi.transforms import flatten_dict, unflatten_dict
@@ -85,11 +85,19 @@ def get_engine_path(model_type: str) -> pathlib.Path:
     return engine_path
 
 
-def build_transforms(norm_stats):
+def _get_libero_env(task, resolution, seed):
+    """Create libero environment for task."""
+    from libero.libero import get_libero_path
+    task_description = task.language
+    task_bddl_file = pathlib.Path(get_libero_path("bddl_files")) / task.problem_folder / task.bddl_file
+    env_args = {"bddl_file_name": task_bddl_file, "camera_heights": resolution, "camera_widths": resolution}
+    env = OffScreenRenderEnv(**env_args)
+    env.seed(seed)
+    return env, task_description
+
+
+def build_transforms(data_config, norm_stats):
     """Build input/output transforms."""
-    config = _config.load_config("pi05_libero", override_dict={})
-    data_config = config.data
-    
     input_transforms = [
         *data_config.data_transforms.inputs,
         ImageNormalize(),
@@ -102,9 +110,27 @@ def build_transforms(norm_stats):
     output_stats_flat = {k: v for k, v in flat_stats.items() if "actions" in k}
     output_norm_stats = unflatten_dict(output_stats_flat)
     
+    # Pad action stats to 32 dimensions to match model output
+    if "actions" in output_norm_stats:
+        act_stats = output_norm_stats["actions"]
+        current_dim = act_stats.mean.shape[0]
+        if current_dim < 32:
+            pad_len = 32 - current_dim
+            # Pad mean with 0
+            act_stats.mean = np.concatenate([act_stats.mean, np.zeros(pad_len, dtype=np.float32)])
+            # Pad std with 1 (so unnorm is identity for extra dims)
+            act_stats.std = np.concatenate([act_stats.std, np.ones(pad_len, dtype=np.float32)])
+            # Pad quantiles if present (safe values)
+            if hasattr(act_stats, "q01") and act_stats.q01 is not None:
+                act_stats.q01 = np.concatenate([act_stats.q01, np.full(pad_len, -1.0, dtype=np.float32)])
+            if hasattr(act_stats, "q99") and act_stats.q99 is not None:
+                act_stats.q99 = np.concatenate([act_stats.q99, np.full(pad_len, 1.0, dtype=np.float32)])
+    
     output_transforms = [
-        transforms.Unnormalize(output_norm_stats),
-        transforms.PadStatesAndActions(target_action_dim=32, action_mask_dim=1, action_dim=7),
+        *data_config.model_transforms.outputs,
+        transforms.Unnormalize(output_norm_stats, use_quantiles=data_config.use_quantile_norm),
+        *data_config.data_transforms.outputs,
+        libero_policy.LiberoOutputs(),
     ]
     
     return input_transforms, output_transforms
@@ -159,17 +185,27 @@ def benchmark_model(args: Args):
     logging.info(f"Engine size: {engine_size_gb:.2f} GB")
     
     # Load config and norm stats
-    config = _config.load_config("pi05_libero", override_dict={})
+    train_config = _config.get_config("pi05_libero")
+    data_config = train_config.data.create(train_config.assets_dirs, train_config.model)
     
+    # Load norm stats from torch_norm_stats.json
+    from openpi.shared.normalize import NormStats
     norm_stats = {}
     norm_path = pathlib.Path("./torch_norm_stats.json")
     if norm_path.exists():
         with open(norm_path) as f:
-            norm_stats = json.load(f)
+            override_stats = json.load(f)
         logging.info(f"Loaded norm stats: {norm_path}")
+        # Convert to NormStats objects
+        for k, v in override_stats.items():
+            mean = np.array(v["mean"], dtype=np.float32)
+            std = np.array(v["std"], dtype=np.float32)
+            q01 = np.array(v["q01"], dtype=np.float32) if v.get("q01") is not None else None
+            q99 = np.array(v["q99"], dtype=np.float32) if v.get("q99") is not None else None
+            norm_stats[k] = NormStats(mean=mean, std=std, q01=q01, q99=q99)
     
     # Build transforms
-    input_transforms, output_transforms = build_transforms(norm_stats)
+    input_transforms, output_transforms = build_transforms(data_config, norm_stats)
     
     # Note: Assumes TensorRT server is already running on the specified port
     logging.info(f"Assuming TensorRT server running on port {args.port}")
@@ -197,7 +233,7 @@ def benchmark_model(args: Args):
             logging.warning(f"Suite not found: {suite_name}")
             continue
         
-        suite = libero_benchmark[suite_name]
+        suite = libero_benchmark[suite_name]()  # Instantiate the suite
         suite_results = {"tasks": {}, "suite_success_rate": 0.0, "suite_avg_latency_ms": 0.0}
         
         logging.info(f"\n{'='*60}")
@@ -208,8 +244,22 @@ def benchmark_model(args: Args):
         suite_trials = 0
         suite_latencies = []
         
-        for task_id, task in enumerate(suite.tasks):
-            task_name = task.problem_statement.replace(" ", "_")[:35]
+        # Determine max steps based on task suite
+        if suite_name == "libero_spatial": max_steps = 220
+        elif suite_name == "libero_object": max_steps = 280
+        elif suite_name == "libero_goal": max_steps = 300
+        elif suite_name == "libero_10": max_steps = 520
+        elif suite_name == "libero_90": max_steps = 400
+        else: max_steps = 400
+        
+        for task_id in range(suite.n_tasks):
+            task = suite.get_task(task_id)
+            initial_states = suite.get_task_init_states(task_id)
+            
+            # Get task description
+            task_description = task.problem_statement if hasattr(task, 'problem_statement') else f"Task {task_id}"
+            task_name = task_description.replace(" ", "_")[:35]
+            
             task_results = {
                 "successes": 0,
                 "trials": args.num_trials,
@@ -221,21 +271,15 @@ def benchmark_model(args: Args):
             task_successes = 0
             task_latencies = []
             
-            logging.info(f"Task {task_id+1}/10: {task_name}")
+            logging.info(f"Task {task_id+1}/{suite.n_tasks}: {task_name}")
             
             with tqdm.trange(args.num_trials) as pbar:
                 for trial in pbar:
-                    env = OffScreenRenderEnv(
-                        task,
-                        device_id=0,
-                        img_size=LIBERO_ENV_RESOLUTION,
-                        seed=args.seed + trial,
-                    )
+                    env, _ = _get_libero_env(task, LIBERO_ENV_RESOLUTION, args.seed + trial)
                     
-                    obs = env.reset()
+                    obs = env.set_init_state(initial_states[trial % len(initial_states)])
                     done = False
                     step = 0
-                    max_steps = 400
                     
                     latencies = []
                     success = False
@@ -250,7 +294,7 @@ def benchmark_model(args: Args):
                             obs, reward, done, info = env.step(action)
                             step += 1
                         
-                        success = info.get("success", False) or (step < max_steps - 50)
+                        success = reward > 0 or info.get("success", False)
                     except Exception as e:
                         logging.debug(f"Trial error: {e}")
                         success = False
