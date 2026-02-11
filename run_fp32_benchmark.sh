@@ -20,7 +20,7 @@ suite_num=0
 total_suites=${#SUITES[@]}
 
 for suite in "${SUITES[@]}"; do
-    ((suite_num++))
+    suite_num=$((suite_num + 1))
     echo ""
     echo "======================================================================"
     echo "[$suite_num/$total_suites] Starting: $suite"
