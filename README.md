@@ -4,29 +4,37 @@
 
 ## ✨ Quick Overview
 
-### 🔥 PyTorch FP32 Baseline Results
+### 🔥 PyTorch FP32 Baseline Results (20 Trials Standard Test)
 
-| Suite | Accuracy | Avg Latency (ms) | P99 Latency (ms) | GPU Memory (GB) |
-|-------|----------|------------------|------------------|-----------------|
-| **libero_spatial** | **97.0%** | **264.38** | **491.61** | **8.10** |
-| **libero_goal** | **94.0%** | **260.57** | **282.64** | **8.10** |
-| **libero_object** | **96.0%** | **262.32** | **281.04** | **8.10** |
-| **libero_10** | **92.0%** | **263.27** | **291.02** | **8.10** |
+**测试配置**: 每任务20次试验 × 4套件 = 800 episodes | 随机种子: 42 | 测试日期: 2026-02-11/12
 
+| Suite | Accuracy | Success/Total | Avg Latency (ms) | Median Latency (ms) | P99 Latency (ms) | GPU Memory (GB) |
+|-------|----------|---------------|------------------|---------------------|------------------|-----------------|
+| **libero_spatial** | **99.5%** | 199/200 | 263.23 | 261.68 | 286.90 | 8.10 |
+| **libero_goal** | **91.0%** | 182/200 | 259.49 | 258.43 | 271.99 | 8.10 |
+| **libero_object** | **95.0%** | 190/200 | 264.36 | 263.70 | 283.00 | 8.10 |
+| **libero_10** | **89.5%** | 179/200 | 262.56 | 262.46 | 273.26 | 8.10 |
+| **Overall** | **93.75%** | **750/800** | **262.41** | **261.57** | **278.79** | **8.10** |
 
 **Key Findings**:
-- ✅ High accuracy: 94.75% average across 3 suites
-- ⚡ Consistent latency: ~260ms mean across all suites
-- 💾 Stable memory: 8.10GB GPU usage
+- ✅ High accuracy: 93.75% overall (750/800 episodes)
+- ⚡ Consistent latency: 262.41ms mean, only 1.75ms std across suites
+- 🎯 Low tail latency: P99 only +17ms vs median (+6.5%)
+- 💾 Stable memory: 8.10GB GPU usage (constant across all suites)
+- 📊 Task stratification: spatial (99.5%) > object (95.0%) > goal (91.0%) > libero_10 (89.5%)
 
-### 📊 INT8 TensorRT Quantization Results
+📄 **详细报告**: [benchmark_results/FP32_RESULTS_20TRIALS.md](benchmark_results/FP32_RESULTS_20TRIALS.md)
+
+### 📊 INT8 TensorRT Quantization Results (Historical - 需要重新测试)
+
+**注意**: 以下INT8结果基于之前的测试，建议使用标准化20次试验重新评估以便公平对比。
 
 - **Overall Accuracy**: 96.88%
 - **Quantization**: INT8 W8A8 (ModelOpt)
 - **Evaluation**: LIBERO Benchmark
-- **Status**: ✅ Production Ready
+- **Status**: 待重新验证
 
-#### Suite Performance (INT8)
+#### Suite Performance (INT8 - Historical)
 | Suite | Accuracy |
 |-------|----------|
 | libero_goal | 99.0% |
@@ -34,10 +42,10 @@
 | libero_object | 98.0% |
 | libero_10 | 92.0% |
 
-**Key Findings**:
-- 🎯 Higher accuracy: INT8 96.88% vs FP32 93.25% (+3.63%)
-- 🚀 Smaller model: 4.6GB vs 13GB (64.6% reduction)
-- ✅ Successful quantization: All suites achieve 92%+, goal suite reaches 99%
+**下一步**:
+- [ ] 运行 INT8 标准化 20次试验测试 (`./run_int8_benchmark.sh`)
+- [ ] 生成 FP32 vs INT8 公平对比报告
+- [ ] 分析量化对延迟的影响
 
 ## 📚 Documentation
 
@@ -46,8 +54,9 @@
    - Quick overview: Key data, common commands, file structure
    - **For**: Quick understanding of current status
 
-2. **[FP32_INT8_COMPARISON.md](FP32_INT8_COMPARISON.md)** 🆕
+2. **[FP32_INT8_COMPARISON.md](FP32_INT8_COMPARISON.md)** 🆕 ⏳ 待更新
    - Model comparison: FP32 baseline vs INT8 quantization
+   - **Status**: 等待INT8标准化测试完成后更新
    - **For**: Performance comparison and deployment decisions
 
 3. **[INT8_SUMMARY.md](INT8_SUMMARY.md)**
@@ -58,9 +67,10 @@
    - Detailed results: Complete data for all 40 tasks
    - **For**: Viewing specific accuracy and failure analysis
 
-5. **[PYTORCH_FP32_FINAL_RESULTS.md](PYTORCH_FP32_FINAL_RESULTS.md)**
-   - PyTorch baseline: Complete FP32 model evaluation
-   - **For**: FP32 baseline performance reference
+5. **[PYTORCH_FP32_FINAL_RESULTS.md](PYTORCH_FP32_FINAL_RESULTS.md)** (已过期 - 10次试验)
+   - PyTorch baseline: 之前的FP32模型评估（10次试验）
+   - **新版本**: [benchmark_results/FP32_RESULTS_20TRIALS.md](benchmark_results/FP32_RESULTS_20TRIALS.md) ⭐
+   - **For**: 查看最新标准化测试结果
 
 6. **[README_INT8.md](README_INT8.md)**
    - Technical documentation: Configuration, quick start, troubleshooting
@@ -80,11 +90,27 @@ cat INT8_SUMMARY.md
 cat INT8_FINAL_RESULTS.md
 ```
 
-### 运行PyTorch FP32基线测试 (推荐)
+### 运行PyTorch FP32基线测试
 
 PyTorch模型是经过验证的工作版本，适合作为性能基准。
 
-#### 单个套件测试
+#### ✅ 推荐：使用标准化脚本（20次试验）
+```bash
+# FP32标准化测试（已完成 ✅）
+./run_fp32_benchmark.sh
+
+# 查看结果
+cat benchmark_results/fp32_summary.txt
+cat benchmark_results/FP32_RESULTS_20TRIALS.md
+```
+
+**当前状态**: 
+- ✅ FP32 测试已完成 (2026-02-11/12)
+- ⏳ INT8 测试待运行
+- 📊 总体成功率: 93.75% (750/800)
+- ⚡ 平均延迟: 262.41 ms
+
+#### 手动单个套件测试
 ```bash
 # 激活环境
 source .venv/bin/activate
@@ -126,7 +152,26 @@ grep -c "Result: failure" pytorch_benchmark_spatial.log
 tail -100 pytorch_benchmark_spatial.log | grep -A 5 "Total Success Rate"
 ```
 
-### 运行TensorRT评估 (需要先修复推理问题)
+### 运行TensorRT INT8评估
+
+#### ✅ 推荐：使用标准化脚本（20次试验）
+```bash
+# INT8标准化测试（与FP32相同配置）
+./run_int8_benchmark.sh
+
+# 实时监控进度
+tail -f benchmark_logs/int8_spatial_20trials.log
+
+# 查看结果
+cat benchmark_results/int8_summary.txt
+```
+
+**配置**:
+- 每任务20次试验 × 4套件 = 800 episodes
+- 随机种子: 42
+- 模型: model.int8.modelopt.engine (4.6GB)
+
+#### 手动启动服务和测试
 
 #### 启动TensorRT服务
 ```bash
