@@ -2,6 +2,7 @@
 """Analyze FP32 vs INT8 benchmark results."""
 import re
 from pathlib import Path
+from tqdm import tqdm
 
 def parse_log(path):
     """Parse benchmark log file."""
@@ -32,7 +33,10 @@ def main():
     log_dir = Path('benchmark_logs')
     results = {'fp32': {}, 'int8': {}}
     
-    for suite in ['spatial', 'goal', 'object', '10']:
+    suites = ['spatial', 'goal', 'object', '10']
+    print("\nParsing benchmark logs...")
+    
+    for suite in tqdm(suites, desc="Loading results", unit="suite"):
         fp32_log = log_dir / f'fp32_{suite}_20trials.log'
         int8_log = log_dir / f'int8_{suite}_20trials.log'
         

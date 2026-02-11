@@ -16,11 +16,18 @@ echo "======================================================================"
 source .venv/bin/activate
 mkdir -p benchmark_logs benchmark_results
 
+suite_num=0
+total_suites=${#SUITES[@]}
+
 for suite in "${SUITES[@]}"; do
+    ((suite_num++))
     echo ""
-    echo ">>> Starting: $suite"
+    echo "======================================================================"
+    echo "[$suite_num/$total_suites] Starting: $suite"
+    echo "======================================================================"
     log_file="benchmark_logs/fp32_${suite##*_}_20trials.log"
     
+    START=$(date +%s)
     PYTHONPATH="$LIBERO_PATH:$PYTHONPATH" \
     python3 scripts/eval_libero_torch.py \
         --checkpoint="$CHECKPOINT" \
@@ -28,11 +35,17 @@ for suite in "${SUITES[@]}"; do
         --task_suite_name="$suite" \
         --num_trials_per_task="$NUM_TRIALS" \
         --seed="$SEED" \
-        > "$log_file" 2>&1
+        2>&1 | tee "$log_file"
     
-    echo "✓ Completed: $suite"
+    END=$(date +%s)
+    DURATION=$((END - START))
+    
+    echo ""
+    echo "✓ Completed: $suite (took ${DURATION}s)"
+    echo "Results:"
     grep "Total Success Rate\|Latency (ms)" "$log_file" | tail -2
-    sleep 10
+    echo ""
+    sleep 5
 done
 
 echo ""
