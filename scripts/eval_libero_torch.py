@@ -253,12 +253,9 @@ def eval_libero(args: Args) -> None:
                         if torch.cuda.is_available():
                             torch.cuda.synchronize()
                         end_time = time.time()
-                        latencies.append((end_time - start_time) * 1000)
-
-                        if torch.cuda.is_available():
-                            torch.cuda.synchronize()
-                        end_time = time.time()
-                        latencies.append((end_time - start_time) * 1000)
+                        latency_ms = (end_time - start_time) * 1000
+                        latencies.append(latency_ms)
+                        logging.info(f"Infer latency (ms): {latency_ms:.2f}")
 
                         # Convert from Torch to Numpy
                         # result['actions'] is usually a Numpy array (from Policy wrapper)

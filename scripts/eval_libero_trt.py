@@ -269,6 +269,7 @@ async def eval_libero_trt(args):
                                     )
                                     debug_logged = True
                                 latencies.append(latency)
+                                logger.info(f"Infer latency (ms): {latency:.2f}")
                                 
                                 # Extract actions
                                 # Model outputs 32D actions, but LIBERO only uses first 7D
