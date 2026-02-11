@@ -139,7 +139,11 @@ def build_transforms(data_config, norm_stats):
 def get_inference_function(port: int, input_transforms, output_transforms, resize_size=224):
     """Create inference function using TensorRT remote policy."""
     from openpi_client import image_tools
+    import traceback
     policy = tensorrt_remote_policy.TensorRTRemotePolicy(host="localhost", port=port)
+    
+    # Statistics
+    inference_stats = {"success": 0, "errors": 0, "error_types": {}}
     
     def inference_fn(obs):
         try:
@@ -174,12 +178,23 @@ def get_inference_function(port: int, input_transforms, output_transforms, resiz
             for transform in output_transforms:
                 output_data = transform(output_data)
             
+            inference_stats["success"] += 1
+            
             # Return 7D action
             return output_data["actions"][:7].tolist()
         except Exception as e:
-            logging.debug(f"Inference error: {e}")
+            error_type = type(e).__name__
+            inference_stats["errors"] += 1
+            inference_stats["error_types"][error_type] = inference_stats["error_types"].get(error_type, 0) + 1
+            
+            # Log first few errors in detail
+            if inference_stats["errors"] <= 3:
+                logging.error(f"Inference error #{inference_stats['errors']}: {e}")
+                logging.error(f"Traceback: {traceback.format_exc()}")
+            
             return LIBERO_DUMMY_ACTION
     
+    inference_fn.stats = inference_stats
     return inference_fn
 
 

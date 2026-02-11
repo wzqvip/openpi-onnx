@@ -203,17 +203,11 @@ def eval_libero(args: Args) -> None:
 
         task_episodes, task_successes = 0, 0
         
-        # DEBUG: Check initial state vector
-        s0 = initial_states[0]
-        print(f"DEBUG [Torch] InitState[0]: shape={s0.shape}, mean={np.mean(s0)}, first10={s0[:10]}")
-        
         for episode_idx in tqdm.tqdm(range(args.num_trials_per_task)):
             env.reset()
             env.reset()
             action_plan = collections.deque()
             obs = env.set_init_state(initial_states[episode_idx])
-            
-            print(f"DEBUG [Torch] Task ID: {task_id}, Desc: {task_description}")
             
             t = 0
             replay_images = []
@@ -250,10 +244,7 @@ def eval_libero(args: Args) -> None:
                             "prompt": str(task_description),
                         }
                         
-                        # DEBUG: Print input stats
-                        print(f"DEBUG [Torch] Image: shape={element['observation/image'].shape}, range=[{np.min(element['observation/image'])}, {np.max(element['observation/image'])}], mean={np.mean(element['observation/image'])}")
-                        print(f"DEBUG [Torch] State: shape={element['observation/state'].shape}, first10={element['observation/state'][:10]}")
-                        
+
                         # Policy Inference
                         if torch.cuda.is_available():
                             torch.cuda.synchronize()

@@ -1,9 +1,9 @@
-
-import os
-import modelopt
 import modelopt.torch.quantization as mtq
-
-print("--- ModelOpt Quantization Configs ---")
+print("Attributes of mtq:")
 for x in dir(mtq):
-    if "CFG" in x:
-        print(x)
+    print(x)
+print("\nChecking for export:")
+if hasattr(mtq, 'export_model'):
+    print("Found export_model")
+if hasattr(mtq, 'convert'):
+    print("Found convert")
