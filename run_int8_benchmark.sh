@@ -13,7 +13,8 @@ echo "======================================================================"
 echo "  INT8 TensorRT Benchmark (20 trials per task)"
 echo "======================================================================"
 
-source .venv/bin/activate
+# Use the main venv with all dependencies installed
+source /home/taco/.venv/bin/activate
 mkdir -p benchmark_logs benchmark_results
 
 suite_num=0
