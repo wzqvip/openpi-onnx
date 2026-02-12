@@ -11,9 +11,15 @@ This repository covers the OpenPI ONNX/TensorRT workflow: JAX → PyTorch conver
 
 ### ONNX Export & INT8 Quantization
 
-- [docs/conversion/pi05_onnx_conversion_guide.md](docs/conversion/pi05_onnx_conversion_guide.md) - ONNX export + INT8 workflow
+- **[INT8_WORKFLOW_QUICKSTART.md](INT8_WORKFLOW_QUICKSTART.md) - Quick start guide (4-step workflow)** ⭐
+- [docs/conversion/pi05_onnx_conversion_guide.md](docs/conversion/pi05_onnx_conversion_guide.md) - Complete INT8 workflow (data collection → quantization → evaluation)
 - [docs/conversion/norm_stats.md](docs/conversion/norm_stats.md) - normalization stats format
 - [docs/quantization_calibration_explained.md](docs/quantization_calibration_explained.md) - calibration data notes
+- [scripts/collect_calibration_data.py](scripts/collect_calibration_data.py) - collect calibration data from LIBERO
+- [exports/export_modelopt_int8.py](exports/export_modelopt_int8.py) - ModelOpt INT8 export script
+- [scripts/eval_libero_trt_v1.py](scripts/eval_libero_trt_v1.py) - full LIBERO evaluation (all 4 suites)
+- [scripts/eval_libero_10.py](scripts/eval_libero_10.py) - LIBERO-10 evaluation via WebSocket
+- [scripts/serve_trt.py](scripts/serve_trt.py) - TensorRT inference server
 
 ### FP4 Notes
 
