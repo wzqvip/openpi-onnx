@@ -1,4 +1,41 @@
-# INT8 Model Quantization and Evaluation
+# INT8 TensorRT Guide
+
+This document covers INT8 evaluation using the verified v1 path.
+
+## Recommended script
+
+```bash
+./run_int8_benchmark_v1.sh
+```
+
+## Manual flow
+
+```bash
+# Start server
+python scripts/serve_trt.py \
+  --engine_path=checkpoints/pi05_libero_onnx_compat/model.int8.modelopt.engine \
+  --port=8012 &
+
+# Run a suite
+python scripts/eval_libero_trt_v1.py \
+  --task_suite_name=libero_spatial \
+  --num_trials_per_task=20 \
+  --port=8012 --seed=42
+```
+
+## Logs
+
+- `benchmark_logs/int8_spatial_20trials_v1.log`
+- `benchmark_logs/int8_goal_20trials_v1.log`
+- `benchmark_logs/int8_object_20trials_v1.log`
+- `benchmark_logs/int8_10_20trials_v1.log`
+
+## Notes
+
+- The WebSocket path (`eval_libero_trt.py`) is **not** validated for INT8 accuracy.
+- `eval_libero_trt_v1.py` contains the correct action padding logic.
+
+**Last updated**: 2026-02-12# INT8 Model Quantization and Evaluation
 
 > **Branch**: INT8  
 > **Status**: ✅ Completed  

@@ -1,54 +1,56 @@
-# PyTorch FP32 Benchmark - 快速参考
+# PyTorch FP32 Benchmark - Quick Reference
 
-⚡ **一页纸总结** - 所有关键数据一目了然
-
----
-
-## 📊 核心数据
-
-| 指标 | 数值 |
-|------|------|
-| 🎯 **总成功率** | **93.25%** (373/400) |
-| ⚡ **平均延迟** | **515 ms** |
-| 💾 **GPU显存** | **8.10 GB** |
-| ✅ **状态** | 生产就绪 |
+⚡ **One-page summary** - key results at a glance
 
 ---
 
-## 📈 各套件表现
+## 📊 Core Metrics
+
+| Metric | Value |
+|--------|-------|
+| 🎯 **Overall success rate** | **93.25%** (373/400) |
+| ⚡ **Mean latency** | **515 ms** |
+| 💾 **GPU memory** | **8.10 GB** |
+| ✅ **Status** | Production ready |
+
+---
+
+## 📈 By Suite
 
 ```
-libero_spatial: 98% ████████████████████ (266ms)  ⚡最快
+libero_spatial: 98% ████████████████████ (266ms)  ⚡fastest
 libero_object:  96% ███████████████████  (646ms)
-libero_goal:    94% ██████████████████   (690ms)  🐢最慢  
-libero_10:      85% █████████████████    (458ms)  ⚠️最难
+libero_goal:    94% ██████████████████   (690ms)  🐢slowest  
+libero_10:      85% █████████████████    (458ms)  ⚠️hardest
 ```
 
 ---
 
-## 🎯 对比INT8 (待测)
+## 🎯 INT8 Comparison
 
-| 项目 | FP32 ✅ | INT8 ⏳ |
+| Item | FP32 ✅ | INT8 ✅ |
 |------|---------|---------|
-| 成功率 | 93% | 待修复 |
-| 延迟 | 515ms | 预期~200ms |
-| 显存 | 8.1GB | 预期~4GB |
+| Success rate | 93.25% | 98.25% |
+| Latency | 515 ms (inference) | 10.43 s mean (episode wall time) |
+| GPU memory | 8.10 GB | ~4.95 GB |
+
+> INT8 latency is end-to-end episode wall time from tqdm logs; inference-only latency is not logged.
 
 ---
 
-## 🚀 快速命令
+## 🚀 Quick Commands
 
-**查看完整结果**:
+**View full results**:
 ```bash
 cat ~/PYTORCH_FP32_FINAL_RESULTS.md
 ```
 
-**查看对比报告**:
+**View comparison report**:
 ```bash
 cat ~/FP32_INT8_COMPARISON.md
 ```
 
-**重新运行测试**:
+**Re-run the benchmark**:
 ```bash
 cd /home/taco && source .venv/bin/activate
 PYTHONPATH=openpi-onnx/third_party/libero:$PYTHONPATH \
@@ -61,15 +63,15 @@ python3 openpi-onnx/scripts/eval_libero_torch.py \
 
 ---
 
-## 📁 文档索引
+## 📁 Document Index
 
-| 文档 | 说明 |
-|------|------|
-| [PYTORCH_FP32_FINAL_RESULTS.md](PYTORCH_FP32_FINAL_RESULTS.md) | 完整测试结果 |
-| [FP32_INT8_COMPARISON.md](FP32_INT8_COMPARISON.md) | FP32 vs INT8对比 |
-| [openpi-onnx/README.md](openpi-onnx/README.md) | 项目主文档 |
-| [PYTORCH_FP32_PROGRESS.md](PYTORCH_FP32_PROGRESS.md) | 进度追踪 |
+| Document | Description |
+|----------|-------------|
+| [PYTORCH_FP32_FINAL_RESULTS.md](PYTORCH_FP32_FINAL_RESULTS.md) | Full benchmark results |
+| [FP32_INT8_COMPARISON.md](FP32_INT8_COMPARISON.md) | FP32 vs INT8 comparison |
+| [openpi-onnx/README.md](openpi-onnx/README.md) | Project README |
+| [PYTORCH_FP32_PROGRESS.md](PYTORCH_FP32_PROGRESS.md) | Progress tracking |
 
 ---
 
-**生成时间**: 2026-02-09 | **模型**: pi05_libero_pytorch
+**Generated**: 2026-02-09 | **Model**: pi05_libero_pytorch

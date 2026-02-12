@@ -1,78 +1,127 @@
-# FP32 PyTorch Baseline - 20 Trials 标准化测试结果
+# FP32 PyTorch Baseline - 20 Trials Standard Test
 
-**测试日期**: 2026-02-11 ~ 2026-02-12  
-**测试配置**: 每个任务20次试验，随机种子42  
-**模型**: checkpoints/pi05_libero_pytorch (13GB)  
-**设备**: NVIDIA Jetson (8.10GB GPU Memory)
+**Test date**: 2026-02-11 ~ 2026-02-12  
+**Config**: 20 trials per task, seed 42  
+**Model**: checkpoints/pi05_libero_pytorch (13GB)  
+**Device**: NVIDIA Jetson (8.10GB GPU Memory)
 
 ---
 
-## 📊 总体结果
+## 📊 Results
 
-| 套件 | 成功率 | 成功/总数 | 平均延迟 (ms) | 中位数延迟 (ms) | P99延迟 (ms) | GPU显存 (GB) |
-|------|--------|-----------|---------------|-----------------|--------------|--------------|
+| Suite | Accuracy | Success/Total | Avg Latency (ms) | Median (ms) | P99 (ms) | GPU Memory (GB) |
+|------|----------|---------------|------------------|-------------|----------|-----------------|
 | **libero_spatial** | **99.5%** | 199/200 | 263.23 | 261.68 | 286.90 | 8.10 |
 | **libero_goal** | **91.0%** | 182/200 | 259.49 | 258.43 | 271.99 | 8.10 |
 | **libero_object** | **95.0%** | 190/200 | 264.36 | 263.70 | 283.00 | 8.10 |
 | **libero_10** | **89.5%** | 179/200 | 262.56 | 262.46 | 273.26 | 8.10 |
 
-### 汇总统计（4个套件）
+### Overall (all 4 suites)
 
-- **总体成功率**: **93.75%** (750/800 episodes)
-- **平均延迟**: **262.41 ms**
-- **中位数延迟**: **261.57 ms**
-- **P99延迟**: **278.79 ms**
-- **GPU峰值显存**: **8.10 GB**
-
----
-
-## 📈 详细分析
-
-### 成功率分布
-
-- **最佳性能**: libero_spatial (99.5%) - 空间推理任务
-- **挑战性任务**: libero_10 (89.5%) - 长序列任务
-- **中等难度**: libero_object (95.0%), libero_goal (91.0%)
-
-### 延迟性能
-
-- **一致性**: 4个套件的平均延迟都在 259-264 ms 范围内，标准差极小
-- **P99延迟**: 所有套件的P99都在 272-287 ms 之间，尾延迟控制良好
-- **单次推理**: 平均 ~262 ms/infer
-
-### 资源占用
-
-- **GPU显存**: 所有套件峰值都是 8.10 GB，显存使用稳定
-- **适用设备**: 需要至少 9GB GPU显存的设备
+- **Overall accuracy**: **93.75%** (750/800 episodes)
+- **Mean latency**: **262.41 ms**
+- **Median latency**: **261.57 ms**
+- **P99 latency**: **278.79 ms**
+- **Peak GPU memory**: **8.10 GB**
 
 ---
 
-## 🔍 与之前10次试验的对比
+## 📈 Analysis
 
-| 指标 | 10次试验 | 20次试验 | 变化 |
-|------|----------|----------|------|
-| **总体成功率** | 95.0% (285/300) | 93.75% (750/800) | -1.25% |
-| **平均延迟** | 262.42 ms | 262.41 ms | -0.01 ms |
-| **P99延迟** | ~280 ms | 278.79 ms | 略有改善 |
+### Accuracy distribution
 
-**结论**: 增加样本量后，成功率稍有下降（统计回归），延迟性能保持一致。20次试验的结果更具统计显著性。
+- **Best performance**: libero_spatial (99.5%)
+- **Most challenging**: libero_10 (89.5%)
+- **Mid-range**: libero_object (95.0%), libero_goal (91.0%)
+
+### Latency behavior
+
+- **Consistency**: 259–264 ms across suites
+- **Tail latency**: P99 within 272–287 ms
+- **Per-inference**: ~262 ms/infer
+
+### Resource usage
+
+- **GPU memory**: stable at 8.10 GB across suites
+- **Hardware requirement**: ~9 GB GPU memory recommended
 
 ---
 
-## 📁 日志文件
+## 🔍 Comparison vs 10-trial run
 
-- `benchmark_logs/fp32_spatial_20trials.log` (25KB)
-- `benchmark_logs/fp32_goal_20trials.log` (25KB)
-- `benchmark_logs/fp32_object_20trials.log` (25KB)
-- `benchmark_logs/fp32_10_20trials.log` (25KB)
+| Metric | 10 trials | 20 trials | Change |
+|--------|----------|-----------|--------|
+| **Overall accuracy** | 95.0% (285/300) | 93.75% (750/800) | -1.25% |
+| **Mean latency** | 262.42 ms | 262.41 ms | -0.01 ms |
+| **P99 latency** | ~280 ms | 278.79 ms | slightly improved |
+
+**Conclusion**: More trials reduced variance. Latency is stable; accuracy slightly regressed due to a larger sample size.
 
 ---
 
-## ⏭️ 下一步
+## 📁 Logs
 
-- [x] FP32 基线测试完成
-- [ ] 运行 INT8 TensorRT 20次试验测试
-- [ ] 生成 FP32 vs INT8 对比报告
-- [ ] 分析量化对准确率和延迟的影响
+- `benchmark_logs/fp32_spatial_20trials.log`
+- `benchmark_logs/fp32_goal_20trials.log`
+- `benchmark_logs/fp32_object_20trials.log`
+- `benchmark_logs/fp32_10_20trials.log`
 
-**命令**: `./run_int8_benchmark.sh`
+---
+
+## ⏭️ Next steps
+
+- [x] FP32 baseline complete
+- [x] INT8 TensorRT 20-trial benchmark complete
+- [ ] Update the final FP32 vs INT8 comparison report
+
+**Command**: `./run_int8_benchmark_v1.sh`
+
+## 📈 Analysis
+
+### Accuracy distribution
+
+- **Best performance**: libero_spatial (99.5%)
+- **Most challenging**: libero_10 (89.5%)
+- **Mid-range**: libero_object (95.0%), libero_goal (91.0%)
+
+### Latency behavior
+
+- **Consistency**: 259–264 ms across suites
+- **Tail latency**: P99 within 272–287 ms
+- **Per-inference**: ~262 ms/infer
+
+### Resource usage
+
+- **GPU memory**: stable at 8.10 GB across suites
+- **Hardware requirement**: ~9 GB GPU memory recommended
+
+---
+
+## 🔍 Comparison vs 10-trial run
+
+| Metric | 10 trials | 20 trials | Change |
+|--------|----------|-----------|--------|
+| **Overall accuracy** | 95.0% (285/300) | 93.75% (750/800) | -1.25% |
+| **Mean latency** | 262.42 ms | 262.41 ms | -0.01 ms |
+| **P99 latency** | ~280 ms | 278.79 ms | slightly improved |
+
+**Conclusion**: More trials reduced variance. Latency is stable; accuracy slightly regressed due to a larger sample size.
+
+---
+
+## 📁 Logs
+
+- `benchmark_logs/fp32_spatial_20trials.log`
+- `benchmark_logs/fp32_goal_20trials.log`
+- `benchmark_logs/fp32_object_20trials.log`
+- `benchmark_logs/fp32_10_20trials.log`
+
+---
+
+## ⏭️ Next steps
+
+- [x] FP32 baseline complete
+- [x] INT8 TensorRT 20-trial benchmark complete
+- [ ] Update the final FP32 vs INT8 comparison report
+
+**Command**: `./run_int8_benchmark_v1.sh`
