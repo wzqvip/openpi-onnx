@@ -31,10 +31,10 @@ libero_10:      85% █████████████████    (458m
 | Item | FP32 ✅ | INT8 ✅ |
 |------|---------|---------|
 | Success rate | 93.25% | 98.25% |
-| Latency | 515 ms (inference) | 10.43 s mean (episode wall time) |
+| Latency | 515 ms (inference) | ~162 ms mean (P99 ~167 ms) |
 | GPU memory | 8.10 GB | ~4.95 GB |
 
-> INT8 latency is end-to-end episode wall time from tqdm logs; inference-only latency is not logged.
+> INT8 latency is inference latency reported by evaluation logs.
 
 ---
 

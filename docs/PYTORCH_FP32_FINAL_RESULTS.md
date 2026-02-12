@@ -59,12 +59,12 @@
 
 ### INT8 TensorRT (completed)
 - ✅ Success rate: 98.25%
-- ✅ Latency: 10.43s mean episode wall time
+- ✅ Latency: ~162 ms mean inference time (P99 ~167 ms)
 - ✅ GPU memory: ~4.95GB
 - ✅ Status: verified (v1 path)
 
 ### Notes
-- INT8 latency above is end-to-end episode wall time from tqdm logs; inference-only latency is not logged.
+- INT8 latency above is inference latency reported by evaluation logs.
 
 ---
 

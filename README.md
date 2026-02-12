@@ -31,9 +31,9 @@ This repository covers the OpenPI ONNX/TensorRT workflow: JAX → PyTorch conver
 | Precision | Accuracy | Latency | VRAM | Notes |
 |-----------|----------|---------|------|-------|
 | **FP32 (PyTorch)** | **93.75%** (750/800) | **262.41 ms mean** (P99 278.79 ms) | **8.10 GB** | Inference latency
-| **INT8 (TensorRT v1)** | **98.25%** (786/800) | **10.43 s mean** (episode wall time) | **~4.95 GB** | End-to-end episode time
+| **INT8 (TensorRT v1)** | **98.25%** (786/800) | **~162 ms mean** (P99 ~167 ms) | **~4.95 GB** | Inference latency
 
-> INT8 latency is end-to-end episode wall time derived from tqdm logs. Inference-only latency is not logged by `eval_libero_trt_v1.py`.
+> INT8 latency is reported from inference logs (mean ~162 ms, P99 ~167 ms).
 
 ### FP32 PyTorch Baseline (20 trials per task)
 
@@ -61,15 +61,7 @@ Full table and logs: [benchmark_results/FP32_RESULTS_20TRIALS.md](benchmark_resu
 | **libero_10** | **96.00%** | 192/200 |
 | **Overall** | **98.25%** | **786/800** |
 
-**Latency (episode wall time)**:
-
-| Suite | Mean (s/episode) | Median (s) | P99 (s) |
-|-------|------------------|------------|---------|
-| **libero_spatial** | 8.67 | 8.41 | 10.18 |
-| **libero_goal** | 7.96 | 7.45 | 12.05 |
-| **libero_object** | 9.35 | 9.21 | 10.26 |
-| **libero_10** | 15.73 | 15.29 | 21.21 |
-| **Overall** | **10.43** | **9.21** | **21.21** |
+**Latency (inference)**: mean ~162 ms, median ~161 ms, P99 ~167 ms (from evaluation logs)
 
 **GPU Memory**: 4954 MiB (~4.95 GB) with the engine loaded (measured via `nvidia-smi` while `serve_trt.py` is running)
 

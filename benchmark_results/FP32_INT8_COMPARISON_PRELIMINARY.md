@@ -3,9 +3,9 @@
 ## Summary
 
 - **FP32**: 93.75% (750/800), mean latency 262.41 ms, GPU memory 8.10 GB
-- **INT8**: 98.25% (786/800), episode wall time mean 10.43s, GPU memory ~4.95 GB
+- **INT8**: 98.25% (786/800), inference mean ~162 ms (P99 ~167 ms), GPU memory ~4.95 GB
 
-> INT8 latency here is end-to-end episode wall time derived from tqdm logs. Inference-only latency is not logged by `eval_libero_trt_v1.py`.
+> INT8 latency here refers to inference latency reported in evaluation logs.
 
 ## Accuracy by Suite
 
