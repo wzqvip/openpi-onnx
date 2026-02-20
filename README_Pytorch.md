@@ -23,13 +23,13 @@ This document outlines the scripts and steps for the PyTorch implementation of t
 
 ## Evaluation Results
 
-Benchmarks were conducted on an NVIDIA Thor GPU.
+Benchmarks were conducted on an **NVIDIA Thor GPU** (CuDNN disabled for stability).
 
-| Precision | Latency (avg) | MSE vs FP32 | Status | Notes |
-| :--- | :--- | :--- | :--- | :--- |
-| **FP32** | **~410 ms** | - | **Working** | Baseline. CuDNN disabled to prevent segmentation faults. |
-| **FP8** | ~747 ms | 2.70 | **Working** | Slower than FP32. Likely due to missing Triton kernels/software stack support for `torchao` on this environment. |
-| **BF16** | N/A | N/A | Failed | Encountered internal library dtype mismatches during benchmark execution. |
+| Precision | Latency (avg) | Speed vs FP32 | MSE vs FP32 | Status | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **FP32** | **~408 ms** | 1.0× | — | ✅ Working | Baseline |
+| **BF16** | ~250 ms | **1.63×** | 2.11 | ✅ Working | Best latency; requires `autocast` + explicit input casting |
+| **INT8** | ~466 ms | 0.88× | 2.02 | ✅ Working | 35% smaller file (7.0→4.6 GB); slower without Triton kernels |
 
 ## Quick Start
 
