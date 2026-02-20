@@ -4,6 +4,7 @@ checkpoints/
 data/
 wandb/
 archive/
+venv-thor/
 
 # Large Files
 *.trt
